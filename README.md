@@ -9,7 +9,7 @@ MeshroomMicMac is a set of [MicMac](https://github.com/micmacIGN/micmac) nodes a
 - Install MicMac ([repository](https://github.com/micmacIGN/micmac) or [pre-compiled binaries](https://github.com/micmacIGN/micmac/releases))
 - Install Meshroom ([repository](https://github.com/alicevision/Meshroom) or [pre-compiled binaries](https://github.com/alicevision/Meshroom/releases))
 
-*For now, please use MicMac 1.1.1 and Meshroom 2.3.0.*
+*For now, please use MicMac 1.1.1 and Meshroom 2023.3.0.*
 
 *For now, please avoid white spaces and special characters in the MicMac installation path.* 
 
@@ -31,3 +31,4 @@ MESHROOM_PIPELINE_TEMPLATES_PATH = path/to/MeshroomMicMac/pipelines
 ```
 
 You can now find MicMac nodes and pipelines in Meshroom.
+
