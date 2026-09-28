@@ -123,8 +123,7 @@ for cmdLineArg in cmdLineArgs:
     paramStr="""
             name='{name}',
             label='{label}',
-            description="{description}",
-            uid=[0],""".format(name=argName, label=convertToLabel(argName), description=argDesc)
+            description="{description}",""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     
     if isUnnamed:
         paramStr += """
@@ -165,7 +164,6 @@ for cmdLineArg in cmdLineArgs:
                 label="{label} Item",
                 description="{description}",
                 value='',
-                uid=[0],
             ),
         ),""".format(params=paramStr, name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'vector<double>':
@@ -177,7 +175,6 @@ for cmdLineArg in cmdLineArgs:
                 description="{description}",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
         ),""".format(params=paramStr, name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'pt2di':
@@ -195,7 +192,6 @@ for cmdLineArg in cmdLineArgs:
                 description="x.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
             desc.IntParam(
                 name="y",
@@ -203,7 +199,6 @@ for cmdLineArg in cmdLineArgs:
                 description="y.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
         ]),""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'pt3di':
@@ -221,7 +216,6 @@ for cmdLineArg in cmdLineArgs:
                 description="x.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
             desc.IntParam(
                 name="y",
@@ -229,7 +223,6 @@ for cmdLineArg in cmdLineArgs:
                 description="y.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
             desc.IntParam(
                 name="z",
@@ -237,7 +230,6 @@ for cmdLineArg in cmdLineArgs:
                 description="z.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
         ]),""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'pt2dr':
@@ -255,7 +247,6 @@ for cmdLineArg in cmdLineArgs:
                 description="x.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
             desc.FloatParam(
                 name="y",
@@ -263,7 +254,6 @@ for cmdLineArg in cmdLineArgs:
                 description="y.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
         ]),""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'pt3dr':
@@ -281,7 +271,6 @@ for cmdLineArg in cmdLineArgs:
                 description="x.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
             desc.FloatParam(
                 name="y",
@@ -289,7 +278,6 @@ for cmdLineArg in cmdLineArgs:
                 description="y.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
             desc.FloatParam(
                 name="z",
@@ -297,7 +285,6 @@ for cmdLineArg in cmdLineArgs:
                 description="z.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
         ]),""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     else:
@@ -308,8 +295,6 @@ for cmdLineArg in cmdLineArgs:
         outputNodeStr += argStr
     else:
         inputNodeStr += argStr
-
-outputNodeStr = re.sub('(uid=\[0\])', lambda m: 'uid=[]', outputNodeStr) # remove uid for output parameters
 
 fileStr = '''__version__ = "0.0"
 
@@ -329,7 +314,7 @@ class {nodeName}(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             group='', # required to execute mm3d command line
-            uid=[0],
+            invalidate=True,
         ),{inputNodes}
     ]
 

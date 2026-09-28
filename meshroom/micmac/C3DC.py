@@ -14,7 +14,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             group='', # required to execute mm3d command line
-            uid=[0],
+            invalidate=True,
         ),
         desc.File(
             name='imagePattern',
@@ -22,13 +22,13 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             value="",
             group='', # unnamed parameter
-            uid=[0],
+            invalidate=True,
         ),    
         desc.File(
             name='SH',
             label='Homol Directory',
             description="Homol Directory.",
-            uid=[0],
+            invalidate=True,
             value="",
         ),
         desc.File(
@@ -37,7 +37,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             description='Orientation directory name.',
             group='', # unnamed parameter
             value='',
-            uid=[0],
+            invalidate=True,
         ),
         desc.ChoiceParam(
             name="mode",
@@ -47,14 +47,14 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             value="QuickMac",
             values=["Ground", "Statue", "Forest", "QuickMac", "MicMac", "BigMac"],
             exclusive=True,
-            uid=[0],
+            invalidate=True,
         ),
         desc.StringParam(
             name='Masq3D',
             label='Masq 3D',
             description='3D masq for point selection.',
             value="",
-            uid=[0],
+            invalidate=True,
         ),
         desc.IntParam(
             name='SzNorm',
@@ -62,7 +62,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             description='Size of param for normal evaluation (<=0 if none, 2 means 5x5).',
             value=2,
             range=(-1, 20, 1),
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -70,7 +70,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Ply Color',
             description='Colour in ply.', 
             value=True,
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -78,7 +78,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Purge',
             description='Purge result.', 
             value=True,
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -86,14 +86,14 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Tie Points In Txt',
             description='Use txt tie points for determining image pairs.', 
             value=False,
-            uid=[0],
+            invalidate=True,
         ),
         desc.BoolParam(
             name='Bin',
             label='Bin',
             description='PLY in binary mode.',  
             value=True,
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -101,7 +101,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Norm By C',
             description='Replace normal with camera position in PLY.',
             value=False,
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
         desc.FloatParam(
@@ -110,14 +110,14 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             description='For the choice of secondary images: Optimal angle of stereoscopy, in radian.',
             value=0.17,
             range=(0.0, 1.0, 0.01),
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
             name='ExpImSec',
             label='Exp Im Sec',
             description="Export Images Second.",
-            uid=[0],
+            invalidate=True,
             value=True,
             advanced=True,
         ),
@@ -125,7 +125,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             name='setCustomZoomF',
             label='Set Custom ZoomF',
             description="Set custom ZoomF.",
-            uid=[0],
+            invalidate=True,
             value=False,
             group='',
             advanced=True,
@@ -135,7 +135,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Zoom F',
             description="Zoom final.",
             enabled=lambda node: node.setCustomZoomF.value,
-            uid=[0],
+            invalidate=True,
             value=2,
             range=(0, 100, 1),
         ),
@@ -144,7 +144,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='FilePair',
             description='Explicit pairs of images (as in Tapioca).',
             value="",
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
         desc.GroupAttribute(
@@ -162,7 +162,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
                 description="x.",
                 value=0.0,
                 range=(0.0, float('inf'), 0.01),
-                uid=[0],
+                invalidate=True,
             ),
             desc.FloatParam(
                 name="y",
@@ -170,7 +170,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
                 description="y.",
                 value=0.0,
                 range=(0.0, float('inf'), 0.01),
-                uid=[0],
+                invalidate=True,
             ),
             desc.FloatParam(
                 name="z",
@@ -178,7 +178,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
                 description="z.",
                 value=0.0,
                 range=(0.0, float('inf'), 0.01),
-                uid=[0],
+                invalidate=True,
             ),
         ]),
         desc.StringParam(
@@ -186,7 +186,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Output Name',
             description='Output PLY point cloud name.',
             value='C3DC.ply',
-            uid=[0],
+            invalidate=True,
         ),
     ]
 
@@ -197,6 +197,6 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             description='Output PLY point cloud name.',
             value='{OutValue}',
             group='', # not a command line parameter
-            uid=[],
+            invalidate=False,
         ),
     ]

@@ -16,7 +16,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             group='', # required to execute mm3d command line
-            uid=[0],
+            invalidate=True,
         ),
         desc.File(
             name='imagePattern',
@@ -24,7 +24,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             group='', # unnamed parameter
             value="",
-            uid=[0],
+            invalidate=True,
         ),
         desc.File(
             name='orientationDir',
@@ -32,13 +32,13 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             description='Orientation directory name.',
             group='', # unnamed parameter
             value='',
-            uid=[0],
+            invalidate=True,
         ),
         desc.File(
             name='imageMeasures',
             label='Image measures',
             description="Image measures xml file, set 'HOR' if horizontal line is wanted (HORVy if Y vertical), 'NONE' if unused",
-            uid=[0],
+            invalidate=True,
             group='', # unnamed parameter
             value="",
         ),
@@ -46,14 +46,14 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             name='ExpTxt',
             label='Tie Points In Txt',
             description="Export in text format.",
-            uid=[0],
+            invalidate=True,
             value=False,
         ),
         desc.StringParam(
             name='PostPlan',
             label='Post Plan',
             description="Postfix for plane name, (Def=_Masq)",
-            uid=[0],
+            invalidate=True,
             value="",
             advanced=True,
         ),
@@ -61,7 +61,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             name='OrthoCyl',
             label='Ortho Cyl',
             description="Is the coordinate system in ortho-cylindric mode?",
-            uid=[0],
+            invalidate=True,
             value=False,
             advanced=True,
         ),
@@ -69,7 +69,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             name='localFrame',
             label='Local Frame name',
             description="Output of Local Frame (Repere Local) xml file",
-            uid=[0],
+            invalidate=True,
             group='', # unnamed parameter
             value="RepLoc.xml",
         ),
@@ -80,7 +80,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             name='localFrameOut',
             label='Local Frame',
             description="Output of Local Frame (Repere Local) xml file",
-            uid=[],
+            invalidate=False,
             group='', # unnamed parameter
             value="{localFrameValue}",
         ),

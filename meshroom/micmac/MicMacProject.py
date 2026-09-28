@@ -15,7 +15,7 @@ class MicMacProject(desc.Node):
             label='SfMData',
             description='SfMData file.',
             value="",
-            uid=[0],
+            invalidate=True,
         ),   
         desc.ChoiceParam(
             name='verboseLevel',
@@ -24,7 +24,7 @@ class MicMacProject(desc.Node):
             value='info',
             values=['fatal', 'error', 'warning', 'info', 'debug', 'trace'],
             exclusive=True,
-            uid=[],
+            invalidate=False,
         ),
     ]
 
@@ -35,7 +35,7 @@ class MicMacProject(desc.Node):
             description='Project Directory.',
             group='',  # required to execute mm3d command line
             value=os.path.join(desc.Node.internalFolder, 'project'),
-            uid=[],
+            invalidate=False,
         ),
     ]
 

@@ -14,14 +14,14 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             group='', # required to execute mm3d command line
-            uid=[0],
+            invalidate=True,
         ),
         desc.File(
             name='Pattern',
             label='Image Pattern',
             description='Image Pattern.',
             value="",
-            uid=[0],
+            invalidate=True,
         ),
         desc.File(
             name='plyName',
@@ -29,14 +29,14 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             description='Point cloud PLY filename.',
             group='', # unnamed parameter
             value='',
-            uid=[0],
+            invalidate=True,
         ),
         desc.BoolParam(
             name='Bin',
             label='Bin',
             description='Write PLY in binary mode.', 
             value=True,
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
         desc.IntParam(
@@ -45,14 +45,14 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             description='Maximum reconstruction depth for PoissonRecon.',
             value=8,
             range=(0, 20, 1),
-            uid=[0],
+            invalidate=True,
         ),
         desc.BoolParam(
             name='Rm',
             label='Rm',
             description='Remove intermediary Poisson mesh.', 
             value=True,
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -60,7 +60,7 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             label='Filter',
             description='Filter mesh.', 
             value=True,
-            uid=[0],
+            invalidate=True,
         ),
         desc.ChoiceParam(
             name="Mode",
@@ -69,7 +69,7 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             value="QuickMac",
             values=["Ground", "Statue", "Forest", "QuickMac", "MicMac", "BigMac"],
             exclusive=True,
-            uid=[0],
+            invalidate=True,
         ),
         desc.IntParam(
             name='Scale',
@@ -77,14 +77,14 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             description='Z-buffer downscale factor.',
             value=2,
             range=(0, 10, 1),
-            uid=[0],
+            invalidate=True,
         ),
         desc.BoolParam(
             name='FFB',
             label='FFB',
             description='Filter from border.', 
             value=True,
-            uid=[0],
+            invalidate=True,
             advanced=True,
         ),
     ]
@@ -95,6 +95,6 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             label='Mesh',
             description='Output PLY mesh name.',
             value='TiPunch.ply',
-            uid=[],
+            invalidate=False,
         ),
     ]

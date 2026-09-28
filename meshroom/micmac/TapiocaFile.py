@@ -14,7 +14,7 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             group='', # required to execute mm3d command line
-            uid=[0],
+            invalidate=True,
         ),
         desc.File(
             name='xmlPath',
@@ -22,7 +22,7 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             description='XML file path of pair.',
             group='', # unnamed parameter
             value="",
-            uid=[0],
+            invalidate=True,
         ),
         desc.IntParam(
             name='resolution',
@@ -31,35 +31,35 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             group='', # unnamed parameter
             value=-1,
             range=(-1, 16000, 10),
-            uid=[0],
+            invalidate=True,
         ),
         desc.BoolParam(
             name='ExpTxt',
             label='Export Files In Txt',
             description='Export files in text format (if false binary).', 
             value=False,
-            uid=[0],
+            invalidate=True,
         ),
         desc.BoolParam(
             name='NoMax',
             label='No Max',
             description='No max.', 
             value=False,
-            uid=[0],
+            invalidate=True,
         ),
         desc.BoolParam(
             name='NoMin',
             label='No Min',
             description='No min.', 
             value=False,
-            uid=[0],
+            invalidate=True,
         ),
         desc.BoolParam(
             name='NoUnknown',
             label='No Unknown',
             description='No unknown.', 
             value=False,
-            uid=[0],
+            invalidate=True,
         ),
         desc.FloatParam(
             name='Ratio',
@@ -67,7 +67,7 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             description='ANN closeness ration.',
             value=0.6,
             range=(0.1, 1.0, 0.1),
-            uid=[0],
+            invalidate=True,
         ),
     ]
 
@@ -77,6 +77,6 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             label='Homol Directory', # Directory Postfix
             description='Homol Directory.',
             value="Tapioca",
-            uid=[],
+            invalidate=False,
         ),
     ]
