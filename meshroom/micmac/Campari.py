@@ -55,7 +55,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             brackets='[]',
             joinChar=',',
             enabled=lambda node: node.enableGpsLa.value,
-            groupDesc=[
+            items=[
             desc.FloatParam(
                 name="x",
                 label="X",
@@ -88,7 +88,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             brackets='[]',
             joinChar=',',
             enabled=lambda node: node.enableGpsLa.value,
-            groupDesc=[
+            items=[
             desc.FloatParam(
                 name="x",
                 label="X",

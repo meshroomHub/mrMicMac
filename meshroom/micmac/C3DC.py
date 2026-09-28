@@ -155,7 +155,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             joinChar=',',
             enabled=lambda node: node.enableGpsLa.value,
             advanced=True,
-            groupDesc=[
+            items=[
             desc.FloatParam(
                 name="x",
                 label="X",

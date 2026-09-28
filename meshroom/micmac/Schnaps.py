@@ -81,7 +81,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
             description="Use a fixed size for image, do not read size in files",
             brackets='[]',
             joinChar=',',
-            groupDesc=[
+            items=[
             desc.IntParam(
                 name="x",
                 label="X",

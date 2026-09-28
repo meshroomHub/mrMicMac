@@ -68,7 +68,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             joinChar=',',
             enabled=lambda node: node.setDEqXY.value,
             advanced=True,
-            groupDesc=[
+            items=[
             desc.IntParam(
                 name="x",
                 label="X",
@@ -140,7 +140,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             joinChar=',',
             enabled=lambda node: node.setDegRapXY.value,
             advanced=True,
-            groupDesc=[
+            items=[
             desc.IntParam(
                 name="x",
                 label="X",

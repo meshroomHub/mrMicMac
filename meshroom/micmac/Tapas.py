@@ -101,7 +101,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             brackets='[]',
             joinChar=',',
             advanced=True,
-            groupDesc=[
+            items=[
             desc.FloatParam(
                 name="max",
                 label="Max",

@@ -185,7 +185,7 @@ for cmdLineArg in cmdLineArgs:
             description="{description}",
             brackets='[]',
             joinChar=',',
-            groupDesc=[
+            items=[
             desc.IntParam(
                 name="x",
                 label="X",
@@ -209,7 +209,7 @@ for cmdLineArg in cmdLineArgs:
             description="{description}",
             brackets='[]',
             joinChar=',',
-            groupDesc=[
+            items=[
             desc.IntParam(
                 name="x",
                 label="X",
@@ -240,7 +240,7 @@ for cmdLineArg in cmdLineArgs:
             description="{description}",
             brackets='[]',
             joinChar=',',
-            groupDesc=[
+            items=[
             desc.FloatParam(
                 name="x",
                 label="X",
@@ -264,7 +264,7 @@ for cmdLineArg in cmdLineArgs:
             description="{description}",
             brackets='[]',
             joinChar=',',
-            groupDesc=[
+            items=[
             desc.FloatParam(
                 name="x",
                 label="X",
