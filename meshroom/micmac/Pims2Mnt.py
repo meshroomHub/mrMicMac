@@ -2,7 +2,7 @@ __version__ = "1.1.1"
 
 import sys
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
 class Pims2Mnt(node.MicmacNode):
     commandLine = 'mm3d Pims2Mnt {dirOrPIMValue} {allParams}'

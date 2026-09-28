@@ -2,7 +2,7 @@ __version__ = "0.0"
 
 import sys
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
 class MeshCloudClip(node.MicmacNode):
     commandLine = 'MMVII MeshCloudClip {CloudValue} {3DRegValue} {allParams}'

@@ -2,7 +2,7 @@ __version__ = "0.0"
 
 import sys
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
 class OriConvV1V2(node.MicmacNode):
     commandLine = 'MMVII OriConvV1V2 Ori-{InValue}/ {OriValue}'

@@ -1,7 +1,7 @@
 __version__ = "1.1.1"
 
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
 class Tequila(node.MicmacNode):
     commandLine = 'mm3d Tequila {imagePatternValue} {orientationDirValue} {plyNameValue} {allParams}'

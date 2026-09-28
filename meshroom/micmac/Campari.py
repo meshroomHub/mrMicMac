@@ -2,7 +2,7 @@ __version__ = "0.0"
 
 import sys
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
 class Campari(node.MicmacNode):
     commandLine = 'mm3d Campari {imagePatternValue} {inputOrientationValue} {OutValue} {allParams}'

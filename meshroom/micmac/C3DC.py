@@ -1,7 +1,7 @@
 __version__ = "1.1.1"
 
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
 class C3DC(node.MicmacNode):
     commandLine = 'mm3d C3DC {modeValue} {imagePatternValue} {orientationDirValue} {allParams}'

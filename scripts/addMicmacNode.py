@@ -315,7 +315,7 @@ fileStr = '''__version__ = "0.0"
 
 import sys
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
 class {nodeName}(node.MicmacNode):
     commandLine = '{cmd} {allParams}'

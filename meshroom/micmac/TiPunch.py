@@ -1,7 +1,7 @@
 __version__ = "1.1.1"
 
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
 class TiPunch(node.MicmacNode):
     commandLine = 'mm3d TiPunch {plyNameValue} {allParams}'

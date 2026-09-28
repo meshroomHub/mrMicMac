@@ -2,7 +2,7 @@ __version__ = "0.0"
 
 import sys
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
 class RepLocBascule(node.MicmacNode):
     commandLine = 'mm3d RepLocBascule {imagePatternValue} {orientationDirValue} {imageMeasuresValue} {localFrameValue} {allParams}'
