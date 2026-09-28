@@ -13,14 +13,14 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='xmlPath',
             label='XML File Path',
             description='XML file path of pair.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="",
             invalidate=True,
         ),
@@ -28,7 +28,7 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             name='resolution',
             label='Resolution',
             description='Resolution.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value=-1,
             range=(-1, 16000, 10),
             invalidate=True,

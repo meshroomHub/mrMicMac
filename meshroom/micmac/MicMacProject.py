@@ -33,7 +33,7 @@ class MicMacProject(desc.Node):
             name='projectDirectory',
             label='Project Directory',
             description='Project Directory.',
-            group='',  # required to execute mm3d command line
+            commandLineGroup='',  # required to execute mm3d command line
             value=os.path.join(desc.Node.internalFolder, 'project'),
             invalidate=False,
         ),

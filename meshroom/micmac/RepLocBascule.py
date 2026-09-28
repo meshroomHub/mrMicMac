@@ -15,14 +15,14 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="",
             invalidate=True,
         ),
@@ -30,7 +30,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             name='orientationDir',
             label='Orientation Directory',
             description='Orientation directory name.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value='',
             invalidate=True,
         ),
@@ -39,7 +39,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             label='Image measures',
             description="Image measures xml file, set 'HOR' if horizontal line is wanted (HORVy if Y vertical), 'NONE' if unused",
             invalidate=True,
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="",
         ),
         desc.BoolParam(
@@ -70,7 +70,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             label='Local Frame name',
             description="Output of Local Frame (Repere Local) xml file",
             invalidate=True,
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="RepLoc.xml",
         ),
     ]
@@ -81,7 +81,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             label='Local Frame',
             description="Output of Local Frame (Repere Local) xml file",
             invalidate=False,
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="{localFrameValue}",
         ),
     ]

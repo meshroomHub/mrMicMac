@@ -14,7 +14,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group="micmac",
+            commandLineGroup="micmac",
             invalidate=True,
         ),
         desc.File(
@@ -22,7 +22,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             label='Image Pattern',
             description="Full Directory (Dir+Pattern)",
             invalidate=True,
-            group='unnamedParams',
+            commandLineGroup='unnamedParams',
             value="",
         ),
         desc.File(
@@ -30,7 +30,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             label='Orientation Directory',
             description="Input Orientation",
             invalidate=True,
-            group='unnamedParams',
+            commandLineGroup='unnamedParams',
             value="",
         ),
         desc.File(
@@ -46,7 +46,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             description="Enable GpsLa.",
             invalidate=True,
             value=False,
-            group=''
+            commandLineGroup=''
         ),
         desc.GroupAttribute(
             name='GpsLa',
@@ -448,7 +448,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             label='Orientation Directory',
             description="Output Orientation",
             invalidate=True,
-            group='unnamedParams',
+            commandLineGroup='unnamedParams',
             value="Campari",
         ), 
     ]

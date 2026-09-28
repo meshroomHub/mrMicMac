@@ -13,7 +13,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
@@ -21,7 +21,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             label='Image Pattern',
             description='Image Pattern.',
             value='.*.(jpg|jpeg|JPG|JPEG|png|PNG|tif|tiff|TIF|TIFF)',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             invalidate=True,
         ),    
         desc.File(
@@ -36,7 +36,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             name='imageSize',
             label='Image Size',
             description='Size of image.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value=1000,
             range=(-1, 50000, 10),
             invalidate=True,
@@ -47,7 +47,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             description='Set ByP.', 
             value=False,
             invalidate=True,
-            group='',
+            commandLineGroup='',
         ),
         desc.IntParam(
             name='ByP',
@@ -95,7 +95,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             name="wallisFilter",
             label="Wallis Filter",
             description="Apply Wallis filter.",
-            group='', # keys
+            commandLineGroup='', # keys
             value="",
             values=["", "@SFS"],
             exclusive=True,

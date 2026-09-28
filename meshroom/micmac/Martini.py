@@ -13,14 +13,14 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="",
             invalidate=True,
         ),
@@ -111,7 +111,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
             label='Orientation Directory',
             description="Directory of Output Orientation",
             value="{OriOutValue}",
-            group='', # not a command line parameter
+            commandLineGroup='', # not a command line parameter
             invalidate=False,
         ),
     ]

@@ -15,7 +15,7 @@ class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group="micmac",
+            commandLineGroup="micmac",
             invalidate=True,
         ),
         desc.File(
@@ -23,7 +23,7 @@ class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
             label='Orientation MicMac V1',
             description="Input Orientation for MMV1 Files",
             invalidate=True,
-        group='unnamedParams',
+        commandLineGroup='unnamedParams',
             value="",
         ),
         
@@ -35,7 +35,7 @@ class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
             label='Orientation MMVII',
             description="Out Orientation for MMVII Files",
             invalidate=True,
-        group='unnamedParams',
+        commandLineGroup='unnamedParams',
             value="OriV2",
         ),
     ]

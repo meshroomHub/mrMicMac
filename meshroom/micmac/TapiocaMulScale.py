@@ -13,14 +13,14 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value=".*.(jpg|jpeg|JPG|JPEG|png|PNG|tif|tiff|TIF|TIFF)",
             invalidate=True,
         ),
@@ -36,7 +36,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             name='imageSizeLowResolution',
             label='Image Size Low',
             description='Size of low resolution images.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value=500,
             range=(-1, 10000, 1),
             invalidate=True,
@@ -45,7 +45,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             name='imageSizeHighResolution',
             label='Image Size High',
             description='Size of high resolution images.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value=1500,
             range=(-1, 10000, 1),
             invalidate=True,
@@ -56,7 +56,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             description='Set ByP.', 
             value=False,
             invalidate=True,
-            group='',
+            commandLineGroup='',
         ),
         desc.IntParam(
             name='ByP',
@@ -113,7 +113,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             name="wallisFilter",
             label="Wallis Filter",
             description="Apply Wallis filter.",
-            group='', # keys
+            commandLineGroup='', # keys
             value="",
             values=["", "@SFS"],
             exclusive=True,

@@ -13,7 +13,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
@@ -21,7 +21,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Image Pattern',
             description='Image Pattern.',
             value="",
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             invalidate=True,
         ),    
         desc.File(
@@ -35,7 +35,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             name='orientationDir',
             label='Orientation Directory',
             description='Orientation directory name.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value='',
             invalidate=True,
         ),
@@ -43,7 +43,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             name="mode",
             label="Mode",
             description="Mode.",
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="QuickMac",
             values=["Ground", "Statue", "Forest", "QuickMac", "MicMac", "BigMac"],
             exclusive=True,
@@ -127,7 +127,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             description="Set custom ZoomF.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.IntParam(
@@ -196,7 +196,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Dense Point Cloud',
             description='Output PLY point cloud name.',
             value='{OutValue}',
-            group='', # not a command line parameter
+            commandLineGroup='', # not a command line parameter
             invalidate=False,
         ),
     ]

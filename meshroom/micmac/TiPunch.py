@@ -13,7 +13,7 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
@@ -27,7 +27,7 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             name='plyName',
             label='Point Cloud',
             description='Point cloud PLY filename.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value='',
             invalidate=True,
         ),

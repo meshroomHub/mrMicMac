@@ -13,14 +13,14 @@ class SetExif(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="",
             invalidate=True,
         ),
@@ -30,7 +30,7 @@ class SetExif(node.MicmacNode, desc.CommandLineNode):
             description='Set Focal lenght?', 
             value=False,
             invalidate=True,
-            group='',
+            commandLineGroup='',
         ),
         desc.FloatParam(
             name='F',
@@ -47,7 +47,7 @@ class SetExif(node.MicmacNode, desc.CommandLineNode):
             description='Set Focal lenght equiv 35mm?', 
             value=False,
             invalidate=True,
-            group='',
+            commandLineGroup='',
         ),
         desc.FloatParam(
             name='F35',

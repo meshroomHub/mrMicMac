@@ -14,14 +14,14 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="",
             invalidate=True,
         ),
@@ -29,7 +29,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             name='calibrationModel',
             label='Calibration Model',
             description='Calibration model.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value='RadialBasic',
             values=['RadialBasic', 'RadialExtended', 'Fraser', 'FishEyeEqui', 'AutoCal', 'Figee', 'HemiEqui', 'RadialStd', 'FraserBasic', 'FishEyeBasic', 'FE_EquiSolBasic', 'Four7x2', 'Four11x2', 'Four15x2', 'Four19x2', 'AddFour7x2', 'AddFour11x2', 'AddFour15x2', 'Four19x2', 'AddPolyDeg0', 'AddPolyDeg1', 'AddPolyDeg2', 'AddPolyDeg3', 'AddPolyDeg4', 'AddPolyDeg5', 'AddPolyDeg6', 'AddPolyDeg7', 'Ebner', 'Brown', 'FishEyeStereo'],
             exclusive=True,
@@ -134,7 +134,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Set lib PP.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.BoolParam(
@@ -152,7 +152,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Set lib Foc.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.BoolParam(
@@ -170,7 +170,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Set lib CP.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.BoolParam(
@@ -188,7 +188,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Set lib CD.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.BoolParam(
@@ -206,7 +206,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Set lib Dec.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.BoolParam(
@@ -224,7 +224,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Set DegRadMax.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.IntParam(
@@ -243,7 +243,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Set DR Max.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.IntParam(
@@ -271,7 +271,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Set vitesse init.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.IntParam(
@@ -389,7 +389,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Orientation Directory',
             description="Directory of Output Orientation",
             value="{OutValue}",
-            group='', # not a command line parameter
+            commandLineGroup='', # not a command line parameter
             invalidate=False,
         ),
     ]

@@ -127,7 +127,7 @@ for cmdLineArg in cmdLineArgs:
     
     if isUnnamed:
         paramStr += """
-            group='', # unnamed parameter"""
+            commandLineGroup='', # unnamed parameter"""
 
     if argType == 'bool':
         argStr="""
@@ -313,7 +313,7 @@ class {nodeName}(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),{inputNodes}
     ]

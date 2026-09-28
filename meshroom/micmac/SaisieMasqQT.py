@@ -13,14 +13,14 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='filePath',
             label='File Path',
             description='''Path of the file to open (image or PLY or camera XML).''',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="",
             invalidate=True,
         ),
@@ -30,7 +30,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             description="Set postfix.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.StringParam(
@@ -48,7 +48,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             description="Set name.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.StringParam(
@@ -66,7 +66,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             description="Set attr.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.StringParam(
@@ -84,7 +84,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             description="Set gamma.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.FloatParam(

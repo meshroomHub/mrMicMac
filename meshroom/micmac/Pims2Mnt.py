@@ -14,14 +14,14 @@ class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='dirOrPIM',
             label='Dir Or PIM-Type',
             description="Dir or PIM-Type (QuickMac ....)",
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             invalidate=True,
             value="",
         ),

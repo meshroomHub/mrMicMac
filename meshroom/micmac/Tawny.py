@@ -14,14 +14,14 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='orthoDirectory',
             label='Ortho Directory',
             description="Ortho directory",
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             invalidate=True,
             value="",
         ),
@@ -38,7 +38,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set DEq.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.IntParam(
@@ -57,7 +57,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set DEqXY.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.GroupAttribute(
@@ -92,7 +92,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set add cste.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.BoolParam(
@@ -110,7 +110,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set DegRap.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.IntParam(
@@ -129,7 +129,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set DegRapXY.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.GroupAttribute(
@@ -164,7 +164,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set RGP.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.BoolParam(
@@ -182,7 +182,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set DynG.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.FloatParam(
@@ -201,7 +201,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set Im Prio.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.StringParam(
@@ -219,7 +219,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set SzV.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.IntParam(
@@ -238,7 +238,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set Cor Thr.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.FloatParam(
@@ -257,7 +257,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set Nb Per Im.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.FloatParam(
@@ -276,7 +276,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set L1 F.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.BoolParam(
@@ -294,7 +294,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Set Sat Thresh.",
             invalidate=True,
             value=False,
-            group='',
+            commandLineGroup='',
             advanced=True,
         ),
         desc.FloatParam(

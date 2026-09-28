@@ -13,14 +13,14 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="",
             invalidate=True,
         ),
@@ -28,7 +28,7 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             name='imageSize',
             label='Image Size',
             description='Size of image (greater dimension).',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value=-1,
             range=(-1, 16000, 10),
             invalidate=True,

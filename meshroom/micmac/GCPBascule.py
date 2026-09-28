@@ -14,14 +14,14 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
+            commandLineGroup='', # required to execute mm3d command line
             invalidate=True,
         ),
         desc.File(
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            group='', # unnamed parameter
+            commandLineGroup='', # unnamed parameter
             value="",
             invalidate=True,
         ),
@@ -29,7 +29,7 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
             name='orientationIn',
             label='Input Orientation',
             description="Input Orientation.",
-            group='unnamedParams',
+            commandLineGroup='unnamedParams',
             invalidate=True,
             value="",
         ),
@@ -37,7 +37,7 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
             name='groundControlPointsFile',
             label='GCP 3D coordinates File',
             description="Ground Control Points File",
-            group='unnamedParams',
+            commandLineGroup='unnamedParams',
             invalidate=True,
             value="",
         ),
@@ -45,7 +45,7 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
             name='imageMeasurementsFile',
             label='GCP Image corodinates File',
             description="Image Measurements File",
-            group='unnamedParams',
+            commandLineGroup='unnamedParams',
             invalidate=True,
             value="",
         ),
@@ -119,7 +119,7 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
 		name='orientationOut',
 		label='Output Orientation',
 		description="Orientation out",
-		group='unnamedParams',
+		commandLineGroup='unnamedParams',
 		invalidate=True,
 		value="GCPBasc",
 	),
