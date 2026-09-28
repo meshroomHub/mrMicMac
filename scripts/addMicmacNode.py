@@ -314,7 +314,6 @@ class {nodeName}(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             commandLineGroup='', # required to execute mm3d command line
-            invalidate=True,
         ),{inputNodes}
     ]
 

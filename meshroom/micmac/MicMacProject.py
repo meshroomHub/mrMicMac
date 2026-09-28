@@ -15,7 +15,6 @@ class MicMacProject(desc.Node):
             label='SfMData',
             description='SfMData file.',
             value="",
-            invalidate=True,
         ),   
         desc.ChoiceParam(
             name='verboseLevel',

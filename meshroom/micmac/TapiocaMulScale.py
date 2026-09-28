@@ -14,7 +14,6 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             commandLineGroup='', # required to execute mm3d command line
-            invalidate=True,
         ),
         desc.File(
             name='imagePattern',
@@ -22,13 +21,11 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             commandLineGroup='', # unnamed parameter
             value=".*.(jpg|jpeg|JPG|JPEG|png|PNG|tif|tiff|TIF|TIFF)",
-            invalidate=True,
         ),
         desc.File(
             name='Pat2',
             label='Second Image Pattern',
             description="Second image pattern.",
-            invalidate=True,
             value="",
             advanced=True,
         ),
@@ -39,7 +36,6 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             commandLineGroup='', # unnamed parameter
             value=500,
             range=(-1, 10000, 1),
-            invalidate=True,
         ),
         desc.IntParam(
             name='imageSizeHighResolution',
@@ -48,14 +44,12 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             commandLineGroup='', # unnamed parameter
             value=1500,
             range=(-1, 10000, 1),
-            invalidate=True,
         ),
         desc.BoolParam(
             name='setByP',
             label='Set ByP',
             description='Set ByP.', 
             value=False,
-            invalidate=True,
             commandLineGroup='',
         ),
         desc.IntParam(
@@ -65,7 +59,6 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             enabled=lambda node: node.setByP.value,
             value=-1,
             range=(-1, 64, 1),
-            invalidate=True,
             advanced=True,
         ),
         desc.IntParam(
@@ -74,7 +67,6 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             description='Minimum number of points.',
             value=2,
             range=(1, 1000, 1),
-            invalidate=True,
             advanced=True,
         ), 
         desc.BoolParam(
@@ -82,14 +74,12 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             label='Tie Points In Txt',
             description='Export files in text format (if false binary).', 
             value=False,
-            invalidate=True,
         ),
         desc.BoolParam(
             name='NoMax',
             label='No Max',
             description='No max.', 
             value=False,
-            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -97,7 +87,6 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             label='No Min',
             description='No min.', 
             value=False,
-            invalidate=True,
             advanced=True,
         ),
         desc.FloatParam(
@@ -106,7 +95,6 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             description='ANN closeness ration.',
             value=0.6,
             range=(0.1, 1.0, 0.1),
-            invalidate=True,
             advanced=True,
         ),
         desc.ChoiceParam(
@@ -117,7 +105,6 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             value="",
             values=["", "@SFS"],
             exclusive=True,
-            invalidate=True,
             advanced=True,
         ),
     ]

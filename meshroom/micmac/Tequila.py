@@ -14,7 +14,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             commandLineGroup='', # required to execute mm3d command line
-            invalidate=True,
         ),
         desc.File(
             name='imagePattern',
@@ -22,7 +21,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             commandLineGroup='', # unnamed parameter
             value="",
-            invalidate=True,
         ),
         desc.File(
             name='orientationDir',
@@ -30,7 +28,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='Orientation directory name.',
             commandLineGroup='', # unnamed parameter
             value='',
-            invalidate=True,
         ),
         desc.File(
             name='plyName',
@@ -38,14 +35,12 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='PLY Mesh filename.',
             commandLineGroup='', # unnamed parameter
             value='',
-            invalidate=True,
         ),
         desc.BoolParam(
             name='Bin',
             label='Bin',
             description='Write PLY in binary mode.', 
             value=True,
-            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -53,7 +48,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             label='Optim',
             description='Graph-cut optimization.', 
             value=False,
-            invalidate=True,
             advanced=True,
         ),
         desc.FloatParam(
@@ -62,7 +56,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='Lambda.',
             value=0.01,
             range=(0.0, 10.0, 0.01),
-            invalidate=True,
             advanced=True,
         ),
         desc.IntParam(
@@ -71,7 +64,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='Optimization iteration number.',
             value=2,
             range=(0, 20, 1),
-            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -79,7 +71,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             label='Filter',
             description='Remove border faces.', 
             value=False,
-            invalidate=True,
             advanced=True,
         ),
         desc.IntParam(
@@ -88,7 +79,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='Texture max size.',
             value=8192,
             range=(100, 16000, 1),
-            invalidate=True,
         ),
         desc.IntParam(
             name='Scale',
@@ -96,7 +86,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='Z-buffer downscale factor.',
             value=2,
             range=(0, 10, 1),
-            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -104,7 +93,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             label='ZBuf Cache',
             description='ZBuffer cache (if True: a little faster, more memory).',
             value=False,
-            invalidate=True,
             advanced=True,
         ),
         desc.IntParam(
@@ -113,7 +101,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='jpeg compression quality.',
             value=70,
             range=(10, 100, 1),
-            invalidate=True,
         ),
         desc.FloatParam(
             name='Angle',
@@ -121,7 +108,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='Threshold angle, in degree, between triangle normal and image viewing direction',
             value=90.0,
             range=(0.0, 360.0, 0.01),
-            invalidate=True,
             advanced=True,
         ),
         desc.ChoiceParam(
@@ -131,7 +117,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             value="Basic",
             values=["Basic", "Pack"],
             exclusive=True,
-            invalidate=True,
             advanced=True,
         ),
         desc.ChoiceParam(
@@ -141,7 +126,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             value="Angle",
             values=["Angle", "Stretch", "AAngle"],
             exclusive=True,
-            invalidate=True,
             advanced=True,
         ),
     ]

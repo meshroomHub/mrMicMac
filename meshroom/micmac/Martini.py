@@ -14,7 +14,6 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             commandLineGroup='', # required to execute mm3d command line
-            invalidate=True,
         ),
         desc.File(
             name='imagePattern',
@@ -22,27 +21,23 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             commandLineGroup='', # unnamed parameter
             value="",
-            invalidate=True,
         ),
         desc.BoolParam(
             name='Exe',
             label='Exe',
             description='If false, only print.', 
             value=True,
-            invalidate=True,
         ),
         desc.File(
             name='OriCalib',
             label='Ori Calib',
             description='Orientation for calibration.',
             value='',
-            invalidate=True,
         ),
         desc.File(
             name='SH',
             label='Homol Directory',
             description="Homol Directory.",
-            invalidate=True,
             value="",
         ),
         desc.StringParam(
@@ -50,35 +45,30 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
             label='Ext Name',
             description="User's added Prefix.",
             value='',
-            invalidate=True,
         ),
         desc.BoolParam(
             name='ExpTxt',
             label='Exp Txt',
             description='Is Homol in text format?.', 
             value=False,
-            invalidate=True,
         ),
         desc.StringParam(
             name='ModeNO',
             label='Mode NO',
             description="Mode (TTK StdNoTTK OnlyHomogr).",
             value='Std',
-            invalidate=True,
         ),
         desc.BoolParam(
             name='Debug',
             label='Debug',
             description='Debug', 
             value=False,
-            invalidate=True,
         ),
         desc.BoolParam(
             name='AUS',
             label='AUS',
             description='Accept non symetric homologous point.', 
             value=True,
-            invalidate=True,
         ),
         desc.IntParam(
             name='QNbPtTrip',
@@ -86,7 +76,6 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
             description='Max num of triplets per edge (Quick mode).',
             value=8,
             range=(1, 20, 1),
-            invalidate=True,
         ),
         desc.IntParam(
             name='NbTrip',
@@ -94,14 +83,12 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
             description='Min num of points to calculate a triplet.',
             value=5,
             range=(1, 20, 1),
-            invalidate=True,
         ),
         desc.StringParam(
             name='OriOut',
             label='Output Orientation Name',
             description="Directory of Output Orientation",
             value="Martini",
-            invalidate=True,
         ),
     ]
 

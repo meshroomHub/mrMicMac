@@ -16,7 +16,6 @@ class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             commandLineGroup="micmac",
-            invalidate=True,
         ),
         desc.File(
             name='Cloud',
@@ -24,7 +23,6 @@ class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
             description='Name of input cloud mesh',
             commandLineGroup='unnamedParams',
             value='',
-            invalidate=True,
         ),
         desc.File(
             name='3DReg',
@@ -32,20 +30,17 @@ class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
             description='Name of 3D masq',
             commandLineGroup='unnamedParams',
             value='',
-            invalidate=True,
         ),
         desc.BoolParam(
             name='Bin',
             label='Bin',
             description="Generate out in binary format ,[Default=false]",
-            invalidate=True,
             value=False,
         ),
         desc.IntParam(
             name='NbMinV',
             label='Nb Min V',
             description="Number minimal of vertex to maintain a triangle ,[Default=3]",
-            invalidate=True,
             value=3,
             range=(-sys.maxsize, sys.maxsize, 1),
         ),
@@ -56,7 +51,6 @@ class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
             name='Out',
             label='Clipped mesh',
             description="Name of output file",
-            invalidate=True,
             value="Clip_mesh.ply",
         ),
     ]

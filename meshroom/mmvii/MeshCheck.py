@@ -16,7 +16,6 @@ class MeshCheck(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             commandLineGroup="micmac",
-            invalidate=True,
         ),
         desc.File(
             name='Cloud',
@@ -24,27 +23,23 @@ class MeshCheck(node.MicmacNode, desc.CommandLineNode):
             description='Name of input cloud/mesh',
             commandLineGroup='unnamedParams',
             value="",
-            invalidate=True,
         ),
         desc.BoolParam(
             name='Bin',
             label='Bin',
             description="Generate out in binary format ,[Default=false]",
-            invalidate=True,
             value=False,
         ),
         desc.BoolParam(
             name='Do2DC',
             label='Do2 DC',
             description="check also as a 2D-triangulation (orientation) ,[Default=false]",
-            invalidate=True,
             value=False,
         ),
         desc.BoolParam(
             name='Correct',
             label='Correct',
             description="Do correction, Defaut: Do It Out specified",
-            invalidate=True,
             value=True,
         ),
     ]
@@ -54,7 +49,6 @@ class MeshCheck(node.MicmacNode, desc.CommandLineNode):
             name='Out',
             label='Corrected mesh',
             description="Name of output file if correction are done",
-            invalidate=True,
             value="Correc_mesh.ply",
         ),
     ]

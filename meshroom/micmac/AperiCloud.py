@@ -14,7 +14,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             commandLineGroup='', # required to execute mm3d command line
-            invalidate=True,
         ),
         desc.File(
             name='imagePattern',
@@ -22,13 +21,11 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             commandLineGroup='', # unnamed parameter
             value="",
-            invalidate=True,
         ),
         desc.File(
             name='SH',
             label='Homol Directory',
             description="Homol Directory.",
-            invalidate=True,
             value="",
         ),
         desc.File(
@@ -37,21 +34,18 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             description='Orientation directory name.',
             commandLineGroup='', # unnamed parameter
             value="",
-            invalidate=True,
         ),
         desc.BoolParam(
             name='ExpTxt',
             label='Tie Points In Txt',
             description='Tie Points use txt format.', 
             value=False,
-            invalidate=True,
         ),
         desc.BoolParam(
             name='Bin',
             label='Bin',
             description='PLY in binary mode.', 
             value=True,
-            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -59,21 +53,18 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             label='RGB',
             description='Use RGB image to color points.', 
             value=True,
-            invalidate=True,
         ),
         desc.BoolParam(
             name='WithPoints',
             label='With Points',
             description='Add point cloud.', 
             value=True,
-            invalidate=True,
         ),
         desc.BoolParam(
             name='WithCam',
             label='With Cam',
             description='Camera representation.', 
             value=True,
-            invalidate=True,
         ),
         desc.FloatParam(
             name='SeuilEc',
@@ -81,7 +72,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             description='Max residual.',
             value=10.0,
             range=(0.0, 100.0, 0.1),
-            invalidate=True,
             advanced=True,
         ),
         desc.FloatParam(
@@ -90,7 +80,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             description='Limit ratio base to height.',
             value=1e-2,
             range=(0.0, 100.0, 0.1),
-            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -98,7 +87,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             label='Cal Per Im',
             description='Calibration per image was used.', 
             value=False,
-            invalidate=True,
             advanced=True,
         ),
         desc.FloatParam(
@@ -107,7 +95,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             description='if image in camera are wanted, indicate reduction factor.',
             value=-1.0,
             range=(-1.0, 1.0, 0.01),
-            invalidate=True,
             advanced=True,
         ),
         desc.FloatParam(
@@ -116,7 +103,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             description='Size of focal exageration factor for pyramid representing camera.',
             value=0.3,
             range=(0.0, 100.0, 0.1),
-            invalidate=True,
         ),
         desc.FloatParam(
             name='RabDrBundle',
@@ -124,7 +110,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             description='Lenght to add in bundle drawing.',
             value=0.0,
             range=(0.0, 100.0, 0.1),
-            invalidate=True,
             advanced=True,
         ),
         desc.BoolParam(
@@ -132,7 +117,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             label='Save Pts Col',
             description="Don't store point color element in PLY file to save disk space.", 
             value=True,
-            invalidate=True,
             advanced=True,
         ),
         desc.ListAttribute(
@@ -146,7 +130,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
                 description="GCP Ctrl item.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                invalidate=True,
             ),
         ),
         desc.StringParam(

@@ -14,7 +14,6 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             description='Project Directory.',
             value="",
             commandLineGroup='', # required to execute mm3d command line
-            invalidate=True,
         ),
         desc.File(
             name='imagePattern',
@@ -22,7 +21,6 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             commandLineGroup='', # unnamed parameter
             value="",
-            invalidate=True,
         ),
         desc.IntParam(
             name='imageSize',
@@ -31,7 +29,6 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             commandLineGroup='', # unnamed parameter
             value=-1,
             range=(-1, 16000, 10),
-            invalidate=True,
         ),
         desc.IntParam(
             name='MaxPoint',
@@ -39,7 +36,6 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             description='Number of points used per image to construct the graph.',
             value=200,
             range=(1, 1000, 1),
-            invalidate=True,
         ),
         desc.FloatParam(
             name="MinScale",
@@ -47,7 +43,6 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             description='Points with a lesser scale are ignored.',
             value=0.0,
             range=(0.0, 10000000000.0, 0.1),
-            invalidate=True,
         ),
         desc.FloatParam(
             name="MaxScale",
@@ -55,7 +50,6 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             description='Points with a greater scale are ignored.',
             value=10000000000.0,
             range=(0.0, 10000000000.0, 0.1),
-            invalidate=True,
         ),
         desc.IntParam(
             name='NbRequired',
@@ -63,14 +57,12 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             description='Number of matches to create a connexion between two images.',
             value=1,
             range=(1, 10000, 1),
-            invalidate=True,
         ),
         desc.BoolParam(
             name='PrintGraph',
             label='Print Graph',
             description='Print result graph in standard output.', 
             value=False,
-            invalidate=True,
         ),
     ]
 
