@@ -3,7 +3,7 @@ __version__ = "1.1.1"
 from meshroom.core import desc
 from ..common import node
 
-class TapiocaFile(node.MicmacNode):
+class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca File {xmlPathValue} {resolutionValue} {allParams}'
     documentation = '''Tapioca File'''
 

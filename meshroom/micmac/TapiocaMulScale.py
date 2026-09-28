@@ -3,7 +3,7 @@ __version__ = "1.1.1"
 from meshroom.core import desc
 from ..common import node
 
-class TapiocaMulScale(node.MicmacNode):
+class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca MulScale {imagePatternValue} {imageSizeLowResolutionValue} {imageSizeHighResolutionValue} {allParams} {wallisFilterValue}'
     documentation = '''Tapioca MulScale'''
 

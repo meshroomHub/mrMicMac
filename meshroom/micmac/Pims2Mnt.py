@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class Pims2Mnt(node.MicmacNode):
+class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Pims2Mnt {dirOrPIMValue} {allParams}'
     documentation = 'Pims2Mnt'
 

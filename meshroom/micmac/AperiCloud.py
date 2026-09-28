@@ -3,7 +3,7 @@ __version__ = "1.1.1"
 from meshroom.core import desc
 from ..common import node
 
-class AperiCloud(node.MicmacNode):
+class AperiCloud(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d AperiCloud {imagePatternValue} {orientationDirValue} {allParams}'
     documentation = '''AperiCloud'''
 

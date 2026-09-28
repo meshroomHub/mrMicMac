@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class MeshCloudClip(node.MicmacNode):
+class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'MMVII MeshCloudClip {CloudValue} {3DRegValue} {allParams}'
     documentation = 'MeshCloudClip'
     category = 'MicMacV2'

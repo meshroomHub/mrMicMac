@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class GCPBascule(node.MicmacNode):
+class GCPBascule(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d GCPBascule {imagePatternValue} {orientationInValue} {orientationOutValue} {groundControlPointsFileValue} {imageMeasurementsFileValue} {allParams}'
     documentation = 'GCPBascule'
 

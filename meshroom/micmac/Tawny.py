@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class Tawny(node.MicmacNode):
+class Tawny(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tawny {orthoDirectoryValue} {allParams}'
     documentation = 'Tawny'
 

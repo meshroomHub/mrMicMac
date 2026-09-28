@@ -3,7 +3,7 @@ __version__ = "1.1.1"
 from meshroom.core import desc
 from ..common import node
 
-class TapiocaLine(node.MicmacNode):
+class TapiocaLine(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca Line {imagePatternValue} {imageSizeValue} {nbAdjacentImagesValue} {allParams}'
     documentation = '''Tapioca Line'''
 

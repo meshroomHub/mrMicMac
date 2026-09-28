@@ -1,31 +1,24 @@
-from meshroom.core import desc
 import re
 import psutil
 import shlex
 
-class MicmacNode(desc.CommandLineNode):
+class MicmacNode:
+    '''
+    Mixin for MicMac nodes, to use with desc.CommandLineNode:
+        class MyNode(MicmacNode, desc.CommandLineNode)
+    Not a desc.Node itself, so Meshroom does not register it as a node.
+    '''
     category = 'MicMac'
-
-    inputs = [
-        desc.File(
-            name='projectDirectory',
-            label='Project Directory',
-            description='Project Directory.',
-            value="",
-            group='', # required to execute mm3d command line
-            uid=[0],
-        ),
-    ]
 
     def buildCommandLine(self, chunk):
         '''
         Fix command line for MicMac
         '''
-        cmdline = desc.CommandLineNode.buildCommandLine(self, chunk)                          # build node command line                    
+        cmdline = super().buildCommandLine(chunk)                                             # build node command line
         cmdline = re.sub('(True|False)', lambda m: str(int(m.group(1) == 'True')), cmdline)   # use 0 / 1 instead of False / True
         cmdline = re.sub('--(\w+)\s', lambda m: '{name}='.format(name=m.group(1)), cmdline)   # use "name=value" instead of "--name value"
         cmdline = re.sub('(\w+=\"\"\s)', lambda m: '', cmdline)                               # remove value with empty string (optional parameter)
-        cmdline = re.sub('(\w+=\[\])', lambda m: '', cmdline)                                   # remove value with empty list (optional parameter)
+        cmdline = re.sub('(\w+=\[\])', lambda m: '', cmdline)                                 # remove value with empty list (optional parameter)
         return cmdline
     
     def processChunk(self, chunk):

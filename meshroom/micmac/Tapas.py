@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class Tapas(node.MicmacNode):
+class Tapas(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapas {calibrationModelValue} {imagePatternValue} {allParams}'
     documentation = 'Tapas'
 

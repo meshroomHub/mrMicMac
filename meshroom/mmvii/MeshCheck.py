@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class MeshCheck(node.MicmacNode):
+class MeshCheck(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'MMVII MeshCheck {CloudValue} {allParams}'
     documentation = 'MeshCheck'
     category = 'MicMacV2'

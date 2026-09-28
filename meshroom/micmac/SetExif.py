@@ -3,7 +3,7 @@ __version__ = "1.1.1"
 from meshroom.core import desc
 from ..common import node
 
-class SetExif(node.MicmacNode):
+class SetExif(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d SetExif {imagePatternValue} {allParams}'
     documentation = '''SetExif'''
 

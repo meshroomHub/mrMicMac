@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class Campari(node.MicmacNode):
+class Campari(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Campari {imagePatternValue} {inputOrientationValue} {OutValue} {allParams}'
     documentation = 'Campari'
 

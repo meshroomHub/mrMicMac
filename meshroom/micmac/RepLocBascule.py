@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class RepLocBascule(node.MicmacNode):
+class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d RepLocBascule {imagePatternValue} {orientationDirValue} {imageMeasuresValue} {localFrameValue} {allParams}'
     documentation = 'RepLocBascule'
     category = 'MicMac'

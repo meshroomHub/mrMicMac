@@ -3,7 +3,7 @@ __version__ = "1.1.1"
 from meshroom.core import desc
 from ..common import node
 
-class SaisieMasqQT(node.MicmacNode):
+class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d SaisieMasqQT {filePathValue} {allParams}'
     documentation = '''SaisieMasqQT'''
 

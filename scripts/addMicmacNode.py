@@ -317,7 +317,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class {nodeName}(node.MicmacNode):
+class {nodeName}(node.MicmacNode, desc.CommandLineNode):
     commandLine = '{cmd} {allParams}'
     documentation = '{nodeName}'
     category = 'MicMac'

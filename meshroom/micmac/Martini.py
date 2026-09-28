@@ -3,7 +3,7 @@ __version__ = "1.1.1"
 from meshroom.core import desc
 from ..common import node
 
-class Martini(node.MicmacNode):
+class Martini(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Martini {imagePatternValue} {allParams}'
     documentation = '''Martini'''
 

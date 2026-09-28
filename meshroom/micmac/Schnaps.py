@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class Schnaps(node.MicmacNode):
+class Schnaps(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Schnaps {imagePatternValue} {allParams}'
     documentation = 'Schnaps'
 

@@ -4,7 +4,7 @@ import sys
 from meshroom.core import desc
 from ..common import node
 
-class OriConvV1V2(node.MicmacNode):
+class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'MMVII OriConvV1V2 Ori-{InValue}/ {OriValue}'
     documentation = 'OriConvV1V2'
     category = 'MicMacV2'
