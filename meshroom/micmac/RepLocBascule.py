@@ -1,0 +1,79 @@
+__version__ = "0.0"
+
+import sys
+from meshroom.core import desc
+from ..common import node
+
+class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
+    commandLine = 'mm3d RepLocBascule {imagePatternValue} {orientationDirValue} {imageMeasuresValue} {localFrameValue} {allParams}'
+    documentation = 'RepLocBascule'
+    category = 'MicMac'
+
+    inputs = [
+        desc.File(
+            name='projectDirectory',
+            label='Project Directory',
+            description='Project Directory.',
+            value="",
+            commandLineGroup='', # required to execute mm3d command line
+        ),
+        desc.File(
+            name='imagePattern',
+            label='Image Pattern',
+            description='Image Pattern.',
+            commandLineGroup='', # unnamed parameter
+            value="",
+        ),
+        desc.File(
+            name='orientationDir',
+            label='Orientation Directory',
+            description='Orientation directory name.',
+            commandLineGroup='', # unnamed parameter
+            value='',
+        ),
+        desc.File(
+            name='imageMeasures',
+            label='Image measures',
+            description="Image measures xml file, set 'HOR' if horizontal line is wanted (HORVy if Y vertical), 'NONE' if unused",
+            commandLineGroup='', # unnamed parameter
+            value="",
+        ),
+        desc.BoolParam(
+            name='ExpTxt',
+            label='Tie Points In Txt',
+            description="Export in text format.",
+            value=False,
+        ),
+        desc.StringParam(
+            name='PostPlan',
+            label='Post Plan',
+            description="Postfix for plane name, (Def=_Masq)",
+            value="",
+            advanced=True,
+        ),
+        desc.BoolParam(
+            name='OrthoCyl',
+            label='Ortho Cyl',
+            description="Is the coordinate system in ortho-cylindric mode?",
+            value=False,
+            advanced=True,
+        ),
+         desc.StringParam(
+            name='localFrame',
+            label='Local Frame name',
+            description="Output of Local Frame (Repere Local) xml file",
+            commandLineGroup='', # unnamed parameter
+            value="RepLoc.xml",
+        ),
+    ]
+
+    outputs = [
+        desc.File(
+            name='localFrameOut',
+            label='Local Frame',
+            description="Output of Local Frame (Repere Local) xml file",
+            invalidate=False,
+            commandLineGroup='', # unnamed parameter
+            value="{localFrameValue}",
+        ),
+    ]

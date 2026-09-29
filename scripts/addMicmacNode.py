@@ -123,12 +123,11 @@ for cmdLineArg in cmdLineArgs:
     paramStr="""
             name='{name}',
             label='{label}',
-            description="{description}",
-            uid=[0],""".format(name=argName, label=convertToLabel(argName), description=argDesc)
+            description="{description}",""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     
     if isUnnamed:
         paramStr += """
-            group='', # unnamed parameter"""
+            commandLineGroup='', # unnamed parameter"""
 
     if argType == 'bool':
         argStr="""
@@ -165,7 +164,6 @@ for cmdLineArg in cmdLineArgs:
                 label="{label} Item",
                 description="{description}",
                 value='',
-                uid=[0],
             ),
         ),""".format(params=paramStr, name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'vector<double>':
@@ -177,7 +175,6 @@ for cmdLineArg in cmdLineArgs:
                 description="{description}",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
         ),""".format(params=paramStr, name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'pt2di':
@@ -188,14 +185,13 @@ for cmdLineArg in cmdLineArgs:
             description="{description}",
             brackets='[]',
             joinChar=',',
-            groupDesc=[
+            items=[
             desc.IntParam(
                 name="x",
                 label="X",
                 description="x.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
             desc.IntParam(
                 name="y",
@@ -203,7 +199,6 @@ for cmdLineArg in cmdLineArgs:
                 description="y.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
         ]),""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'pt3di':
@@ -214,14 +209,13 @@ for cmdLineArg in cmdLineArgs:
             description="{description}",
             brackets='[]',
             joinChar=',',
-            groupDesc=[
+            items=[
             desc.IntParam(
                 name="x",
                 label="X",
                 description="x.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
             desc.IntParam(
                 name="y",
@@ -229,7 +223,6 @@ for cmdLineArg in cmdLineArgs:
                 description="y.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
             desc.IntParam(
                 name="z",
@@ -237,7 +230,6 @@ for cmdLineArg in cmdLineArgs:
                 description="z.",
                 value=0,
                 range=(-sys.maxsize, sys.maxsize, 1),
-                uid=[0],
             ),
         ]),""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'pt2dr':
@@ -248,14 +240,13 @@ for cmdLineArg in cmdLineArgs:
             description="{description}",
             brackets='[]',
             joinChar=',',
-            groupDesc=[
+            items=[
             desc.FloatParam(
                 name="x",
                 label="X",
                 description="x.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
             desc.FloatParam(
                 name="y",
@@ -263,7 +254,6 @@ for cmdLineArg in cmdLineArgs:
                 description="y.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
         ]),""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     elif argType == 'pt3dr':
@@ -274,14 +264,13 @@ for cmdLineArg in cmdLineArgs:
             description="{description}",
             brackets='[]',
             joinChar=',',
-            groupDesc=[
+            items=[
             desc.FloatParam(
                 name="x",
                 label="X",
                 description="x.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
             desc.FloatParam(
                 name="y",
@@ -289,7 +278,6 @@ for cmdLineArg in cmdLineArgs:
                 description="y.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
             desc.FloatParam(
                 name="z",
@@ -297,7 +285,6 @@ for cmdLineArg in cmdLineArgs:
                 description="z.",
                 value=0.0,
                 range=(-float('inf'), float('inf'), 0.01),
-                uid=[0],
             ),
         ]),""".format(name=argName, label=convertToLabel(argName), description=argDesc)
     else:
@@ -309,15 +296,13 @@ for cmdLineArg in cmdLineArgs:
     else:
         inputNodeStr += argStr
 
-outputNodeStr = re.sub('(uid=\[0\])', lambda m: 'uid=[]', outputNodeStr) # remove uid for output parameters
-
 fileStr = '''__version__ = "0.0"
 
 import sys
 from meshroom.core import desc
-from meshroomMicmac.custom import node
+from ..common import node
 
-class {nodeName}(node.MicmacNode):
+class {nodeName}(node.MicmacNode, desc.CommandLineNode):
     commandLine = '{cmd} {allParams}'
     documentation = '{nodeName}'
     category = 'MicMac'
@@ -328,8 +313,7 @@ class {nodeName}(node.MicmacNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            group='', # required to execute mm3d command line
-            uid=[0],
+            commandLineGroup='', # required to execute mm3d command line
         ),{inputNodes}
     ]
 

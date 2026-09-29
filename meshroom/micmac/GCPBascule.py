@@ -1,0 +1,112 @@
+__version__ = "1.1.1"
+
+import sys
+from meshroom.core import desc
+from ..common import node
+
+class GCPBascule(node.MicmacNode, desc.CommandLineNode):
+    commandLine = 'mm3d GCPBascule {imagePatternValue} {orientationInValue} {orientationOutValue} {groundControlPointsFileValue} {imageMeasurementsFileValue} {allParams}'
+    documentation = 'GCPBascule'
+
+    inputs = [
+        desc.File(
+            name='projectDirectory',
+            label='Project Directory',
+            description='Project Directory.',
+            value="",
+            commandLineGroup='', # required to execute mm3d command line
+        ),
+        desc.File(
+            name='imagePattern',
+            label='Image Pattern',
+            description='Image Pattern.',
+            commandLineGroup='', # unnamed parameter
+            value="",
+        ),
+        desc.File(
+            name='orientationIn',
+            label='Input Orientation',
+            description="Input Orientation.",
+            commandLineGroup='unnamedParams',
+            value="",
+        ),
+        desc.File(
+            name='groundControlPointsFile',
+            label='GCP 3D coordinates File',
+            description="Ground Control Points File",
+            commandLineGroup='unnamedParams',
+            value="",
+        ),
+        desc.File(
+            name='imageMeasurementsFile',
+            label='GCP Image corodinates File',
+            description="Image Measurements File",
+            commandLineGroup='unnamedParams',
+            value="",
+        ),
+        desc.BoolParam(
+            name='L1',
+            label='L1',
+            description="L1 minimisation vs L2",
+            value=False,
+            advanced=True,
+        ),
+        desc.BoolParam(
+            name='CPI',
+            label='CPI',
+            description="when Calib Per Image has to be used",
+            value=False,
+        ),
+        desc.BoolParam(
+            name='ShowU',
+            label='Show U',
+            description="Show unused point",
+            value=True,
+            advanced=True,
+        ),
+        desc.BoolParam(
+            name='ShowD',
+            label='Show D',
+            description="Show details",
+            value=False,
+            advanced=True,
+        ),
+        desc.StringParam(
+            name='PatNLD',
+            label='Pat NLD',
+            description="Pattern for Non linear deformation, with aerial like geometry",
+            value="",
+            advanced=True,
+        ),
+        desc.BoolParam(
+            name='NLFR',
+            label='NLFR',
+            description="Non Linear : Force True Rot",
+            value=True,
+            advanced=True,
+        ),
+        desc.BoolParam(
+            name='NLShow',
+            label='NL Show',
+            description="Non Linear : Show Details",
+            value=False,
+            advanced=True,
+        ),
+      #  desc.StringParam(
+      #      name='ForceSol',
+      #      label='Force Sol',
+      #      description="To Force Sol from existing solution (xml file)",
+      #      value="",
+      #      advanced=True,
+      #  ),
+    ]
+
+    outputs = [
+        desc.File(
+		name='orientationOut',
+		label='Output Orientation',
+		description="Orientation out",
+		commandLineGroup='unnamedParams',
+		value="GCPBasc",
+	),
+    ]

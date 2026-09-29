@@ -1,33 +1,27 @@
-# MeshroomMicMac
+# ![mrMicMac - MicMac Nodes for Meshroom](/docs/banner-mrMicMac.png)
 
-![](./assets/banner_meshroomMicmac.jpg)
-
-MeshroomMicMac is a set of [MicMac](https://github.com/micmacIGN/micmac) nodes and pipelines for [Meshroom](https://github.com/alicevision/Meshroom).
+mrMicMac is a set of [MicMac](https://github.com/micmacIGN/micmac) nodes and pipelines for [Meshroom](https://github.com/alicevision/Meshroom).
 
 ## Required
 
 - Install MicMac ([repository](https://github.com/micmacIGN/micmac) or [pre-compiled binaries](https://github.com/micmacIGN/micmac/releases))
 - Install Meshroom ([repository](https://github.com/alicevision/Meshroom) or [pre-compiled binaries](https://github.com/alicevision/Meshroom/releases))
 
-*For now, please use MicMac 1.1.1 and Meshroom 2.3.0.*
-
-*For now, please avoid white spaces and special characters in the MicMac installation path.* 
+> [!IMPORTANT]
+> mrMicMac requires Meshroom 2026+.
+>
+> Avoid white spaces and special characters in the MicMac installation path.
 
 ## How to install 
 
 1) Clone this repository: 
 ```
-git clone https://github.com/alicevision/MeshroomMicMac
+git clone https://github.com/meshroomHub/mrMicMac.git
 ```
 
-2) Add MicMac nodes to Meshroom by setting `MESHROOM_NODES_PATH` environment variable:
+2) Add mrMicMac plugin to Meshroom by setting `MESHROOM_PLUGINS_PATH` environment variable:
 ```
-MESHROOM_NODES_PATH = path/to/MeshroomMicMac
-```
-
-3) Add MicMac pipelines to Meshroom by setting `MESHROOM_PIPELINE_TEMPLATES_PATH` environment variable:
-```
-MESHROOM_PIPELINE_TEMPLATES_PATH = path/to/MeshroomMicMac/pipelines
+MESHROOM_PLUGINS_PATH = path/to/mrMicMac
 ```
 
 You can now find MicMac nodes and pipelines in Meshroom.
