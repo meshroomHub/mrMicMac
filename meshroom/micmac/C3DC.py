@@ -44,7 +44,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             values=["Ground", "Statue", "Forest", "QuickMac", "MicMac", "BigMac"],
             exclusive=True,
         ),
-        desc.StringParam(
+        desc.File(
             name='Masq3D',
             label='Masq 3D',
             description='3D masq for point selection.',
