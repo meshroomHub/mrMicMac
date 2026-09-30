@@ -136,7 +136,6 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             description="Ply offset to overcome 32 bits problem.",
             brackets='[]',
             joinChar=',',
-            enabled=lambda node: node.enableGpsLa.value,
             advanced=True,
             items=[
             desc.FloatParam(
