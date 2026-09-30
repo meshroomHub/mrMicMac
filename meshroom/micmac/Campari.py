@@ -44,6 +44,26 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             commandLineGroup=''
         ),
         desc.GroupAttribute(
+            name='GCP',
+            label='GCP',
+            description="Give the start and end image that you want to put in a new folder.",
+            brackets='[]',
+            joinChar=',',
+            items=[
+                desc.ListAttribute(
+                    name='GCPCtrl',
+                    label='GCP Ctrl',
+                    description="[GCPTerr.xml,GCPIm.xml,Scale]-> true 3D coordinates+image observations+residual vector scaling factor.",
+                    joinChar=',',
+                    elementDesc=desc.StringParam(
+                        name="GCPCtrlItem",
+                        label="GCP Ctrl Item",
+                        description="GCP Ctrl item.",
+                        value="",
+                    ),
+            )],
+        ),
+        desc.GroupAttribute(
             name='GpsLa',
             label='Gps La',
             description="Gps Lever Arm, in combination with EmGPS",
