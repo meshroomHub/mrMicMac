@@ -39,6 +39,39 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             advanced=True,
         ),
         desc.BoolParam(
+            name='setSzW',
+            label='Set Window Size',
+            description="Set window size.",
+            value=False,
+            commandLineGroup='', # unnamed parameter
+            advanced=True,
+        ),
+        desc.GroupAttribute(
+            name='SzW',
+            label='Window Size',
+            description="Set window size.",
+            brackets='[]',
+            joinChar=',',
+            advanced=True,
+            enabled=lambda node: node.setSzW.value,
+            items=[
+                desc.IntParam(
+                    name="width",
+                    label="Width",
+                    description="Window width.",
+                    value=900,
+                    range=(0, 7680, 1),
+                ),  
+                desc.IntParam(
+                    name="height",
+                    label="Height",
+                    description="Window height.",
+                    value=600,
+                    range=(0, 4320, 1),
+                ),
+            ]
+        ),
+        desc.BoolParam(
             name='setName',
             label='Set Name',
             description="Set name.",
