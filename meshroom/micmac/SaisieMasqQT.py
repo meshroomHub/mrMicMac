@@ -26,8 +26,8 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             name='setPostfix',
             label='Set Postfix',
             description="Set postfix.",
-            value=False,
-            commandLineGroup='',
+            value=True,
+            commandLineGroup='', # unnamed parameter
             advanced=True,
         ),
         desc.StringParam(
@@ -75,8 +75,8 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             name='setName',
             label='Set Name',
             description="Set name.",
-            value=False,
-            commandLineGroup='',
+            value=True,
+            commandLineGroup='', # unnamed parameter
             advanced=True,
         ),
         desc.StringParam(
