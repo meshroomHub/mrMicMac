@@ -44,6 +44,39 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Directory of Input External Orientation",
             value="",
         ),
+        desc.BoolParam(
+            name='setFocs',
+            label='set Focs',
+            description="Set Focs",
+            value=False,
+            commandLineGroup='', # unnamed parameter
+            advanced=True,
+        ),
+        desc.GroupAttribute(
+            name='Focs',
+            label='Focs',
+            description="Focal length inside range [min,max] (min,max in mm).",
+            enabled=lambda node: node.setFocs.value,
+            brackets='[]',
+            joinChar=',',
+            advanced=True,
+            items=[
+                desc.IntParam(
+                    name="min",
+                    label="Min",
+                    description="Minimum focal length.",
+                    value=20,
+                    range=(0, 5200, 1),
+                ),  
+                desc.IntParam(
+                    name="max",
+                    label="Max",
+                    description="Maximum focal length.",
+                    value=30,
+                    range=(0, 5200, 1),
+                ),
+            ]
+        ),
         desc.File(
             name='SH',
             label='Homol Directory',
