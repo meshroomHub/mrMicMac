@@ -15,17 +15,17 @@ class MicmacNode:
         Fix command line for MicMac
         '''
         cmdline = super().buildCommandLine(chunk)                                             # build node command line
-        cmdline = re.sub('(True|False)', lambda m: str(int(m.group(1) == 'True')), cmdline)   # use 0 / 1 instead of False / True
-        cmdline = re.sub('--(\w+)\s', lambda m: '{name}='.format(name=m.group(1)), cmdline)   # use "name=value" instead of "--name value"
-        cmdline = re.sub('(\w+=\"\"\s)', lambda m: '', cmdline)                               # remove value with empty string (optional parameter)
-        cmdline = re.sub('(\w+=\[\])', lambda m: '', cmdline)                                 # remove value with empty list (optional parameter)
+        cmdline = re.sub(r'--(\w+)\s', lambda m: '{name}='.format(name=m.group(1)), cmdline)                 # use "name=value" instead of "--name value"
+        cmdline = re.sub(r'(?<==)(True|False)(?=\s|$)', lambda m: str(int(m.group(1) == 'True')), cmdline)   # use 0 / 1 instead of False / True (only as a whole value)
+        cmdline = re.sub(r'(\w+=\"\"\s)', lambda m: '', cmdline)                                             # remove value with empty string (optional parameter)
+        cmdline = re.sub(r'(\w+=\[\])', lambda m: '', cmdline)                                               # remove value with empty list (optional parameter)
         return cmdline
     
     def processChunk(self, chunk):
         try:
             with open(chunk.logFile, 'w') as logF:
                 cmd = self.buildCommandLine(chunk) + ' @ExitOnBrkp @ExitOnWarn @ExitOnNan' # build command line and add MicMac enter key flags
-                projectDir = chunk.node._cmdVars['projectDirectoryValue'].replace('"','')  # get project directory from parameter (and remove quotes)
+                projectDir = chunk.node._expVars['projectDirectoryValue'].replace('"','')  # get project directory from parameter (and remove quotes)
                 chunk.status.commandLine = cmd
                 chunk.saveStatusFile()
                 print(' - commandLine: {}'.format(cmd))
