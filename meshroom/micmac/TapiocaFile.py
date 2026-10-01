@@ -1,11 +1,11 @@
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 from meshroom.core import desc
 from ..common import node
 
 class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca File {xmlPathValue} {resolutionValue} {allParams}'
-    documentation = '''Tapioca File'''
+    documentation = 'Tapioca File: Detect and match tie points between image pairs listed in an XML file.'
 
     inputs = [
         desc.File(
@@ -33,25 +33,25 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='ExpTxt',
             label='Export Files In Txt',
-            description='Export files in text format (if false binary).', 
+            description='Export files in text format (if false binary).',
             value=False,
         ),
         desc.BoolParam(
             name='NoMax',
             label='No Max',
-            description='No max.', 
+            description='No max.',
             value=False,
         ),
         desc.BoolParam(
             name='NoMin',
             label='No Min',
-            description='No min.', 
+            description='No min.',
             value=False,
         ),
         desc.BoolParam(
             name='NoUnknown',
             label='No Unknown',
-            description='No unknown.', 
+            description='No unknown.',
             value=False,
         ),
         desc.FloatParam(

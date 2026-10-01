@@ -1,11 +1,11 @@
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 from meshroom.core import desc
 from ..common import node
 
 class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca MulScale {imagePatternValue} {imageSizeLowResolutionValue} {imageSizeHighResolutionValue} {allParams} {wallisFilterValue}'
-    documentation = '''Tapioca MulScale'''
+    documentation = 'Tapioca MulScale: Detect and match tie points in two passes: pair selection at low resolution, then matching at high resolution.'
 
     inputs = [
         desc.File(
@@ -48,9 +48,9 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='setByP',
             label='Set ByP',
-            description='Set ByP.', 
+            description='Set ByP.',
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'ByP' attribute
         ),
         desc.IntParam(
             name='ByP',
@@ -68,24 +68,24 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             value=2,
             range=(1, 1000, 1),
             advanced=True,
-        ), 
+        ),
         desc.BoolParam(
             name='ExpTxt',
             label='Tie Points In Txt',
-            description='Export files in text format (if false binary).', 
+            description='Export files in text format (if false binary).',
             value=False,
         ),
         desc.BoolParam(
             name='NoMax',
             label='No Max',
-            description='No max.', 
+            description='No max.',
             value=False,
             advanced=True,
         ),
         desc.BoolParam(
             name='NoMin',
             label='No Min',
-            description='No min.', 
+            description='No min.',
             value=False,
             advanced=True,
         ),
@@ -101,7 +101,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             name="wallisFilter",
             label="Wallis Filter",
             description="Apply Wallis filter.",
-            commandLineGroup='', # keys
+            commandLineGroup='', # unnamed parameter
             value="",
             values=["", "@SFS"],
             exclusive=True,

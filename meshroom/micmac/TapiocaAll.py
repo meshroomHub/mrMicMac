@@ -1,11 +1,11 @@
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 from meshroom.core import desc
 from ..common import node
 
 class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca All {imagePatternValue} {imageSizeValue} {allParams} {wallisFilterValue}'
-    documentation = '''Tapioca All'''
+    documentation = 'Tapioca All: Detect and match tie points between all image pairs.'
 
     inputs = [
         desc.File(
@@ -21,7 +21,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             value='.*.(jpg|jpeg|JPG|JPEG|png|PNG|tif|tiff|TIF|TIFF)',
             commandLineGroup='', # unnamed parameter
-        ),    
+        ),
         desc.File(
             name='Pat2',
             label='Second Image Pattern',
@@ -40,9 +40,9 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='setByP',
             label='Set ByP',
-            description='Set ByP.', 
+            description='Set ByP.',
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'ByP' attribute
         ),
         desc.IntParam(
             name='ByP',
@@ -56,20 +56,20 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='ExpTxt',
             label='Tie Points In Txt',
-            description='Export files in text format (if false binary).', 
+            description='Export files in text format (if false binary).',
             value=False,
         ),
         desc.BoolParam(
             name='NoMax',
             label='No Max',
-            description='No max.', 
+            description='No max.',
             value=False,
             advanced=True,
         ),
         desc.BoolParam(
             name='NoMin',
             label='No Min',
-            description='No min.', 
+            description='No min.',
             value=False,
             advanced=True,
         ),
@@ -85,7 +85,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             name="wallisFilter",
             label="Wallis Filter",
             description="Apply Wallis filter.",
-            commandLineGroup='', # keys
+            commandLineGroup='', # unnamed parameter
             value="",
             values=["", "@SFS"],
             exclusive=True,

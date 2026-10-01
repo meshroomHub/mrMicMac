@@ -32,11 +32,11 @@ class ChgSysCo(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='ChgSyst',
             label='Changing system file',
-            description="Changing system file",
+            description="Changing system file.",
             commandLineGroup='', # unnamed parameter
             value="",
         ),
-        desc.BoolParam( 
+        desc.BoolParam(
             name='FR',
             label='F R',
             description="Force orientation matrix to be pure rotation.",

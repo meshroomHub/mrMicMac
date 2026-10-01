@@ -1,11 +1,11 @@
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 from meshroom.core import desc
 from ..common import node
 
 class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca Graph {imagePatternValue} {imageSizeValue} {allParams}'
-    documentation = '''Tapioca Graph'''
+    documentation = 'Tapioca Graph: Compute an image connectivity graph (XML pairs file) from a few tie points per image.'
 
     inputs = [
         desc.File(
@@ -61,7 +61,7 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='PrintGraph',
             label='Print Graph',
-            description='Print result graph in standard output.', 
+            description='Print result graph in standard output.',
             value=False,
         ),
     ]

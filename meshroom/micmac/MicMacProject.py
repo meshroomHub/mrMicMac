@@ -1,10 +1,10 @@
-__version__ = "1.0"
+__version__ = "1.2.0"
 
 from meshroom.core import desc
 
 class MicMacProject(desc.Node):
     category = 'MicMac'
-    documentation = '''Project node for MicMac pipeline. Copy CameraInit images into the node folder.'''
+    documentation = 'MicMacProject: Copy the SfMData (CameraInit) images into a MicMac project directory.'
 
     inputs = [
         desc.File(
@@ -12,7 +12,7 @@ class MicMacProject(desc.Node):
             label='SfMData',
             description='SfMData file.',
             value="",
-        ),   
+        ),
         desc.ChoiceParam(
             name='verboseLevel',
             label='Verbose Level',
@@ -39,11 +39,11 @@ class MicMacProject(desc.Node):
         import os
         import shutil
         import json
-        
+
         try:
             chunk.logManager.start(chunk.node.verboseLevel.value)
             chunk.logger.info("Copy images from input SfMData file")
-            
+
             projectDir = os.path.normpath(chunk.node.projectDirectory.value).replace('\\', '/')
 
             chunk.logger.debug('Create output directory: ' + projectDir)
@@ -51,7 +51,7 @@ class MicMacProject(desc.Node):
 
             with open(chunk.node.input.value, 'r', encoding='utf-8', errors='ignore') as f:
                 data = json.load(f)
-            
+
             views = [{k: v for k, v in item.items()} for item in data.get("views", [])]
             for view in views:
                 inputPath = view['path']

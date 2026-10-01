@@ -6,7 +6,7 @@ from ..common import node
 
 class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'MMVII MeshCloudClip {CloudValue} {3DRegValue} {allParams}'
-    documentation = 'MeshCloudClip'
+    documentation = 'MeshCloudClip: Clip a mesh or point cloud using a 3D region.'
     category = 'MicMacV2'
 
     inputs = [
@@ -15,32 +15,32 @@ class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            commandLineGroup="micmac",
+            commandLineGroup='', # required to execute mm3d command line
         ),
         desc.File(
             name='Cloud',
             label='Input mesh',
-            description='Name of input cloud mesh',
-            commandLineGroup='unnamedParams',
+            description='Name of input cloud mesh.',
+            commandLineGroup='', # unnamed parameter
             value='',
         ),
         desc.File(
             name='3DReg',
             label='3D masq',
-            description='Name of 3D masq',
-            commandLineGroup='unnamedParams',
+            description='Name of 3D masq.',
+            commandLineGroup='', # unnamed parameter
             value='',
         ),
         desc.BoolParam(
             name='Bin',
             label='Bin',
-            description="Generate out in binary format ,[Default=false]",
+            description="Generate out in binary format ,[Default=false].",
             value=False,
         ),
         desc.IntParam(
             name='NbMinV',
             label='Nb Min V',
-            description="Number minimal of vertex to maintain a triangle ,[Default=3]",
+            description="Number minimal of vertex to maintain a triangle ,[Default=3].",
             value=3,
             range=(-sys.maxsize, sys.maxsize, 1),
         ),
@@ -50,7 +50,7 @@ class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='Out',
             label='Clipped mesh',
-            description="Name of output file",
+            description="Name of output file.",
             value="Clip_mesh.ply",
         ),
     ]

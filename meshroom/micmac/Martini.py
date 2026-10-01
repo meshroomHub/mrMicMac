@@ -1,11 +1,11 @@
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 from meshroom.core import desc
 from ..common import node
 
 class Martini(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Martini {imagePatternValue} {allParams}'
-    documentation = '''Martini'''
+    documentation = 'Martini: Initialize image orientations from triplets of images (experimental).'
 
     inputs = [
         desc.File(
@@ -25,7 +25,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Exe',
             label='Exe',
-            description='If false, only print.', 
+            description='If false, only print.',
             value=True,
         ),
         desc.File(
@@ -49,7 +49,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='ExpTxt',
             label='Exp Txt',
-            description='Is Homol in text format?.', 
+            description='Is Homol in text format?.',
             value=False,
         ),
         desc.StringParam(
@@ -61,13 +61,13 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Debug',
             label='Debug',
-            description='Debug', 
+            description='Debug.',
             value=False,
         ),
         desc.BoolParam(
             name='AUS',
             label='AUS',
-            description='Accept non symetric homologous point.', 
+            description='Accept non symetric homologous point.',
             value=True,
         ),
         desc.IntParam(
@@ -87,7 +87,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.StringParam(
             name='OriOut',
             label='Output Orientation Name',
-            description="Directory of Output Orientation",
+            description="Directory of Output Orientation.",
             value="Martini",
         ),
     ]
@@ -96,7 +96,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='orientationDirectory',
             label='Orientation Directory',
-            description="Directory of Output Orientation",
+            description="Directory of Output Orientation.",
             value="{OriOutValue}",
             commandLineGroup='', # not a command line parameter
             invalidate=False,

@@ -1,11 +1,11 @@
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 from meshroom.core import desc
 from ..common import node
 
 class AperiCloud(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d AperiCloud {imagePatternValue} {orientationDirValue} {allParams}'
-    documentation = '''AperiCloud'''
+    documentation = 'AperiCloud: Visualization of cameras and sparse tie point cloud in a PLY file.'
 
     inputs = [
         desc.File(
@@ -38,32 +38,32 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='ExpTxt',
             label='Tie Points In Txt',
-            description='Tie Points use txt format.', 
+            description='Tie Points use txt format.',
             value=False,
         ),
         desc.BoolParam(
             name='Bin',
             label='Bin',
-            description='PLY in binary mode.', 
+            description='PLY in binary mode.',
             value=True,
             advanced=True,
         ),
         desc.BoolParam(
             name='RGB',
             label='RGB',
-            description='Use RGB image to color points.', 
+            description='Use RGB image to color points.',
             value=True,
         ),
         desc.BoolParam(
             name='WithPoints',
             label='With Points',
-            description='Add point cloud.', 
+            description='Add point cloud.',
             value=True,
         ),
         desc.BoolParam(
             name='WithCam',
             label='With Cam',
-            description='Camera representation.', 
+            description='Camera representation.',
             value=True,
         ),
         desc.FloatParam(
@@ -85,7 +85,7 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='CalPerIm',
             label='Cal Per Im',
-            description='Calibration per image was used.', 
+            description='Calibration per image was used.',
             value=False,
             advanced=True,
         ),
@@ -115,14 +115,14 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='SavePtsCol',
             label='Save Pts Col',
-            description="Don't store point color element in PLY file to save disk space.", 
+            description="Don't store point color element in PLY file to save disk space.",
             value=True,
             advanced=True,
         ),
         desc.ListAttribute(
             name='GCPCtrl',
             label='GCP Ctrl',
-            description="[GCPTerr.xml,GCPIm.xml,Scale]-> true 3D coordinates+image observations+residual vector scaling factor.", 
+            description="[GCPTerr.xml,GCPIm.xml,Scale]-> true 3D coordinates+image observations+residual vector scaling factor.",
             advanced=True,
             elementDesc=desc.FloatParam(
                 name="GCPCtrlItem",

@@ -1,11 +1,11 @@
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 from meshroom.core import desc
 from ..common import node
 
 class Tequila(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tequila {imagePatternValue} {orientationDirValue} {plyNameValue} {allParams}'
-    documentation = '''Tequila'''
+    documentation = 'Tequila: Texture a mesh from oriented images.'
 
     inputs = [
         desc.File(
@@ -39,14 +39,14 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Bin',
             label='Bin',
-            description='Write PLY in binary mode.', 
+            description='Write PLY in binary mode.',
             value=True,
             advanced=True,
         ),
         desc.BoolParam(
             name='Optim',
             label='Optim',
-            description='Graph-cut optimization.', 
+            description='Graph-cut optimization.',
             value=False,
             advanced=True,
         ),
@@ -69,7 +69,7 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Filter',
             label='Filter',
-            description='Remove border faces.', 
+            description='Remove border faces.',
             value=False,
             advanced=True,
         ),
@@ -105,7 +105,7 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
         desc.FloatParam(
             name='Angle',
             label='Angle',
-            description='Threshold angle, in degree, between triangle normal and image viewing direction',
+            description='Threshold angle, in degree, between triangle normal and image viewing direction.',
             value=90.0,
             range=(0.0, 360.0, 0.01),
             advanced=True,

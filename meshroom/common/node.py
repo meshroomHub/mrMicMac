@@ -20,7 +20,7 @@ class MicmacNode:
         cmdline = re.sub(r'(\w+=\"\"\s)', lambda m: '', cmdline)                                             # remove value with empty string (optional parameter)
         cmdline = re.sub(r'(\w+=\[\])', lambda m: '', cmdline)                                               # remove value with empty list (optional parameter)
         return cmdline
-    
+
     def processChunk(self, chunk):
         try:
             with open(chunk.logFile, 'w') as logF:

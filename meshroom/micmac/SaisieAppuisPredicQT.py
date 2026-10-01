@@ -45,9 +45,9 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
             value="Mesure.xml",
         ),
         desc.GroupAttribute(
-            name = 'SzW',
-            label = 'Size of the window',
-            description = 'Size of the window',
+            name='SzW',
+            label='Size of the window',
+            description='Size of the window.',
             brackets='[]',
             joinChar=',',
             items=[
@@ -68,9 +68,9 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
             ],
         ),
         desc.GroupAttribute(
-            name = 'NbF',
-            label = 'Number of Subwindows',
-            description = 'Number of Subwindows.',
+            name='NbF',
+            label='Number of Subwindows',
+            description='Number of Subwindows.',
             brackets='[]',
             joinChar=',',
             items=[
@@ -134,8 +134,8 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
             name='setZMoy',
             label='Set ZMoy',
             description='Set ZMoy.',
-            value = False,
-            advanced = True,
+            value=False,
+            advanced=True,
             commandLineGroup='', # enable 'ZMoy' attribute
         ),
         desc.FloatParam(
@@ -181,7 +181,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='InputSec',
             label='InputSec',
-            description='InputSec',
+            description='InputSec.',
             value="",
             advanced=True,
         ),
