@@ -1,6 +1,5 @@
 __version__ = "0.0"
 
-import sys
 from meshroom.core import desc
 from ..common import node
 
