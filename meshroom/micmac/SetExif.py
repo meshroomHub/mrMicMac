@@ -25,7 +25,7 @@ class SetExif(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='setF',
             label='Set F',
-            description='Set Focal lenght?', 
+            description='Set Focal lenght?',
             value=False,
             commandLineGroup='', # enable 'F' attribute
         ),
@@ -40,7 +40,7 @@ class SetExif(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='setF35',
             label='Set F35',
-            description='Set Focal lenght equiv 35mm?', 
+            description='Set Focal lenght equiv 35mm?',
             value=False,
             commandLineGroup='', # enable 'F35' attribute
         ),
@@ -67,7 +67,7 @@ class SetExif(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Purge',
             label='Purge',
-            description='Purge created exiv2 command file', 
+            description='Purge created exiv2 command file',
             value=True,
         ),
     ]

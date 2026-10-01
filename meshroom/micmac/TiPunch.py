@@ -31,7 +31,7 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Bin',
             label='Bin',
-            description='Write PLY in binary mode.', 
+            description='Write PLY in binary mode.',
             value=True,
             advanced=True,
         ),
@@ -45,14 +45,14 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Rm',
             label='Rm',
-            description='Remove intermediary Poisson mesh.', 
+            description='Remove intermediary Poisson mesh.',
             value=True,
             advanced=True,
         ),
         desc.BoolParam(
             name='Filter',
             label='Filter',
-            description='Filter mesh.', 
+            description='Filter mesh.',
             value=True,
         ),
         desc.ChoiceParam(
@@ -73,7 +73,7 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='FFB',
             label='FFB',
-            description='Filter from border.', 
+            description='Filter from border.',
             value=True,
             advanced=True,
         ),

@@ -48,7 +48,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='setByP',
             label='Set ByP',
-            description='Set ByP.', 
+            description='Set ByP.',
             value=False,
             commandLineGroup='', # enable 'ByP' attribute
         ),
@@ -68,24 +68,24 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             value=2,
             range=(1, 1000, 1),
             advanced=True,
-        ), 
+        ),
         desc.BoolParam(
             name='ExpTxt',
             label='Tie Points In Txt',
-            description='Export files in text format (if false binary).', 
+            description='Export files in text format (if false binary).',
             value=False,
         ),
         desc.BoolParam(
             name='NoMax',
             label='No Max',
-            description='No max.', 
+            description='No max.',
             value=False,
             advanced=True,
         ),
         desc.BoolParam(
             name='NoMin',
             label='No Min',
-            description='No min.', 
+            description='No min.',
             value=False,
             advanced=True,
         ),

@@ -23,7 +23,7 @@ class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
             commandLineGroup='', # unnamed parameter
             value="",
         ),
-        
+
     ]
 
     outputs = [

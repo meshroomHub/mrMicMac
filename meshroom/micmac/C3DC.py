@@ -21,7 +21,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             value="",
             commandLineGroup='', # unnamed parameter
-        ),    
+        ),
         desc.File(
             name='SH',
             label='Homol Directory',
@@ -61,27 +61,27 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='PlyCoul',
             label='Ply Color',
-            description='Colour in ply.', 
+            description='Colour in ply.',
             value=True,
             advanced=True,
         ),
         desc.BoolParam(
             name='Purge',
             label='Purge',
-            description='Purge result.', 
+            description='Purge result.',
             value=True,
             advanced=True,
         ),
         desc.BoolParam(
             name='ExpTxt',
             label='Tie Points In Txt',
-            description='Use txt tie points for determining image pairs.', 
+            description='Use txt tie points for determining image pairs.',
             value=False,
         ),
         desc.BoolParam(
             name='Bin',
             label='Bin',
-            description='PLY in binary mode.',  
+            description='PLY in binary mode.',
             value=True,
             advanced=True,
         ),

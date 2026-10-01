@@ -240,7 +240,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             label='Name R T A',
             description="Name for save results of Rolling Test Appuis , Def=SauvRTA.xml",
             value="",
-        ), 
+        ),
         desc.IntParam(
             name='NbIterEnd',
             label='Nb Iter End',
@@ -390,7 +390,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             description="Num Attribute for Weigthing in New Format",
             value=0,
             range=(-sys.maxsize, sys.maxsize, 1),
-        ), 
+        ),
         desc.FloatParam(
             name='WOP',
             label='W O P',
@@ -414,5 +414,5 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             description="Output Orientation",
             commandLineGroup='', # unnamed parameter
             value="Campari",
-        ), 
+        ),
     ]

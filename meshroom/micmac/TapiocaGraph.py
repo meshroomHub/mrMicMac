@@ -61,7 +61,7 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='PrintGraph',
             label='Print Graph',
-            description='Print result graph in standard output.', 
+            description='Print result graph in standard output.',
             value=False,
         ),
     ]

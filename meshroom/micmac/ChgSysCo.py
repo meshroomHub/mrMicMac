@@ -36,7 +36,7 @@ class ChgSysCo(node.MicmacNode, desc.CommandLineNode):
             commandLineGroup='', # unnamed parameter
             value="",
         ),
-        desc.BoolParam( 
+        desc.BoolParam(
             name='FR',
             label='F R',
             description="Force orientation matrix to be pure rotation.",

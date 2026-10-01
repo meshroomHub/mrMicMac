@@ -10,7 +10,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
     inputs = [
         desc.File(
             name='projectDirectory',
-            label='Project Directory', 
+            label='Project Directory',
             description='Project Directory.',
             value='',
             commandLineGroup='', # required to execute mm3d command line
@@ -25,22 +25,22 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             exclusive=True,
         ),
         desc.File(
-            name='orientationFile', 
+            name='orientationFile',
             label='Orientation File',
             description='Image orientation file.',
             value='',
             commandLineGroup='', # unnamed parameter
         ),
         desc.File(
-            name='targetedOrientation', 
-            label='Targeted Orientation', 
+            name='targetedOrientation',
+            label='Targeted Orientation',
             description='Targeted orientation.',
             value='',
             commandLineGroup='', # unnamed parameter
         ),
         desc.File(
-            name='ChSys', 
-            label='Change System File', 
+            name='ChSys',
+            label='Change System File',
             description='Change system file.',
             value='',
         ),
@@ -58,7 +58,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             value=False,
             commandLineGroup='', # enable 'AddCalib' attribute
             advanced=True,
-        ),        
+        ),
         desc.BoolParam(
             name='AddCalib',
             label='Add Calib',
@@ -105,7 +105,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             value=True,
         ),
         desc.File(
-            name='NameCple',  
+            name='NameCple',
             label='Couple Image File',
             description='File (usually XML) listing the image pairs.',
             value='',
@@ -116,7 +116,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             description="Set Compute Speed.",
             value=False,
             commandLineGroup='', # enable 'CalcV' attribute
-        ), 
+        ),
         desc.BoolParam(
             name='CalcV',
             label='Compute Speed',
@@ -155,7 +155,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             value=False,
             commandLineGroup='', # enable 'Regul' attribute
             advanced=True,
-        ),        
+        ),
         desc.FloatParam(
             name='Regul',
             label='Regul',
@@ -172,7 +172,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             value=False,
             commandLineGroup='', # enable 'RegNewBr' attribute
             advanced=True,
-        ),     
+        ),
         desc.FloatParam(
             name='RegNewBr',
             label='Reg New Br',
@@ -189,7 +189,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             value=False,
             commandLineGroup='', # enable 'Reliab' attribute
             advanced=True,
-        ),         
+        ),
         desc.FloatParam(
             name='Reliab',
             label='Reliab',
@@ -280,7 +280,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             value=False,
             commandLineGroup='', # enable 'Delaunay' attribute
             advanced=True,
-        ),       
+        ),
         desc.BoolParam(
             name='Delaunay',
             label='Delaunay',
@@ -296,7 +296,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             value=False,
             commandLineGroup='', # enable 'DelaunayCross' attribute
             advanced=True,
-        ),   
+        ),
         desc.BoolParam(
             name='DelaunayCross',
             label='Delaunay Cross',
@@ -312,17 +312,17 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             value=False,
             commandLineGroup='', # enable 'UOC' attribute
             advanced=True,
-        ),         
+        ),
         desc.BoolParam(
             name='UOC',
             label='U O C',
             description="Use Only Center (tuning)",
-            enabled=lambda node: node.setUOC.value, 
+            enabled=lambda node: node.setUOC.value,
             value=False,
             advanced=True,
-        ),    
+        ),
         desc.File(
-            name='ImC', 
+            name='ImC',
             label='Image Center',
             description='Image Center for computing AltiSol',
             value='',
@@ -333,12 +333,12 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             description="Set Nb Adjacent Images",
             value=False,
             commandLineGroup='', # enable 'NbImC' attribute
-        ),                
+        ),
         desc.IntParam(
             name='NbImC',
             label='Nb Adjacent Images',
             description='Number of neighboors around Image "Center" (Def=50)',
-            enabled=lambda node: node.setNbImC.value, 
+            enabled=lambda node: node.setNbImC.value,
             value=50,
             range=(1, 500, 1),
         ),

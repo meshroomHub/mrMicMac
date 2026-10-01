@@ -39,14 +39,14 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Bin',
             label='Bin',
-            description='Write PLY in binary mode.', 
+            description='Write PLY in binary mode.',
             value=True,
             advanced=True,
         ),
         desc.BoolParam(
             name='Optim',
             label='Optim',
-            description='Graph-cut optimization.', 
+            description='Graph-cut optimization.',
             value=False,
             advanced=True,
         ),
@@ -69,7 +69,7 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Filter',
             label='Filter',
-            description='Remove border faces.', 
+            description='Remove border faces.',
             value=False,
             advanced=True,
         ),

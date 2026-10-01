@@ -67,7 +67,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
                     description="Minimum focal length.",
                     value=20,
                     range=(0, 5200, 1),
-                ),  
+                ),
                 desc.IntParam(
                     name="max",
                     label="Max",
@@ -310,7 +310,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.ListAttribute(
             name='BlocGlob',
             label='Bloc Glob',
-            description="Param for Glob bloc compute [File,SigmaCenter,SigmaRot,?MulFinal,?Export].", 
+            description="Param for Glob bloc compute [File,SigmaCenter,SigmaRot,?MulFinal,?Export].",
             advanced=True,
             elementDesc=desc.StringParam(
                 name="Item",
@@ -322,7 +322,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.ListAttribute(
             name='DistBlocGlob',
             label='Dist Bloc Glob',
-            description="Param for Dist Glob bloc compute [File,SigmaDist,?MulFinal,?Export].", 
+            description="Param for Dist Glob bloc compute [File,SigmaDist,?MulFinal,?Export].",
             advanced=True,
             elementDesc=desc.StringParam(
                 name="Item",
@@ -334,7 +334,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.ListAttribute(
             name='BlocTimeRel',
             label='Bloc Time Rel',
-            description="Param for Time Reliative bloc compute [File,SigmaCenter,SigmaRot,?MulFinal,?Export].", 
+            description="Param for Time Reliative bloc compute [File,SigmaCenter,SigmaRot,?MulFinal,?Export].",
             advanced=True,
             elementDesc=desc.StringParam(
                 name="Item",
@@ -346,7 +346,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.ListAttribute(
             name='OptBlocG',
             label='Opt Bloc G',
-            description="[SigmaTr,SigmaRot].", 
+            description="[SigmaTr,SigmaRot].",
             advanced=True,
             elementDesc=desc.StringParam(
                 name="Item",
@@ -358,7 +358,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.ListAttribute(
             name='RegulDist',
             label='Regul Dist',
-            description="Parameter fo RegulDist [Val,Grad,Hessian,NbCase,SeuilNb].", 
+            description="Parameter fo RegulDist [Val,Grad,Hessian,NbCase,SeuilNb].",
             advanced=True,
             elementDesc=desc.FloatParam(
                 name="Item",

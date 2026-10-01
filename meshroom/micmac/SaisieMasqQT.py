@@ -61,7 +61,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
                     description="Window width.",
                     value=900,
                     range=(0, 7680, 1),
-                ),  
+                ),
                 desc.IntParam(
                     name="height",
                     label="Height",

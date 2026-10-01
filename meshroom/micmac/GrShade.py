@@ -62,7 +62,7 @@ class GrShade(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setHypsoSat',
-            label='Set HypsoSat', 
+            label='Set HypsoSat',
             description ='Set HypsoSat.',
             value=False,
             advanced=True,

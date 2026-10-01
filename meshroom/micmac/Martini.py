@@ -25,7 +25,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Exe',
             label='Exe',
-            description='If false, only print.', 
+            description='If false, only print.',
             value=True,
         ),
         desc.File(
@@ -49,7 +49,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='ExpTxt',
             label='Exp Txt',
-            description='Is Homol in text format?.', 
+            description='Is Homol in text format?.',
             value=False,
         ),
         desc.StringParam(
@@ -61,13 +61,13 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Debug',
             label='Debug',
-            description='Debug', 
+            description='Debug',
             value=False,
         ),
         desc.BoolParam(
             name='AUS',
             label='AUS',
-            description='Accept non symetric homologous point.', 
+            description='Accept non symetric homologous point.',
             value=True,
         ),
         desc.IntParam(

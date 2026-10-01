@@ -21,7 +21,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             description='Image Pattern.',
             value='.*.(jpg|jpeg|JPG|JPEG|png|PNG|tif|tiff|TIF|TIFF)',
             commandLineGroup='', # unnamed parameter
-        ),    
+        ),
         desc.File(
             name='Pat2',
             label='Second Image Pattern',
@@ -40,7 +40,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='setByP',
             label='Set ByP',
-            description='Set ByP.', 
+            description='Set ByP.',
             value=False,
             commandLineGroup='', # enable 'ByP' attribute
         ),
@@ -56,20 +56,20 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='ExpTxt',
             label='Tie Points In Txt',
-            description='Export files in text format (if false binary).', 
+            description='Export files in text format (if false binary).',
             value=False,
         ),
         desc.BoolParam(
             name='NoMax',
             label='No Max',
-            description='No max.', 
+            description='No max.',
             value=False,
             advanced=True,
         ),
         desc.BoolParam(
             name='NoMin',
             label='No Min',
-            description='No min.', 
+            description='No min.',
             value=False,
             advanced=True,
         ),

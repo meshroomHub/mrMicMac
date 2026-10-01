@@ -65,7 +65,7 @@ class CenterBascule(node.MicmacNode, desc.CommandLineNode):
             value=False,
             commandLineGroup='', # enable 'ForceVert' attribute
             advanced=True,
-        ), 
+        ),
         desc.FloatParam(
             name='ForceVert',
             label='Force Vert',

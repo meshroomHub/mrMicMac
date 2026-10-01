@@ -41,31 +41,31 @@ class TapiocaLine(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='ExpTxt',
             label='Export Files In Txt',
-            description='Export files in text format (if false binary).', 
+            description='Export files in text format (if false binary).',
             value=False,
         ),
         desc.BoolParam(
             name='ForceAdSupResol',
             label='Force Ad Sup Resol',
-            description='To force computation even when Resol < Adj.', 
+            description='To force computation even when Resol < Adj.',
             value=False,
         ),
         desc.BoolParam(
             name='NoMax',
             label='No Max',
-            description='No max.', 
+            description='No max.',
             value=False,
         ),
         desc.BoolParam(
             name='NoMin',
             label='No Min',
-            description='No min.', 
+            description='No min.',
             value=False,
         ),
         desc.BoolParam(
             name='NoUnknown',
             label='No Unknown',
-            description='No unknown.', 
+            description='No unknown.',
             value=False,
         ),
         desc.FloatParam(
