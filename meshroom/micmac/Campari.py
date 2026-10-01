@@ -19,7 +19,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='imagePattern',
             label='Image Pattern',
-            description="Full Directory (Dir+Pattern)",
+            description='Image Pattern.',
             commandLineGroup='unnamedParams',
             value="",
         ),
