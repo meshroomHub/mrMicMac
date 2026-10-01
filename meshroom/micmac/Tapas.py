@@ -29,7 +29,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description='Calibration model.',
             commandLineGroup='', # unnamed parameter
             value='RadialBasic',
-            values=['RadialBasic', 'RadialExtended', 'Fraser', 'FishEyeEqui', 'AutoCal', 'Figee', 'HemiEqui', 'RadialStd', 'FraserBasic', 'FishEyeBasic', 'FE_EquiSolBasic', 'Four7x2', 'Four11x2', 'Four15x2', 'Four19x2', 'AddFour7x2', 'AddFour11x2', 'AddFour15x2', 'Four19x2', 'AddPolyDeg0', 'AddPolyDeg1', 'AddPolyDeg2', 'AddPolyDeg3', 'AddPolyDeg4', 'AddPolyDeg5', 'AddPolyDeg6', 'AddPolyDeg7', 'Ebner', 'Brown', 'FishEyeStereo'],
+            values=['RadialBasic', 'RadialExtended', 'Fraser', 'FishEyeEqui', 'AutoCal', 'Figee', 'HemiEqui', 'RadialStd', 'FraserBasic', 'FishEyeBasic', 'FE_EquiSolBasic', 'Four7x2', 'Four11x2', 'Four15x2', 'Four19x2', 'AddFour7x2', 'AddFour11x2', 'AddFour15x2', 'AddFour19x2', 'AddPolyDeg0', 'AddPolyDeg1', 'AddPolyDeg2', 'AddPolyDeg3', 'AddPolyDeg4', 'AddPolyDeg5', 'AddPolyDeg6', 'AddPolyDeg7', 'Ebner', 'Brown', 'FishEyeStereo'],
             exclusive=True,
         ),
         desc.File(
