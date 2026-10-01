@@ -20,7 +20,7 @@ def trim(s):
     """
     # regex to replace all space groups by a single space
     # use split() to remove trailing space at beginning/end
-    return re.sub('\s+', ' ', s).strip()
+    return re.sub(r'\s+', ' ', s).strip()
 
 
 def quotesForStrings(valueStr):
@@ -76,16 +76,16 @@ if not inputCmdLineDoc:
 
 
 args_re = re.compile(
-    '^\s+\*\s+'                   # space(s) + '*' + space(s)
-    '(\[Name='                    # '[Name='
-    '(?P<argName>\w+)'            # argument name
-    '\]'                          # ']'
-    '\s+)?'                       # space(s)
-    '(?P<argType>\w+)'            # argument type 
-    '\s+'                         # space(s)
-    '::'                          # '::'
-    '\s+'                         # space(s)
-    '{(?P<argDescription>.*?)?}'  # argument description in {}
+    r'^\s+\*\s+'                   # space(s) + '*' + space(s)
+    r'(\[Name='                    # '[Name='
+    r'(?P<argName>\w+)'            # argument name
+    r'\]'                          # ']'
+    r'\s+)?'                       # space(s)
+    r'(?P<argType>\w+)'            # argument type 
+    r'\s+'                         # space(s)
+    r'::'                          # '::'
+    r'\s+'                         # space(s)
+    r'{(?P<argDescription>.*?)?}'  # argument description in {}
     , re.MULTILINE)
 
 cmdLineArgs = args_re.findall(inputCmdLineDoc.decode('utf-8'))
