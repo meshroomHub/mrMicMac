@@ -35,19 +35,19 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='InCal',
             label='In Calibration Directory',
-            description="Directory of Input Internal Orientation (Calibration)",
+            description="Directory of Input Internal Orientation (Calibration).",
             value="",
         ),
         desc.File(
             name='InOri',
             label='In Orientation Directory',
-            description="Directory of Input External Orientation",
+            description="Directory of Input External Orientation.",
             value="",
         ),
         desc.BoolParam(
             name='setFocs',
             label='set Focs',
-            description="Set Focs",
+            description="Set Focs.",
             value=False,
             commandLineGroup='', # enable 'Focs' attribute
             advanced=True,
@@ -92,34 +92,34 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.StringParam(
             name='FrozenPoses',
             label='Frozen Poses',
-            description="List of frozen external calibration (pattern)",
+            description="List of frozen external calibration (pattern).",
             value="",
             advanced=True,
         ),
         desc.StringParam(
             name='FrozenCalibs',
             label='Frozen Calibrations',
-            description="List of frozen internal calibration (pattern)",
+            description="List of frozen internal calibration (pattern).",
             value="",
             advanced=True,
         ),
         desc.BoolParam(
             name='RefineAll',
             label='Refine All',
-            description="More refinement at all step, safer and more accurate, but slower",
+            description="More refinement at all step, safer and more accurate, but slower.",
             value=True,
         ),
         desc.StringParam(
             name='ImInit',
             label='Initial Image',
-            description="Force first image",
+            description="Force first image.",
             value="",
             advanced=True,
         ),
         desc.GroupAttribute(
             name='EcInit',
             label='Ec Init',
-            description="Inital threshold for residual",
+            description="Inital threshold for residual.",
             brackets='[]',
             joinChar=',',
             advanced=True,
@@ -143,7 +143,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.FloatParam(
             name='EcMax',
             label='Maximal Reprojection Error',
-            description="Final threshold for residual",
+            description="Final threshold for residual.",
             value=5.0,
             range=(-float('inf'), float('inf'), 0.01),
             advanced=True,
@@ -159,7 +159,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='LibPP',
             label='Lib PP',
-            description="Free principal point",
+            description="Free principal point.",
             enabled=lambda node: node.setLibPP.value,
             value=True,
             advanced=True,
@@ -175,7 +175,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='LibFoc',
             label='Lib Foc',
-            description="Free focal",
+            description="Free focal.",
             enabled=lambda node: node.setLibFoc.value,
             value=True,
             advanced=True,
@@ -191,7 +191,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='LibCP',
             label='Lib CP',
-            description="Free distorsion center, Def context dependant",
+            description="Free distorsion center, Def context dependant.",
             enabled=lambda node: node.setLibCP.value,
             value=True,
             advanced=True,
@@ -207,7 +207,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='LibCD',
             label='Lib CD',
-            description="Free distorsion center, Def context dependant. Principal Point should be also free if CD is free",
+            description="Free distorsion center, Def context dependant. Principal Point should be also free if CD is free.",
             enabled=lambda node: node.setLibCD.value,
             value=True,
             advanced=True,
@@ -223,7 +223,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='LibDec',
             label='Lib Dec',
-            description="Free decentric parameter, Def context dependant",
+            description="Free decentric parameter, Def context dependant.",
             enabled=lambda node: node.setLibDec.value,
             value=True,
             advanced=True,
@@ -239,7 +239,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.IntParam(
             name='DegRadMax',
             label='Deg Rad Max',
-            description="Max degree of radial, default model dependent",
+            description="Max degree of radial, default model dependent.",
             enabled=lambda node: node.setDegRadMax.value,
             value=0,
             range=(0, 10, 1),
@@ -256,7 +256,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.IntParam(
             name='DRMax',
             label='DR Max',
-            description="When specified degree of freedom of radial parameters",
+            description="When specified degree of freedom of radial parameters.",
             enabled=lambda node: node.setDRMax.value,
             value=0,
             range=(0, 9, 1),
@@ -265,7 +265,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.FloatParam(
             name='PropDiag',
             label='Prop Diag',
-            description="Hemi-spherik fisheye diameter to diagonal ratio",
+            description="Hemi-spherik fisheye diameter to diagonal ratio.",
             value=1.0,
             range=(0.0, 1.0, 0.01),
             advanced=True,
@@ -372,7 +372,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.StringParam(
             name='Out',
             label='Output Name',
-            description="Directory of Output Orientation",
+            description="Directory of Output Orientation.",
             value="Tapas",
         ),
     ]
@@ -381,7 +381,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='orientationDirectory',
             label='Orientation Directory',
-            description="Directory of Output Orientation",
+            description="Directory of Output Orientation.",
             value="{OutValue}",
             commandLineGroup='', # not a command line parameter
             invalidate=False,

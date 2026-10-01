@@ -45,7 +45,7 @@ class CenterBascule(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='setL1',
             label='Set L1',
-            description="Set L1",
+            description="Set L1.",
             value=False,
             commandLineGroup='', # enable 'L1' attribute
             advanced=True,

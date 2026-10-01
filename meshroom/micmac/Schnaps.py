@@ -26,50 +26,50 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='HomolIn',
             label='Homol In',
-            description="Input Homol directory suffix",
+            description="Input Homol directory suffix.",
             value="",
         ),
         desc.IntParam(
             name='NbWin',
             label='Nb Win',
-            description="Minimal homol points in each image (default: 1000)",
+            description="Minimal homol points in each image (default: 1000).",
             value=1000,
             range=(-sys.maxsize, sys.maxsize, 1),
         ),
         desc.BoolParam(
             name='AppendHomolOut',
             label='Append Homol Out',
-            description="Append to existing HomolOut for multi-step computaton (default: false)",
+            description="Append to existing HomolOut for multi-step computaton (default: false).",
             value=False,
         ),
         desc.BoolParam(
             name='ExpTxt',
             label='Exp Txt',
-            description="Ascii format for in and out, def=false",
+            description="Ascii format for in and out, def=false.",
             value=False,
         ),
         desc.BoolParam(
             name='VeryStrict',
             label='Very Strict',
-            description="Be very strict with homols (remove any suspect), def=false",
+            description="Be very strict with homols (remove any suspect), def=false.",
             value=False,
         ),
         desc.BoolParam(
             name='ShowStats',
             label='Show Stats',
-            description="Show Homol points stats before and after filtering, def=false",
+            description="Show Homol points stats before and after filtering, def=false.",
             value=False,
         ),
         desc.BoolParam(
             name='DoNotFilter',
             label='Do Not Filter',
-            description="Write homol after recomposition, without filtering, def=false",
+            description="Write homol after recomposition, without filtering, def=false.",
             value=False,
         ),
         desc.GroupAttribute(
             name='FixSz',
             label='Fix Sz',
-            description="Use a fixed size for image, do not read size in files",
+            description="Use a fixed size for image, do not read size in files.",
             brackets='[]',
             joinChar=',',
             items=[
@@ -92,27 +92,27 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         desc.FloatParam(
             name='minPercentCoverage',
             label='Min Percent Coverage',
-            description="Minimum % of coverage to avoid adding to poubelle, def=30",
+            description="Minimum % of coverage to avoid adding to poubelle, def=30.",
             value=0.0,
             range=(-float('inf'), float('inf'), 0.01),
         ),
         desc.BoolParam(
             name='MoveBadImgs',
             label='Move Bad Imgs',
-            description="Move bad images to a trash folder called Poubelle, Def=false",
+            description="Move bad images to a trash folder called Poubelle, Def=false.",
             value=False,
         ),
         desc.IntParam(
             name='MiniMulti',
             label='Mini Multi',
-            description="Minimal Multiplicity of selected points, Def=1",
+            description="Minimal Multiplicity of selected points, Def=1.",
             value=0,
             range=(-sys.maxsize, sys.maxsize, 1),
         ),
         desc.BoolParam(
             name='NetworkExport',
             label='Network Export',
-            description="Export Network (in js), Def=false",
+            description="Export Network (in js), Def=false.",
             value=False,
         ),
         desc.IntParam(
@@ -125,7 +125,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='ExeWrite',
             label='Exe Write',
-            description="Do write output homol dir, def=true",
+            description="Do write output homol dir, def=true.",
             value=True,
         ),
     ]
@@ -134,19 +134,19 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='HomolOut',
             label='Homol Out',
-            description="Output Homol directory suffix (default: _mini)",
+            description="Output Homol directory suffix (default: _mini).",
             value="_mini",
         ),
         desc.File(
             name='PoubelleName',
             label='Poubelle Name',
-            description="Output filename with the list of suspicious images, def='Schnaps_poubelle.txt'",
+            description="Output filename with the list of suspicious images, def='Schnaps_poubelle.txt'.",
             value="Schnaps_poubelle.txt",
         ),
         desc.File(
             name='OutTrash',
             label='Out Trash',
-            description="Output name of trash folder if MoveBadImgs, Def=Poubelle",
+            description="Output name of trash folder if MoveBadImgs, Def=Poubelle.",
             value="Poubelle",
         ),
     ]

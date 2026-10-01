@@ -61,7 +61,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.BoolParam(
             name='Debug',
             label='Debug',
-            description='Debug',
+            description='Debug.',
             value=False,
         ),
         desc.BoolParam(
@@ -87,7 +87,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.StringParam(
             name='OriOut',
             label='Output Orientation Name',
-            description="Directory of Output Orientation",
+            description="Directory of Output Orientation.",
             value="Martini",
         ),
     ]
@@ -96,7 +96,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='orientationDirectory',
             label='Orientation Directory',
-            description="Directory of Output Orientation",
+            description="Directory of Output Orientation.",
             value="{OriOutValue}",
             commandLineGroup='', # not a command line parameter
             invalidate=False,

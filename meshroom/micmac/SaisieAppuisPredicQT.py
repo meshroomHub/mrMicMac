@@ -47,7 +47,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         desc.GroupAttribute(
             name='SzW',
             label='Size of the window',
-            description='Size of the window',
+            description='Size of the window.',
             brackets='[]',
             joinChar=',',
             items=[
@@ -181,7 +181,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='InputSec',
             label='InputSec',
-            description='InputSec',
+            description='InputSec.',
             value="",
             advanced=True,
         ),

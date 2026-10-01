@@ -105,7 +105,7 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
         desc.FloatParam(
             name='Angle',
             label='Angle',
-            description='Threshold angle, in degree, between triangle normal and image viewing direction',
+            description='Threshold angle, in degree, between triangle normal and image viewing direction.',
             value=90.0,
             range=(0.0, 360.0, 0.01),
             advanced=True,

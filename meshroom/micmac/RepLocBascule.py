@@ -32,7 +32,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='imageMeasures',
             label='Image measures',
-            description="Image measures xml file, set 'HOR' if horizontal line is wanted (HORVy if Y vertical), 'NONE' if unused",
+            description="Image measures xml file, set 'HOR' if horizontal line is wanted (HORVy if Y vertical), 'NONE' if unused.",
             commandLineGroup='', # unnamed parameter
             value="",
         ),
@@ -45,7 +45,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
         desc.StringParam(
             name='PostPlan',
             label='Post Plan',
-            description="Postfix for plane name, (Def=_Masq)",
+            description="Postfix for plane name, (Def=_Masq).",
             value="",
             advanced=True,
         ),
@@ -59,7 +59,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
          desc.StringParam(
             name='localFrame',
             label='Local Frame name',
-            description="Output of Local Frame (Repere Local) xml file",
+            description="Output of Local Frame (Repere Local) xml file.",
             commandLineGroup='', # unnamed parameter
             value="RepLoc.xml",
         ),
@@ -69,7 +69,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='localFrameOut',
             label='Local Frame',
-            description="Output of Local Frame (Repere Local) xml file",
+            description="Output of Local Frame (Repere Local) xml file.",
             invalidate=False,
             commandLineGroup='', # not a command line parameter
             value="{localFrameValue}",

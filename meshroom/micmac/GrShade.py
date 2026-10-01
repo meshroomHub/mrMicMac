@@ -113,13 +113,13 @@ class GrShade(node.MicmacNode, desc.CommandLineNode):
         desc.File(
             name='Mask',
             label='Mask',
-            description='Mask file',
+            description='Mask file.',
             value='',
         ),
         desc.StringParam(
             name='ModeColor',
             label='Mode Color',
-            description='Color mode',
+            description='Color mode.',
             value='',
         ),
         desc.StringParam(
