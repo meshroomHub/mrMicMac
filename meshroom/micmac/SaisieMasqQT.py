@@ -27,7 +27,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             label='Set Postfix',
             description="Set postfix.",
             value=True,
-            commandLineGroup='', # unnamed parameter
+            commandLineGroup='', # enable 'Post' attribute
             advanced=True,
         ),
         desc.StringParam(
@@ -43,7 +43,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             label='Set Window Size',
             description="Set window size.",
             value=False,
-            commandLineGroup='', # unnamed parameter
+            commandLineGroup='', # enable 'SzW' attribute
             advanced=True,
         ),
         desc.GroupAttribute(
@@ -76,7 +76,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             label='Set Name',
             description="Set name.",
             value=True,
-            commandLineGroup='', # unnamed parameter
+            commandLineGroup='', # enable 'Name' attribute
             advanced=True,
         ),
         desc.StringParam(
@@ -92,7 +92,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             label='Set Attr',
             description="Set attr.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'Attr' attribute
             advanced=True,
         ),
         desc.StringParam(
@@ -108,7 +108,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             label='Set Gamma',
             description="Set gamma.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'Gama' attribute
             advanced=True,
         ),
         desc.FloatParam(

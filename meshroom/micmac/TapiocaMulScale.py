@@ -50,7 +50,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             label='Set ByP',
             description='Set ByP.', 
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'ByP' attribute
         ),
         desc.IntParam(
             name='ByP',
@@ -101,7 +101,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             name="wallisFilter",
             label="Wallis Filter",
             description="Apply Wallis filter.",
-            commandLineGroup='', # keys
+            commandLineGroup='', # unnamed parameter
             value="",
             values=["", "@SFS"],
             exclusive=True,

@@ -34,7 +34,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set DEq',
             description="Set DEq.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'DEq' attribute
             advanced=True,
         ),
         desc.IntParam(
@@ -51,7 +51,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set DEqXY',
             description="Set DEqXY.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'DEqXY' attribute
             advanced=True,
         ),
         desc.GroupAttribute(
@@ -83,7 +83,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set Add Cste',
             description="Set add cste.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'AddCste' attribute
             advanced=True,
         ),
         desc.BoolParam(
@@ -99,7 +99,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set DegRap',
             description="Set DegRap.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'DegRap' attribute
             advanced=True,
         ),
         desc.IntParam(
@@ -116,7 +116,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set DegRapXY',
             description="Set DegRapXY.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'DegRapXY' attribute
             advanced=True,
         ),
         desc.GroupAttribute(
@@ -148,7 +148,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set RGP',
             description="Set RGP.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'RGP' attribute
             advanced=True,
         ),
         desc.BoolParam(
@@ -164,7 +164,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set DynG',
             description="Set DynG.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'DynG' attribute
             advanced=True,
         ),
         desc.FloatParam(
@@ -181,7 +181,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set Im Prio',
             description="Set Im Prio.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'ImPrio' attribute
             advanced=True,
         ),
         desc.StringParam(
@@ -197,7 +197,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set SzV',
             description="Set SzV.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'SzV' attribute
             advanced=True,
         ),
         desc.IntParam(
@@ -214,7 +214,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set Cor Thr',
             description="Set Cor Thr.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'CorThr' attribute
             advanced=True,
         ),
         desc.FloatParam(
@@ -231,7 +231,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set Nb Per Im',
             description="Set Nb Per Im.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'NbPerIm' attribute
             advanced=True,
         ),
         desc.FloatParam(
@@ -248,7 +248,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set L1 F',
             description="Set L1 F.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'L1F' attribute
             advanced=True,
         ),
         desc.BoolParam(
@@ -264,7 +264,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             label='Set Sat Thresh',
             description="Set Sat Thresh.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'SatThresh' attribute
             advanced=True,
         ),
         desc.FloatParam(

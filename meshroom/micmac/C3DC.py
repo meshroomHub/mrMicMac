@@ -112,7 +112,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             label='Set Custom ZoomF',
             description="Set custom ZoomF.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'ZoomF' attribute
             advanced=True,
         ),
         desc.IntParam(

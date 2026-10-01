@@ -41,7 +41,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             label='Enable GpsLa',
             description="Enable GpsLa.",
             value=False,
-            commandLineGroup=''
+            commandLineGroup='', # enable 'GpsLa', 'IncLA' attributes
         ),
         desc.GroupAttribute(
             name='GCP',

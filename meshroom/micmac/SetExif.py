@@ -27,7 +27,7 @@ class SetExif(node.MicmacNode, desc.CommandLineNode):
             label='Set F',
             description='Set Focal lenght?', 
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'F' attribute
         ),
         desc.FloatParam(
             name='F',
@@ -42,7 +42,7 @@ class SetExif(node.MicmacNode, desc.CommandLineNode):
             label='Set F35',
             description='Set Focal lenght equiv 35mm?', 
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'F35' attribute
         ),
         desc.FloatParam(
             name='F35',

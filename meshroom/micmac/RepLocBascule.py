@@ -73,7 +73,7 @@ class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
             label='Local Frame',
             description="Output of Local Frame (Repere Local) xml file",
             invalidate=False,
-            commandLineGroup='', # unnamed parameter
+            commandLineGroup='', # not a command line parameter
             value="{localFrameValue}",
         ),
     ]

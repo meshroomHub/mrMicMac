@@ -49,7 +49,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='set Focs',
             description="Set Focs",
             value=False,
-            commandLineGroup='', # unnamed parameter
+            commandLineGroup='', # enable 'Focs' attribute
             advanced=True,
         ),
         desc.GroupAttribute(
@@ -152,7 +152,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Set Lib PP',
             description="Set lib PP.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'LibPP' attribute
             advanced=True,
         ),
         desc.BoolParam(
@@ -168,7 +168,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Set Lib Foc',
             description="Set lib Foc.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'LibFoc' attribute
             advanced=True,
         ),
         desc.BoolParam(
@@ -184,7 +184,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Set Lib CP',
             description="Set lib CP.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'LibCP' attribute
             advanced=True,
         ),
         desc.BoolParam(
@@ -200,7 +200,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Set Lib CD',
             description="Set lib CD.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'LibCD' attribute
             advanced=True,
         ),
         desc.BoolParam(
@@ -216,7 +216,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Set Lib Dec',
             description="Set lib Dec.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'LibDec' attribute
             advanced=True,
         ),
         desc.BoolParam(
@@ -232,7 +232,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Set DegRadMax',
             description="Set DegRadMax.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'DegRadMax' attribute
             advanced=True,
         ),
         desc.IntParam(
@@ -249,7 +249,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Set DR Max',
             description="Set DR Max.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'DRMax' attribute
             advanced=True,
         ),
         desc.IntParam(
@@ -274,7 +274,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             label='Set Vitesse Init',
             description="Set vitesse init.",
             value=False,
-            commandLineGroup='',
+            commandLineGroup='', # enable 'VitesseInit' attribute
             advanced=True,
         ),
         desc.IntParam(
