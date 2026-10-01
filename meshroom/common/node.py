@@ -25,7 +25,7 @@ class MicmacNode:
         try:
             with open(chunk.logFile, 'w') as logF:
                 cmd = self.buildCommandLine(chunk) + ' @ExitOnBrkp @ExitOnWarn @ExitOnNan' # build command line and add MicMac enter key flags
-                projectDir = chunk.node._cmdVars['projectDirectoryValue'].replace('"','')  # get project directory from parameter (and remove quotes)
+                projectDir = chunk.node._expVars['projectDirectoryValue'].replace('"','')  # get project directory from parameter (and remove quotes)
                 chunk.status.commandLine = cmd
                 chunk.saveStatusFile()
                 print(' - commandLine: {}'.format(cmd))
