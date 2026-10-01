@@ -71,7 +71,7 @@ inputCmdLineDoc = stdout if stdout else stderr
 
 if not inputCmdLineDoc:
     print('No input documentation.')
-    print('Usage: YOUR_COMMAND -help | {cmd}'.format(cmd=os.path.splitext(__file__)[0]))
+    parser.print_usage()
     sys.exit(-1)
 
 
