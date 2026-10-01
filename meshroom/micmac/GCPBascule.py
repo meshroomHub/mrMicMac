@@ -5,7 +5,7 @@ from meshroom.core import desc
 from ..common import node
 
 class GCPBascule(node.MicmacNode, desc.CommandLineNode):
-    commandLine = 'mm3d GCPBascule {imagePatternValue} {orientationInValue} {orientationOutValue} {groundControlPointsFileValue} {imageMeasurementsFileValue} {allParams}'
+    commandLine = 'mm3d GCPBascule {imagePatternValue} {orientationInValue} {orientationOutValue} {GCPFileValue} {imageMeasurementsFileValue} {allParams}'
     documentation = 'GCPBascule'
 
     inputs = [
@@ -31,7 +31,7 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
             value="",
         ),
         desc.File(
-            name='groundControlPointsFile',
+            name='GCPFile',
             label='GCP 3D coordinates File',
             description="Ground Control Points File",
             commandLineGroup='unnamedParams',
