@@ -28,7 +28,7 @@ class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
     ]
 
     outputs = [
-    	desc.File(
+        desc.File(
             name='Ori',
             label='Orientation MMVII',
             description="Out Orientation for MMVII Files",

@@ -36,7 +36,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             description="Homol Directory.",
             value="",
         ),
-     	desc.BoolParam(
+        desc.BoolParam(
             name='enableGpsLa',
             label='Enable GpsLa',
             description="Enable GpsLa.",
