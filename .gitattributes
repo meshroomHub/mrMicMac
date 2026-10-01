@@ -1,0 +1,4 @@
+# Normalize line endings: text files are stored with LF in the repository
+* text=auto
+
+*.png binary
