@@ -1,9 +1,6 @@
 __version__ = "1.0"
 
 from meshroom.core import desc
-import os
-import shutil
-import json
 
 class MicMacProject(desc.Node):
     category = 'MicMac'
@@ -39,6 +36,10 @@ class MicMacProject(desc.Node):
     ]
 
     def processChunk(self, chunk):
+        import os
+        import shutil
+        import json
+        
         try:
             chunk.logManager.start(chunk.node.verboseLevel.value)
             chunk.logger.info("Copy images from input SfMData file")
@@ -58,6 +59,7 @@ class MicMacProject(desc.Node):
                 chunk.logger.debug('Copy of image: ' + inputPath)
                 shutil.copy2(inputPath, outputPath)
 
-        finally:
             chunk.logger.info('Images have been copied in directory: ' + projectDir)
+
+        finally:
             chunk.logManager.end()
