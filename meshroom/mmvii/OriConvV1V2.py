@@ -15,13 +15,13 @@ class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            commandLineGroup="micmac",
+            commandLineGroup='', # required to execute mm3d command line
         ),
         desc.File(
             name='In',
             label='Orientation MicMac V1',
             description="Input Orientation for MMV1 Files",
-        commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value="",
         ),
         
@@ -32,7 +32,7 @@ class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
             name='Ori',
             label='Orientation MMVII',
             description="Out Orientation for MMVII Files",
-        commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value="OriV2",
         ),
     ]

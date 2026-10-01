@@ -14,20 +14,20 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            commandLineGroup="micmac",
+            commandLineGroup='', # required to execute mm3d command line
         ),
         desc.File(
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value="",
         ),
         desc.File(
             name='inputOrientation',
             label='Orientation Directory',
             description="Input Orientation",
-            commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value="",
         ),
         desc.File(
@@ -412,7 +412,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             name='Out',
             label='Orientation Directory',
             description="Output Orientation",
-            commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value="Campari",
         ), 
     ]

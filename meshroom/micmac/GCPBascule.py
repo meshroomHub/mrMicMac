@@ -27,21 +27,21 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
             name='orientationIn',
             label='Input Orientation',
             description="Input Orientation.",
-            commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value='',
         ),
         desc.File(
             name='GCPFile',
             label='GCP 3D Coordinates File',
             description="Ground Control Points file.",
-            commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value='',
         ),
         desc.File(
             name='imageMeasurementsFile',
             label='GCP Image Coordinates File',
             description="Image measurements file.",
-            commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value='',
         ),
         desc.BoolParam(
@@ -99,7 +99,7 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
             name='orientationOut',
             label='Output Orientation',
             description="Output orientation.",
-		commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value="GCPBasc",
         ),
     ]

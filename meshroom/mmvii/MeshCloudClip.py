@@ -15,20 +15,20 @@ class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
             label='Project Directory',
             description='Project Directory.',
             value="",
-            commandLineGroup="micmac",
+            commandLineGroup='', # required to execute mm3d command line
         ),
         desc.File(
             name='Cloud',
             label='Input mesh',
             description='Name of input cloud mesh',
-            commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value='',
         ),
         desc.File(
             name='3DReg',
             label='3D masq',
             description='Name of 3D masq',
-            commandLineGroup='unnamedParams',
+            commandLineGroup='', # unnamed parameter
             value='',
         ),
         desc.BoolParam(
