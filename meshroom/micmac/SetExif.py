@@ -5,7 +5,7 @@ from ..common import node
 
 class SetExif(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d SetExif {imagePatternValue} {allParams}'
-    documentation = '''SetExif'''
+    documentation = 'SetExif: Modify image EXIF metadata such as focal length or camera model (requires exiv2).'
 
     inputs = [
         desc.File(

@@ -5,7 +5,7 @@ from ..common import node
 
 class RepLocBascule(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d RepLocBascule {imagePatternValue} {orientationDirValue} {imageMeasuresValue} {localFrameValue} {allParams}'
-    documentation = 'RepLocBascule'
+    documentation = 'RepLocBascule: Define a local coordinate frame without changing the orientation.'
     category = 'MicMac'
 
     inputs = [

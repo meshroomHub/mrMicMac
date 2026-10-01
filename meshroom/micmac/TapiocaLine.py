@@ -5,7 +5,7 @@ from ..common import node
 
 class TapiocaLine(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca Line {imagePatternValue} {imageSizeValue} {nbAdjacentImagesValue} {allParams}'
-    documentation = '''Tapioca Line'''
+    documentation = 'Tapioca Line: Detect and match tie points between adjacent images of a linear acquisition.'
 
     inputs = [
         desc.File(

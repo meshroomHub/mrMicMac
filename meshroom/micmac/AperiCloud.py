@@ -5,7 +5,7 @@ from ..common import node
 
 class AperiCloud(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d AperiCloud {imagePatternValue} {orientationDirValue} {allParams}'
-    documentation = '''AperiCloud'''
+    documentation = 'AperiCloud: Visualization of cameras and sparse tie point cloud in a PLY file.'
 
     inputs = [
         desc.File(

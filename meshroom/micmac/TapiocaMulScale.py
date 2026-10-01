@@ -5,7 +5,7 @@ from ..common import node
 
 class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca MulScale {imagePatternValue} {imageSizeLowResolutionValue} {imageSizeHighResolutionValue} {allParams} {wallisFilterValue}'
-    documentation = '''Tapioca MulScale'''
+    documentation = 'Tapioca MulScale: Detect and match tie points in two passes: pair selection at low resolution, then matching at high resolution.'
 
     inputs = [
         desc.File(

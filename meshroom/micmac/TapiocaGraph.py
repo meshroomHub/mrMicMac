@@ -5,7 +5,7 @@ from ..common import node
 
 class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca Graph {imagePatternValue} {imageSizeValue} {allParams}'
-    documentation = '''Tapioca Graph'''
+    documentation = 'Tapioca Graph: Compute an image connectivity graph (XML pairs file) from a few tie points per image.'
 
     inputs = [
         desc.File(

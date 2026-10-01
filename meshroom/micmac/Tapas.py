@@ -6,7 +6,7 @@ from ..common import node
 
 class Tapas(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapas {calibrationModelValue} {imagePatternValue} {allParams}'
-    documentation = 'Tapas'
+    documentation = 'Tapas: Interface to Apero to compute internal (calibration) and external orientations.'
 
     inputs = [
         desc.File(

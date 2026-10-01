@@ -5,7 +5,7 @@ from ..common import node
 
 class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tapioca All {imagePatternValue} {imageSizeValue} {allParams} {wallisFilterValue}'
-    documentation = '''Tapioca All'''
+    documentation = 'Tapioca All: Detect and match tie points between all image pairs.'
 
     inputs = [
         desc.File(

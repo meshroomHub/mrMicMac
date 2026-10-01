@@ -4,7 +4,7 @@ from meshroom.core import desc
 
 class MicMacProject(desc.Node):
     category = 'MicMac'
-    documentation = '''Project node for MicMac pipeline. Copy CameraInit images into the node folder.'''
+    documentation = 'MicMacProject: Copy the SfMData (CameraInit) images into a MicMac project directory.'
 
     inputs = [
         desc.File(

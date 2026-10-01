@@ -5,7 +5,7 @@ from ..common import node
 
 class TiPunch(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d TiPunch {plyNameValue} {allParams}'
-    documentation = '''TiPunch'''
+    documentation = 'TiPunch: Compute a mesh from a dense point cloud (Poisson reconstruction).'
 
     inputs = [
         desc.File(

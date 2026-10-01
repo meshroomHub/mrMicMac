@@ -5,7 +5,7 @@ from ..common import node
 
 class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'MMVII OriConvV1V2 Ori-{InValue}/ {OriValue}'
-    documentation = 'OriConvV1V2'
+    documentation = 'OriConvV1V2: Convert a MicMac V1 orientation to MMVII format.'
     category = 'MicMacV2'
 
     inputs = [

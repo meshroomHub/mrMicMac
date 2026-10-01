@@ -6,7 +6,7 @@ from ..common import node
 
 class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Pims2Mnt {dirOrPIMValue} {allParams}'
-    documentation = 'Pims2Mnt'
+    documentation = 'Pims2Mnt: Generate a DEM (and optionally an orthophoto) from Per Image Matchings (PIMs).'
 
     inputs = [
         desc.File(

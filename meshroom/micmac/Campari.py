@@ -6,7 +6,7 @@ from ..common import node
 
 class Campari(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Campari {imagePatternValue} {inputOrientationValue} {OutValue} {allParams}'
-    documentation = 'Campari'
+    documentation = 'Campari: Interface to Apero for bundle adjustment with heterogeneous measures (tie points, GCP, GPS).'
 
     inputs = [
         desc.File(

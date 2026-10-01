@@ -5,7 +5,7 @@ from ..common import node
 
 class Martini(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Martini {imagePatternValue} {allParams}'
-    documentation = '''Martini'''
+    documentation = 'Martini: Initialize image orientations from triplets of images (experimental).'
 
     inputs = [
         desc.File(

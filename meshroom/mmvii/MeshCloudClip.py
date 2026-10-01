@@ -6,7 +6,7 @@ from ..common import node
 
 class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'MMVII MeshCloudClip {CloudValue} {3DRegValue} {allParams}'
-    documentation = 'MeshCloudClip'
+    documentation = 'MeshCloudClip: Clip a mesh or point cloud using a 3D region.'
     category = 'MicMacV2'
 
     inputs = [

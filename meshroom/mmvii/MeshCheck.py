@@ -5,7 +5,7 @@ from ..common import node
 
 class MeshCheck(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'MMVII MeshCheck {CloudValue} {allParams}'
-    documentation = 'MeshCheck'
+    documentation = 'MeshCheck: Check a mesh and optionally correct simple defects.'
     category = 'MicMacV2'
 
     inputs = [

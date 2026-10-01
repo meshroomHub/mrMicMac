@@ -5,7 +5,7 @@ from ..common import node
 
 class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d SaisieMasqQT {filePathValue} {allParams}'
-    documentation = '''SaisieMasqQT'''
+    documentation = 'SaisieMasqQT: Interactive tool to draw a 2D mask on an image or a 3D mask on a point cloud.'
 
     inputs = [
         desc.File(

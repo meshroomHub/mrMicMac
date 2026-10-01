@@ -6,7 +6,7 @@ from ..common import node
 
 class Tawny(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tawny {orthoDirectoryValue} {allParams}'
-    documentation = 'Tawny'
+    documentation = 'Tawny: Interface to Porto to generate an orthophoto mosaic with radiometric equalization.'
 
     inputs = [
         desc.File(

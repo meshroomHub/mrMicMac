@@ -5,7 +5,7 @@ from ..common import node
 
 class Tequila(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Tequila {imagePatternValue} {orientationDirValue} {plyNameValue} {allParams}'
-    documentation = '''Tequila'''
+    documentation = 'Tequila: Texture a mesh from oriented images.'
 
     inputs = [
         desc.File(

@@ -5,7 +5,7 @@ from ..common import node
 
 class C3DC(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d C3DC {modeValue} {imagePatternValue} {orientationDirValue} {allParams}'
-    documentation = '''C3DC'''
+    documentation = 'C3DC: Automatic dense matching producing a 3D point cloud from oriented images.'
 
     inputs = [
         desc.File(

@@ -6,7 +6,7 @@ from ..common import node
 
 class Schnaps(node.MicmacNode, desc.CommandLineNode):
     commandLine = 'mm3d Schnaps {imagePatternValue} {allParams}'
-    documentation = 'Schnaps'
+    documentation = 'Schnaps: Reduce and filter tie points in image geometry.'
 
     inputs = [
         desc.File(
