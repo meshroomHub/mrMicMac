@@ -63,21 +63,22 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             enabled=lambda node: node.setDEqXY.value,
             advanced=True,
             items=[
-            desc.IntParam(
-                name="x",
-                label="X",
-                description="x.",
-                value=0,
-                range=(-sys.maxsize, sys.maxsize, 1),
-            ),
-            desc.IntParam(
-                name="y",
-                label="Y",
-                description="y.",
-                value=0,
-                range=(-sys.maxsize, sys.maxsize, 1),
-            ),
-        ]),
+                desc.IntParam(
+                    name="x",
+                    label="X",
+                    description="x.",
+                    value=0,
+                    range=(-sys.maxsize, sys.maxsize, 1),
+                ),
+                desc.IntParam(
+                    name="y",
+                    label="Y",
+                    description="y.",
+                    value=0,
+                    range=(-sys.maxsize, sys.maxsize, 1),
+                ),
+            ]
+        ),
         desc.BoolParam(
             name='setAddCste',
             label='Set Add Cste',
@@ -128,21 +129,22 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             enabled=lambda node: node.setDegRapXY.value,
             advanced=True,
             items=[
-            desc.IntParam(
-                name="x",
-                label="X",
-                description="x.",
-                value=0,
-                range=(-sys.maxsize, sys.maxsize, 1),
-            ),
-            desc.IntParam(
-                name="y",
-                label="Y",
-                description="y.",
-                value=0,
-                range=(-sys.maxsize, sys.maxsize, 1),
-            ),
-        ]),
+                desc.IntParam(
+                    name="x",
+                    label="X",
+                    description="x.",
+                    value=0,
+                    range=(-sys.maxsize, sys.maxsize, 1),
+                ),
+                desc.IntParam(
+                    name="y",
+                    label="Y",
+                    description="y.",
+                    value=0,
+                    range=(-sys.maxsize, sys.maxsize, 1),
+                ),
+            ]
+        ),
         desc.BoolParam(
             name='setRGP',
             label='Set RGP',

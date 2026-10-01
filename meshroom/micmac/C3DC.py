@@ -138,28 +138,29 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
             joinChar=',',
             advanced=True,
             items=[
-            desc.FloatParam(
-                name="x",
-                label="X",
-                description="x.",
-                value=0.0,
-                range=(0.0, float('inf'), 0.01),
-            ),
-            desc.FloatParam(
-                name="y",
-                label="Y",
-                description="y.",
-                value=0.0,
-                range=(0.0, float('inf'), 0.01),
-            ),
-            desc.FloatParam(
-                name="z",
-                label="Z",
-                description="z.",
-                value=0.0,
-                range=(0.0, float('inf'), 0.01),
-            ),
-        ]),
+                desc.FloatParam(
+                    name="x",
+                    label="X",
+                    description="x.",
+                    value=0.0,
+                    range=(0.0, float('inf'), 0.01),
+                ),
+                desc.FloatParam(
+                    name="y",
+                    label="Y",
+                    description="y.",
+                    value=0.0,
+                    range=(0.0, float('inf'), 0.01),
+                ),
+                desc.FloatParam(
+                    name="z",
+                    label="Z",
+                    description="z.",
+                    value=0.0,
+                    range=(0.0, float('inf'), 0.01),
+                ),
+            ]
+        ),
         desc.StringParam(
             name='Out',
             label='Output Name',

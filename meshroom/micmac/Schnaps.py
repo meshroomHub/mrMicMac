@@ -73,21 +73,22 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
             brackets='[]',
             joinChar=',',
             items=[
-            desc.IntParam(
-                name="x",
-                label="X",
-                description="x.",
-                value=0,
-                range=(-sys.maxsize, sys.maxsize, 1),
-            ),
-            desc.IntParam(
-                name="y",
-                label="Y",
-                description="y.",
-                value=0,
-                range=(-sys.maxsize, sys.maxsize, 1),
-            ),
-        ]),
+                desc.IntParam(
+                    name="x",
+                    label="X",
+                    description="x.",
+                    value=0,
+                    range=(-sys.maxsize, sys.maxsize, 1),
+                ),
+                desc.IntParam(
+                    name="y",
+                    label="Y",
+                    description="y.",
+                    value=0,
+                    range=(-sys.maxsize, sys.maxsize, 1),
+                ),
+            ]
+        ),
         desc.FloatParam(
             name='minPercentCoverage',
             label='Min Percent Coverage',

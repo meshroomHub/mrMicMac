@@ -71,28 +71,29 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             joinChar=',',
             enabled=lambda node: node.enableGpsLa.value,
             items=[
-            desc.FloatParam(
-                name="x",
-                label="X",
-                description="x.",
-                value=0.0,
-                range=(-float('inf'), float('inf'), 0.01),
-            ),
-            desc.FloatParam(
-                name="y",
-                label="Y",
-                description="y.",
-                value=0.0,
-                range=(-float('inf'), float('inf'), 0.01),
-            ),
-            desc.FloatParam(
-                name="z",
-                label="Z",
-                description="z.",
-                value=0.0,
-                range=(-float('inf'), float('inf'), 0.01),
-            ),
-        ]),
+                desc.FloatParam(
+                    name="x",
+                    label="X",
+                    description="x.",
+                    value=0.0,
+                    range=(-float('inf'), float('inf'), 0.01),
+                ),
+                desc.FloatParam(
+                    name="y",
+                    label="Y",
+                    description="y.",
+                    value=0.0,
+                    range=(-float('inf'), float('inf'), 0.01),
+                ),
+                desc.FloatParam(
+                    name="z",
+                    label="Z",
+                    description="z.",
+                    value=0.0,
+                    range=(-float('inf'), float('inf'), 0.01),
+                ),
+            ]
+        ),
         desc.GroupAttribute(
             name='IncLA',
             label='Inc L A',
@@ -101,28 +102,29 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             joinChar=',',
             enabled=lambda node: node.enableGpsLa.value,
             items=[
-            desc.FloatParam(
-                name="x",
-                label="X",
-                description="x.",
-                value=0.0,
-                range=(-float('inf'), float('inf'), 0.01),
-            ),
-            desc.FloatParam(
-                name="y",
-                label="Y",
-                description="y.",
-                value=0.0,
-                range=(-float('inf'), float('inf'), 0.01),
-            ),
-            desc.FloatParam(
-                name="z",
-                label="Z",
-                description="z.",
-                value=0.0,
-                range=(-float('inf'), float('inf'), 0.01),
-            ),
-        ]),
+                desc.FloatParam(
+                    name="x",
+                    label="X",
+                    description="x.",
+                    value=0.0,
+                    range=(-float('inf'), float('inf'), 0.01),
+                ),
+                desc.FloatParam(
+                    name="y",
+                    label="Y",
+                    description="y.",
+                    value=0.0,
+                    range=(-float('inf'), float('inf'), 0.01),
+                ),
+                desc.FloatParam(
+                    name="z",
+                    label="Z",
+                    description="z.",
+                    value=0.0,
+                    range=(-float('inf'), float('inf'), 0.01),
+                ),
+            ]
+        ),
         desc.StringParam(
             name='PatGPS',
             label='Pat G P S',

@@ -124,21 +124,22 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             joinChar=',',
             advanced=True,
             items=[
-            desc.FloatParam(
-                name="max",
-                label="Max",
-                description="max.",
-                value=100.0,
-                range=(0.0, 10000.0, 0.01),
-            ),
-            desc.FloatParam(
-                name="min",
-                label="Min",
-                description="min.",
-                value=5.0,
-                range=(0.0, 10000.0, 0.01),
-            ),
-        ]),
+                desc.FloatParam(
+                    name="max",
+                    label="Max",
+                    description="max.",
+                    value=100.0,
+                    range=(0.0, 10000.0, 0.01),
+                ),
+                desc.FloatParam(
+                    name="min",
+                    label="Min",
+                    description="min.",
+                    value=5.0,
+                    range=(0.0, 10000.0, 0.01),
+                ),
+            ]
+        ),
         desc.FloatParam(
             name='EcMax',
             label='Maximal Reprojection Error',
