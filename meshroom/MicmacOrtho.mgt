@@ -1,0 +1,218 @@
+{
+    "header": {
+        "releaseVersion": "2026.1.0+develop",
+        "fileVersion": "2.1",
+        "nodesVersions": {
+            "AperiCloud": "1.2.0",
+            "C3DC": "1.2.0",
+            "CameraInit": "12.1",
+            "MicMacProject": "1.2.0",
+            "Pims2Mnt": "1.2.0",
+            "RepLocBascule": "1.2.0",
+            "SaisieMasqQT": "1.2.0",
+            "Tapas": "1.2.0",
+            "TapiocaMulScale": "1.2.0",
+            "Tawny": "1.2.0"
+        },
+        "template": true
+    },
+    "graph": {
+        "AperiCloud_1": {
+            "nodeType": "AperiCloud",
+            "position": [
+                806,
+                187
+            ],
+            "inputs": {
+                "projectDirectory": "{Tapas_1.projectDirectory}",
+                "imagePattern": "{Tapas_1.imagePattern}",
+                "SH": "{Tapas_1.SH}",
+                "orientationDir": "{Tapas_1.orientationDirectory}",
+                "RGB": false,
+                "Out": "AperiCloud_Calib.ply"
+            },
+            "internalInputs": {
+                "label": "AperiCloud Calib"
+            }
+        },
+        "AperiCloud_2": {
+            "nodeType": "AperiCloud",
+            "position": [
+                1003,
+                2
+            ],
+            "inputs": {
+                "projectDirectory": "{Tapas_2.projectDirectory}",
+                "imagePattern": "{Tapas_2.imagePattern}",
+                "SH": "{Tapas_2.SH}",
+                "orientationDir": "{Tapas_2.orientationDirectory}",
+                "RGB": false
+            },
+            "internalInputs": {
+                "label": "AperiCloud All"
+            }
+        },
+        "Backdrop_1": {
+            "nodeType": "Backdrop",
+            "position": [
+                123,
+                -159
+            ],
+            "internalInputs": {
+                "comment": "To access the project folder: \n- Right-click on the 'MicMacProject' node\n- Select 'Open Folder'\n- Open the 'project' folder. \n\nAll calculations are stored in this folder.",
+                "label": "MicMac Project",
+                "fontSize": 10,
+                "nodeWidth": 253,
+                "nodeHeight": 251
+            }
+        },
+        "C3DC_1": {
+            "nodeType": "C3DC",
+            "position": [
+                1394,
+                -4
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieMasqQT_1.projectDirectory}",
+                "imagePattern": "{AperiCloud_2.imagePattern}",
+                "SH": "{AperiCloud_2.SH}",
+                "orientationDir": "{AperiCloud_2.orientationDir}",
+                "Masq3D": "AperiCloud_polyg3d.xml"
+            }
+        },
+        "CameraInit_1": {
+            "nodeType": "CameraInit",
+            "position": [
+                -66,
+                2
+            ],
+            "inputs": {}
+        },
+        "MicMacProject_1": {
+            "nodeType": "MicMacProject",
+            "position": [
+                177,
+                2
+            ],
+            "inputs": {
+                "input": "{CameraInit_1.output}"
+            }
+        },
+        "Pims2Mnt_1": {
+            "nodeType": "Pims2Mnt",
+            "position": [
+                1795,
+                -5
+            ],
+            "inputs": {
+                "projectDirectory": "{C3DC_1.projectDirectory}",
+                "dirOrPIM": "Quickmac",
+                "DoOrtho": true,
+                "DirMTD": "PIMs-TmpMnt",
+                "DirOrtho": "PIMs-ORTHO",
+                "DirBasc": "PIMs-TmpBasc"
+            }
+        },
+        "RepLocBascule_1": {
+            "nodeType": "RepLocBascule",
+            "position": [
+                1594,
+                -6
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieMasqQT_2.projectDirectory}",
+                "imagePattern": "{C3DC_1.imagePattern}",
+                "orientationDir": "{AperiCloud_2.orientationDir}",
+                "imageMeasures": "HOR"
+            },
+            "internalInputs": {
+                "comment": "Need to rename HomolMulScale in Homol.\nWaiting for SH option in RepLoc to come in july, then in precomp binaries before november."
+            }
+        },
+        "SaisieMasqQT_1": {
+            "nodeType": "SaisieMasqQT",
+            "position": [
+                1198,
+                2
+            ],
+            "inputs": {
+                "projectDirectory": "{AperiCloud_2.projectDirectory}",
+                "filePath": "{AperiCloud_2.pointCloud}"
+            },
+            "internalInputs": {
+                "label": "SaisieMasqQT 3D"
+            }
+        },
+        "SaisieMasqQT_2": {
+            "nodeType": "SaisieMasqQT",
+            "position": [
+                1400,
+                153
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieMasqQT_1.projectDirectory}",
+                "filePath": "IMGP4176.JPG"
+            },
+            "internalInputs": {
+                "label": "SaisieMasqQT 2D"
+            }
+        },
+        "Tapas_1": {
+            "nodeType": "Tapas",
+            "position": [
+                600,
+                0
+            ],
+            "inputs": {
+                "projectDirectory": "{TapiocaMulScale_1.projectDirectory}",
+                "imagePattern": "IMGP416[0-5].JPG",
+                "calibrationModel": "FraserBasic",
+                "SH": "{TapiocaMulScale_1.PostFix}",
+                "Out": "Calib"
+            },
+            "internalInputs": {
+                "label": "Tapas Calib"
+            }
+        },
+        "Tapas_2": {
+            "nodeType": "Tapas",
+            "position": [
+                804,
+                -5
+            ],
+            "inputs": {
+                "projectDirectory": "{Tapas_1.projectDirectory}",
+                "imagePattern": "IMGP41(6[7-9]|[7-8].).JPG",
+                "calibrationModel": "Figee",
+                "InCal": "{Tapas_1.orientationDirectory}",
+                "SH": "{Tapas_1.SH}",
+                "Out": "Relative"
+            },
+            "internalInputs": {
+                "label": "Tapas All"
+            }
+        },
+        "TapiocaMulScale_1": {
+            "nodeType": "TapiocaMulScale",
+            "position": [
+                400,
+                0
+            ],
+            "inputs": {
+                "projectDirectory": "{MicMacProject_1.projectDirectory}",
+                "imageSizeHighResolution": 1000
+            }
+        },
+        "Tawny_1": {
+            "nodeType": "Tawny",
+            "position": [
+                2006,
+                -4
+            ],
+            "inputs": {
+                "projectDirectory": "{Pims2Mnt_1.projectDirectory}",
+                "RadiomEgal": false
+            }
+        }
+    }
+}
