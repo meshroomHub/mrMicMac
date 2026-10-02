@@ -1,0 +1,13 @@
+[project]
+name = "mrMicMac"
+version = "1.2.0"
+description = "MicMac photogrammetry nodes for Meshroom."
+authors = [
+    { name = "IRIT"},
+    { name = "ENSG"},
+    { name = "MAP CNRS"},
+]
+
+[tool.meshroom]
+publisher = "meshroomHub"
+requirements = "MicMac 1.2.0 installed locally and added to PATH."
