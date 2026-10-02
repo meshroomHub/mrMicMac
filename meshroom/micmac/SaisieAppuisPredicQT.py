@@ -188,7 +188,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
             value="",
             advanced=True,
         ),
-        desc.File(
+        desc.StringParam(
             name='PIMsF',
             label='PIMs Filter',
             description='PIMs filter used for visibility.',
