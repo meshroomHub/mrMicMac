@@ -14,10 +14,10 @@ class MicmacNode:
         '''
         Fix command line for MicMac
         '''
-        cmdline = super().buildCommandLine(chunk)                                             # build node command line
+        cmdline = super().buildCommandLine(chunk)                                                            # build node command line
         cmdline = re.sub(r'--(\w+)\s', lambda m: '{name}='.format(name=m.group(1)), cmdline)                 # use "name=value" instead of "--name value"
         cmdline = re.sub(r'(?<==)(True|False)(?=\s|$)', lambda m: str(int(m.group(1) == 'True')), cmdline)   # use 0 / 1 instead of False / True (only as a whole value)
-        cmdline = re.sub(r'(\w+=\"\"\s)', lambda m: '', cmdline)                                             # remove value with empty string (optional parameter)
+        cmdline = re.sub(r'(\w+=\"\"(?:\s|$))', lambda m: '', cmdline)                                       # remove value with empty string (optional parameter)
         cmdline = re.sub(r'(\w+=\[\])', lambda m: '', cmdline)                                               # remove value with empty list (optional parameter)
         return cmdline
 
