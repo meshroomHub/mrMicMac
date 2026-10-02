@@ -47,7 +47,7 @@ class ChgSysCo(node.MicmacNode, desc.CommandLineNode):
             label='Output Directory Name',
             description="Name or the directory of the output orientation file.",
             commandLineGroup='', # for output parameter
-            value="",
+            value="ChgSysCo",
         ),
     ]
 

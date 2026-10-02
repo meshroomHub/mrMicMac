@@ -35,7 +35,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
             name='targetedOrientation',
             label='Targeted Orientation',
             description='Targeted orientation.',
-            value='',
+            value='OriConvert',
             commandLineGroup='', # unnamed parameter
         ),
         desc.File(

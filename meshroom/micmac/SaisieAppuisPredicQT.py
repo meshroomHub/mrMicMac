@@ -123,10 +123,27 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
             value=True,
             advanced=True,
         ),
+        desc.BoolParam(
+            name='setGama',
+            label='Set Gama',
+            description='Set Gama.',
+            value=False,
+            advanced=True,
+            commandLineGroup='', # enable 'Gama' attribute
+        ),
+        desc.FloatParam(
+            name='Gama',
+            label='Gamma',
+            description='Apply gamma to image.',
+            enabled=lambda node: node.setGama.value,
+            value=1.0,
+            range=(0.0, 4.0, 0.01),
+            advanced=True,
+        ),
         desc.StringParam(
             name='OriMode',
             label='Orientation type',
-            description='Orientation type.',
+            description='Orientation type (GRID).',
             value='Std',
             advanced=True,
         ),
@@ -171,7 +188,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
             value="",
             advanced=True,
         ),
-        desc.File(
+        desc.StringParam(
             name='PIMsF',
             label='PIMs Filter',
             description='PIMs filter used for visibility.',
@@ -180,8 +197,8 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='InputSec',
-            label='InputSec',
-            description='InputSec.',
+            label='Input Sec',
+            description='For importing other inputs.',
             value="",
             advanced=True,
         ),
