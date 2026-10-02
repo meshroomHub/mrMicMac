@@ -143,7 +143,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         desc.StringParam(
             name='OriMode',
             label='Orientation type',
-            description='Orientation type.',
+            description='Orientation type (GRID).',
             value='Std',
             advanced=True,
         ),
@@ -197,8 +197,8 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='InputSec',
-            label='InputSec',
-            description='InputSec.',
+            label='Input Sec',
+            description='For importing other inputs.',
             value="",
             advanced=True,
         ),
