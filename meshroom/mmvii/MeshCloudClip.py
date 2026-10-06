@@ -44,13 +44,30 @@ class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
             value=3,
             range=(-sys.maxsize, sys.maxsize, 1),
         ),
+        desc.StringParam(
+            name='Out',
+            label='Output Filename',
+            description="Name of output file (use a .pc.ply suffix when clipping a point cloud, to display it in the 3D Viewer).",
+            value="Clip_mesh.ply",
+        ),
     ]
 
     outputs = [
         desc.File(
-            name='Out',
-            label='Clipped mesh',
-            description="Name of output file.",
-            value="Clip_mesh.ply",
+            name='outMeshPath',
+            label='Clipped Mesh',
+            description="Output clipped mesh (absolute path).",
+            value="{projectDirectoryValue}/{OutValue}",
+            semantic='3d',
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
+        ),
+        desc.File(
+            name='outMeshFilename',
+            label='Clipped Mesh Filename',
+            description="Name of output clipped mesh, relative to the project directory.",
+            value="{OutValue}",
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
         ),
     ]
