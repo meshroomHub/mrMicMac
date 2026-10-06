@@ -338,7 +338,7 @@ class ConvertIm(node.MicmacNode, desc.CommandLineNode):
             name='outputImage',
             label='Output Image',
             description="Output image.",
-            value=lambda node: node.Out.value or node.image.value.replace('"', '').rsplit(".", 1)[0] + '_Out.' + (node.Ext.value or 'tif'),
+            value=lambda node: node.Out.value or ((node.Ext.value or '_Out') + '.').join(node.image.value.replace('"', '').rsplit('.', 1)),
             commandLineGroup='', # not a command line parameter
             invalidate=False,
         ),
