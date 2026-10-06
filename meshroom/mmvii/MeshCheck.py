@@ -41,13 +41,30 @@ class MeshCheck(node.MicmacNode, desc.CommandLineNode):
             description="Do correction, Defaut: Do It Out specified.",
             value=True,
         ),
+        desc.StringParam(
+            name='Out',
+            label='Output Filename',
+            description="Name of output file if correction are done.",
+            value="Correc_mesh.ply",
+        ),
     ]
 
     outputs = [
         desc.File(
-            name='Out',
-            label='Corrected mesh',
-            description="Name of output file if correction are done.",
-            value="Correc_mesh.ply",
+            name='outMeshPath',
+            label='Corrected Mesh',
+            description="Output corrected mesh (absolute path).",
+            value="{projectDirectoryValue}/{OutValue}",
+            semantic='3d',
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
+        ),
+        desc.File(
+            name='outMeshFilename',
+            label='Corrected Mesh Filename',
+            description="Name of output corrected mesh, relative to the project directory.",
+            value="{OutValue}",
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
         ),
     ]
