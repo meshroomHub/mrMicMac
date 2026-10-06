@@ -117,7 +117,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='DivPH',
-            label='Div P H',
+            label='Div PH',
             description="in exported network, denominator to decrease the number of tie point which is used for displaying strength of a relation between 2 images, def 10.",
             value=0,
             range=(-sys.maxsize, sys.maxsize, 1),

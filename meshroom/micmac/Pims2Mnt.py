@@ -25,7 +25,7 @@ class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='DS',
-            label='D S',
+            label='DS',
             description="Downscale, Def=1.0.",
             value=1.0,
             range=(-float('inf'), float('inf'), 0.01),
@@ -62,7 +62,7 @@ class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='RI',
-            label='R I',
+            label='RI',
             description="Resol Im, def=1.",
             value=1.0,
             range=(0.0, 10.0, 0.01),
