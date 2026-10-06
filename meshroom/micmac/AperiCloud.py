@@ -137,7 +137,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             label='Output Filename',
             description='Output PLY point cloud name (use a .pc.ply suffix to display it in the 3D Viewer).',
             value='AperiCloud.pc.ply',
-            invalidate=False,
         ),
     ]
 
