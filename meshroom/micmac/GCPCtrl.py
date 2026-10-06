@@ -24,7 +24,7 @@ class GCPCtrl(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='orientationIn',
-            label='Orientation In',
+            label='Orientation Directory',
             description='Orientation in.',
             commandLineGroup='', # unnamed parameter
             value='',
@@ -81,14 +81,14 @@ class GCPCtrl(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='OutTxtFile',
-            label='Output Ctrl Txt File',
+            label='Ctrl Txt File',
             description='Output Ctrl txt file.',
             value='{OutTxtValue}.txt',
             commandLineGroup='', # not a command line parameter
         ),
         desc.File(
             name='OutJSONFile',
-            label='Output Ctrl JSON File',
+            label='Ctrl JSON File',
             description='Output Ctrl JSON file.',
             value='{OutJSONValue}.geojson',
             commandLineGroup='', # not a command line parameter

@@ -34,7 +34,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='InCal',
-            label='In Calibration Directory',
+            label='Calibration Directory',
             description="Directory of Input Internal Orientation (Calibration).",
             value="",
         ),

@@ -24,7 +24,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='orientationIn',
-            label='Input Orientation',
+            label='Orientation Directory',
             description="Input Orientation.",
             commandLineGroup='', # unnamed parameter
             value="",

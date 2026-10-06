@@ -17,7 +17,7 @@ class GrShade(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='imageFile',
-            label='imageFile',
+            label='In Image File',
             description="Image of the relief file name.",
             commandLineGroup='', # unnamed parameter
             value='',

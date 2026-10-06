@@ -24,7 +24,7 @@ class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='orientationIn',
-            label='Input Orientation',
+            label='Orientation Directory',
             description="Input Orientation (NONE if unused).",
             commandLineGroup='', # unnamed parameter
             value="",

@@ -24,7 +24,7 @@ class CenterBascule(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='orientationIn',
-            label='Input Orientation',
+            label='In Orientation Directory',
             description="Input Orientation.",
             commandLineGroup='', # unnamed parameter
             value="",
@@ -87,7 +87,7 @@ class CenterBascule(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='orientationOut',
-            label='Output Orientation',
+            label='Orientation Directory',
             description="Output orientation.",
             value="{OutValue}",
             commandLineGroup='', # unnamed parameter

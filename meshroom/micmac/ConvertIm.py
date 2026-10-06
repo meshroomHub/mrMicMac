@@ -17,7 +17,7 @@ class ConvertIm(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='image',
-            label='Image',
+            label='In Image File',
             description='Image.',
             commandLineGroup='', # unnamed parameter
             value="",

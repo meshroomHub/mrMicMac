@@ -30,7 +30,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='OriCalib',
-            label='Ori Calib',
+            label='Calibration Directory',
             description='Orientation for calibration.',
             value='',
         ),

@@ -25,7 +25,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='inputOrientation',
-            label='Orientation Directory',
+            label='In Orientation Directory',
             description="Input Orientation.",
             commandLineGroup='', # unnamed parameter
             value="",

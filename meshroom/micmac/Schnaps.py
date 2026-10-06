@@ -25,7 +25,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='HomolIn',
-            label='Homol In',
+            label='In Homol Directory',
             description="Input Homol directory suffix.",
             value="",
         ),
@@ -133,7 +133,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='HomolOut',
-            label='Homol Out',
+            label='Homol Directory',
             description="Output Homol directory suffix (default: _mini).",
             value="_mini",
         ),

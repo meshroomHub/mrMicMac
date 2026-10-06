@@ -23,7 +23,7 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='plyName',
-            label='Point Cloud',
+            label='Point Cloud Filename',
             description='Point cloud PLY filename.',
             commandLineGroup='', # unnamed parameter
             value='',

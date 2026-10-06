@@ -26,7 +26,7 @@ class GCPConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='GCPFile',
-            label='GCP File',
+            label='In GCP File',
             description='Ground Control Points file.',
             commandLineGroup='', # unnamed parameter
             value='',

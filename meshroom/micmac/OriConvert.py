@@ -515,7 +515,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='orientationOut',
-            label='Targeted Orientation',
+            label='Orientation Directory',
             description='Targeted orientation.',
             value="{targetedOrientationValue}",
             commandLineGroup='', # not a command line parameter
