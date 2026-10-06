@@ -19,14 +19,14 @@ class MeshCloudClip(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='Cloud',
-            label='Input mesh',
+            label='In Mesh/Point Cloud Filename',
             description='Name of input cloud mesh.',
             commandLineGroup='', # unnamed parameter
             value='',
         ),
         desc.File(
             name='3DReg',
-            label='3D masq',
+            label='3D Mask',
             description='Name of 3D masq.',
             commandLineGroup='', # unnamed parameter
             value='',

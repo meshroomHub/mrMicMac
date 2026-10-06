@@ -18,7 +18,7 @@ class MeshCheck(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='Cloud',
-            label='Mesh/Cloud',
+            label='In Mesh/Point Cloud Filename',
             description='Name of input cloud/mesh.',
             commandLineGroup='', # unnamed parameter
             value="",
