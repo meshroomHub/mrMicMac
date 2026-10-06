@@ -30,10 +30,10 @@ class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
             value=1.0,
             range=(-float('inf'), float('inf'), 0.01),
         ),
-        desc.StringParam(
+        desc.File(
             name='Repere',
             label='Repere',
-            description="Repair (Euclid or Cyl).",
+            description="Local system of coordinates (Euclid or Cyl).",
             value="",
         ),
         desc.BoolParam(
