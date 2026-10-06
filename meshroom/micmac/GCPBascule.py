@@ -38,7 +38,7 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='imageMeasurementsFile',
-            label='GCP Image Coordinates File',
+            label='Image Measurements File',
             description="Image measurements file.",
             commandLineGroup='', # unnamed parameter
             value='',
@@ -58,14 +58,14 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ShowU',
-            label='Show U',
+            label='Show Unused Point',
             description="Show unused point.",
             value=True,
             advanced=True,
         ),
         desc.BoolParam(
             name='ShowD',
-            label='Show D',
+            label='Show Details',
             description="Show details.",
             value=False,
             advanced=True,

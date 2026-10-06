@@ -48,7 +48,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ExpTxt',
-            label='Exp Txt',
+            label='Tie Points In Txt',
             description='Is Homol in text format?.',
             value=False,
         ),

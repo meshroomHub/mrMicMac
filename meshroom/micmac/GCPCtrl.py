@@ -45,7 +45,7 @@ class GCPCtrl(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='CPI',
-            label='C P I',
+            label='CPI',
             description='When Calib Per Image has to be used.',
             value=False,
             advanced=True,

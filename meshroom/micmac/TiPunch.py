@@ -57,7 +57,7 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.ChoiceParam(
             name="Mode",
-            label="Mode",
+            label="C3DC Mode",
             description="C3DC Mode.",
             value="QuickMac",
             values=["Ground", "Statue", "Forest", "QuickMac", "MicMac", "BigMac"],

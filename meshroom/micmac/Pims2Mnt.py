@@ -56,7 +56,7 @@ class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='UseTA',
-            label='Use T A',
+            label='Use TA',
             description="Use TA as filter when exist.",
             value=False,
         ),

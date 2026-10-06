@@ -31,7 +31,7 @@ class SBGlobBascule(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='imageMeasures',
-            label='Image Measures',
+            label='Image Measurements File',
             description="Image measures xml file.",
             commandLineGroup='', # unnamed parameter
             value="",

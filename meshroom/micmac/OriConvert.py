@@ -487,7 +487,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='SzW',
-            label='Sz W',
+            label='Window Size',
             description="Size for visualisation.",
             enabled=lambda node: node.setSzW.value,
             value=0.0,

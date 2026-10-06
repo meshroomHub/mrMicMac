@@ -46,7 +46,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.GroupAttribute(
             name='SzW',
-            label='Size of the window',
+            label='Window Size',
             description='Size of the window.',
             brackets='[]',
             joinChar=',',
@@ -174,8 +174,8 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='ZInc',
-            label='Incertitude on Z',
-            description='Incertitude on Z, Mandatory in PB.',
+            label='Z Uncertainty',
+            description='Uncertainty on Z, Mandatory in PB.',
             value=0.0,
             range=(0.0, 1.0, 0.1),
             advanced=True,
@@ -183,7 +183,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='Masq3D',
-            label='3D Masq',
+            label='3D Mask',
             description='3D Masq used for visibility.',
             value="",
             advanced=True,

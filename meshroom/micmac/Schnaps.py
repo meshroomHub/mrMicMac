@@ -44,7 +44,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ExpTxt',
-            label='Exp Txt',
+            label='Tie Points In Txt',
             description="Ascii format for in and out, def=false.",
             value=False,
         ),

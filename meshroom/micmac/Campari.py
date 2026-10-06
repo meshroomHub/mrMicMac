@@ -203,7 +203,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ExpTxt',
-            label='Exp Txt',
+            label='Export In Txt',
             description="Export in text format (Def=false).",
             value=False,
         ),
@@ -258,7 +258,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='PPFree',
-            label='P P Free',
+            label='PP Free',
             description="Principal Point Free (Def=true).",
             value=False,
         ),
@@ -284,20 +284,20 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='DRMax',
-            label='D R Max',
+            label='DR Max',
             description="When specified degree of freedom of radial parameters.",
             value=0,
             range=(-sys.maxsize, sys.maxsize, 1),
         ),
         desc.BoolParam(
             name='LibCP',
-            label='Lib C P',
+            label='Lib CP',
             description="Free distorsion center, Def context dependant.",
             value=False,
         ),
         desc.BoolParam(
             name='LibCD',
-            label='Lib C D',
+            label='Lib CD',
             description="Free distorsion center, Def context dependant. Principal Point should be also free if CD is free.",
             value=False,
         ),
