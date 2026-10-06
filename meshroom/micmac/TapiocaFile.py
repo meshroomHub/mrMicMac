@@ -69,6 +69,5 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             label='Homol Directory', # Directory Postfix
             description='Homol Directory.',
             value="Tapioca",
-            invalidate=False,
         ),
     ]

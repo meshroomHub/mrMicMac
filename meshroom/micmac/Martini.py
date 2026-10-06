@@ -99,6 +99,5 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
             description="Directory of Output Orientation.",
             value="{OriOutValue}",
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]

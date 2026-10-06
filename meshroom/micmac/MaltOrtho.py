@@ -374,7 +374,6 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
             description="Directory of the matching results.",
             value=lambda node: node.DirMEC.value or 'MEC-Malt',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
         desc.File(
             name='orthoDirectory',
@@ -382,6 +381,5 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
             description="Directory of the individual orthophotos.",
             value=lambda node: node.DirOF.value or 'Ortho-' + (node.DirMEC.value or 'MEC-Malt'),
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]

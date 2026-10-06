@@ -72,6 +72,5 @@ class TapiocaGraph(node.MicmacNode, desc.CommandLineNode):
             label='Connectivity Graph',
             description='Name of the produced XML file.',
             value="tapioca_connectivity_graph.xml",
-            invalidate=False,
         ),
     ]

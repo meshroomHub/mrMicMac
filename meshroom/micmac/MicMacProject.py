@@ -31,7 +31,6 @@ class MicMacProject(desc.Node):
             description='Project Directory.',
             commandLineGroup='',  # required to execute mm3d command line
             value='{nodeCacheFolder}/project',
-            invalidate=False,
         ),
     ]
 

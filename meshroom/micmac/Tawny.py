@@ -294,7 +294,6 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             value='{projectDirectoryValue}/{orthoDirectoryValue}/{OutValue}',
             semantic='image',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
         desc.File(
             name='outImageFilename',
@@ -302,6 +301,5 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             description="Output orthophoto name, relative to the project directory.",
             value='{orthoDirectoryValue}/{OutValue}',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]

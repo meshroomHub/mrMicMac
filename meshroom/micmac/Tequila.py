@@ -144,7 +144,6 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             value='{projectDirectoryValue}/{OutValue}',
             semantic='3d',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
         desc.File(
             name='outMeshFilename',
@@ -152,6 +151,5 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             description='Output PLY textured mesh name, relative to the project directory.',
             value='{OutValue}',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]

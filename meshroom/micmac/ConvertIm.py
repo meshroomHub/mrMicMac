@@ -340,7 +340,6 @@ class ConvertIm(node.MicmacNode, desc.CommandLineNode):
             description="Output image name, relative to the project directory.",
             value=lambda node: node.Out.value or ((node.Ext.value or '_Out') + '.').join(node.image.value.replace('"', '').rsplit('.', 1)),
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
         desc.File(
             name='outImagePath',
@@ -349,6 +348,5 @@ class ConvertIm(node.MicmacNode, desc.CommandLineNode):
             value='{projectDirectoryValue}/{outImageFilenameValue}',
             semantic='image',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]
