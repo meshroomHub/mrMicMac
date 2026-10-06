@@ -24,7 +24,7 @@ class ConvertIm(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='Out',
-            label='Output Name',
+            label='Output Filename',
             description="Output image name (Def=input+_Out).",
             value="",
         ),

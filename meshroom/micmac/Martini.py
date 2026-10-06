@@ -86,7 +86,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='OriOut',
-            label='Output Orientation Name',
+            label='Output Directory Name',
             description="Directory of Output Orientation.",
             value="Martini",
         ),

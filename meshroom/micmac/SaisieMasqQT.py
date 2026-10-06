@@ -81,7 +81,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='Name',
-            label='Name',
+            label='Output Filename',
             description='Set output filename (dafault=input+_Masq).',
             enabled=lambda node: node.setName.value,
             value="",

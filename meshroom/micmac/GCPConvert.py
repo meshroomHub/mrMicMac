@@ -33,7 +33,7 @@ class GCPConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='Out',
-            label='Output Name',
+            label='Output Filename',
             description='Xml out file (Def=GCP file name with xml extension).',
             value='',
         ),

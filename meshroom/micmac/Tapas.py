@@ -371,7 +371,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='Out',
-            label='Output Name',
+            label='Output Directory Name',
             description="Directory of Output Orientation.",
             value="Tapas",
         ),

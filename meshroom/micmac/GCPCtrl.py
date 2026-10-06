@@ -66,13 +66,13 @@ class GCPCtrl(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='OutTxt',
-            label='Out Txt',
+            label='Output Txt Filename',
             description='TXT file name for Ctrl.',
             value='',
         ),
         desc.File(
             name='OutJSON',
-            label='Out JSON',
+            label='Output JSON Filename',
             description='.geojson file name for Ctrl result.',
             value='',
         ),
