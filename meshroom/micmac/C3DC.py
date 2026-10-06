@@ -163,17 +163,26 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='Out',
-            label='Output Name',
-            description='Output PLY point cloud name.',
-            value='C3DC.ply',
+            label='Output Filename',
+            description='Output PLY point cloud name (use a .pc.ply suffix to display it in the 3D Viewer).',
+            value='C3DC.pc.ply',
         ),
     ]
 
     outputs = [
         desc.File(
-            name='pointCloud',
+            name='outPointCloudPath',
             label='Dense Point Cloud',
-            description='Output PLY point cloud name.',
+            description='Output PLY point cloud (absolute path).',
+            value='{projectDirectoryValue}/{OutValue}',
+            semantic='3d',
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
+        ),
+        desc.File(
+            name='outPointCloudFilename',
+            label='Dense Point Cloud Filename',
+            description='Output PLY point cloud name, relative to the project directory.',
             value='{OutValue}',
             commandLineGroup='', # not a command line parameter
             invalidate=False,
