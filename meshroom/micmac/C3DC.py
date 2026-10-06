@@ -46,7 +46,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='Masq3D',
-            label='Masq 3D',
+            label='3D Mask',
             description='3D masq for point selection.',
             value="",
         ),
@@ -125,7 +125,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='FilePair',
-            label='FilePair',
+            label='File Pair',
             description='Explicit pairs of images (as in Tapioca).',
             value="",
             advanced=True,

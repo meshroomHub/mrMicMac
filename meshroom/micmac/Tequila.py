@@ -31,7 +31,7 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='plyName',
-            label='Mesh',
+            label='In Mesh Filename',
             description='PLY Mesh filename.',
             commandLineGroup='', # unnamed parameter
             value='',

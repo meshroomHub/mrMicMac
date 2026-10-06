@@ -26,14 +26,14 @@ class GCPConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='GCPFile',
-            label='GCP File',
+            label='In GCP File',
             description='Ground Control Points file.',
             commandLineGroup='', # unnamed parameter
             value='',
         ),
         desc.StringParam(
             name='Out',
-            label='Output Name',
+            label='Output Filename',
             description='Xml out file (Def=GCP file name with xml extension).',
             value='',
         ),

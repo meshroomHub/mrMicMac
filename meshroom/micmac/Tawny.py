@@ -105,7 +105,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='DegRap',
-            label='Deg Rap',
+            label='DegRap',
             description="Degree of rappel to initial values.",
             enabled=lambda node: node.setDegRap.value,
             value=0,
@@ -122,7 +122,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.GroupAttribute(
             name='DegRapXY',
-            label='Deg Rap X Y',
+            label='DegRapXY',
             description="Degree of rappel to initial values.",
             brackets='[]',
             joinChar=',',
@@ -278,14 +278,30 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             range=(-float('inf'), float('inf'), 0.01),
             advanced=True,
         ),
+        desc.StringParam(
+            name='Out',
+            label='Output Filename',
+            description="Name of output file (in the folder).",
+            value="Orthophotomosaic.tif",
+        ),
     ]
 
     outputs = [
         desc.File(
-            name='Out',
-            label='Orthophoto',
-            description="Name of output file (in the folder).",
+            name='outImagePath',
+            label='Orthophoto File',
+            description="Output orthophoto (absolute path).",
+            value='{projectDirectoryValue}/{orthoDirectoryValue}/{OutValue}',
+            semantic='image',
+            commandLineGroup='', # not a command line parameter
             invalidate=False,
-            value="Orthophotomosaic.tif",
+        ),
+        desc.File(
+            name='outImageFilename',
+            label='Orthophoto Filename',
+            description="Output orthophoto name, relative to the project directory.",
+            value='{orthoDirectoryValue}/{OutValue}',
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
         ),
     ]

@@ -24,7 +24,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='orientationIn',
-            label='Input Orientation',
+            label='Orientation Directory',
             description="Input Orientation.",
             commandLineGroup='', # unnamed parameter
             value="",
@@ -46,7 +46,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.GroupAttribute(
             name='SzW',
-            label='Size of the window',
+            label='Window Size',
             description='Size of the window.',
             brackets='[]',
             joinChar=',',
@@ -69,7 +69,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.GroupAttribute(
             name='NbF',
-            label='Number of Subwindows',
+            label='Number Of Subwindows',
             description='Number of Subwindows.',
             brackets='[]',
             joinChar=',',
@@ -100,7 +100,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='WBlur',
-            label='W Blur',
+            label='WBlur',
             enabled=lambda node: node.setWBlur.value,
             description='Size in ground geometry of bluring for target.',
             value=0.0,
@@ -118,14 +118,14 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ForceGray',
-            label='Force gray image',
+            label='Force Gray Image',
             description='Force gray image.',
             value=True,
             advanced=True,
         ),
         desc.BoolParam(
             name='setGama',
-            label='Set Gama',
+            label='Set Gamma',
             description='Set Gama.',
             value=False,
             advanced=True,
@@ -142,14 +142,14 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='OriMode',
-            label='Orientation type',
+            label='Orientation Type',
             description='Orientation type (GRID).',
             value='Std',
             advanced=True,
         ),
         desc.BoolParam(
             name='setZMoy',
-            label='Set ZMoy',
+            label='Set Average Z',
             description='Set ZMoy.',
             value=False,
             advanced=True,
@@ -166,7 +166,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setZInc',
-            label='Set ZInc',
+            label='Set Z Uncertainty',
             description='Set ZInc.',
             value=False,
             advanced=True,
@@ -174,8 +174,8 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='ZInc',
-            label='Incertitude on Z',
-            description='Incertitude on Z, Mandatory in PB.',
+            label='Z Uncertainty',
+            description='Uncertainty on Z, Mandatory in PB.',
             value=0.0,
             range=(0.0, 1.0, 0.1),
             advanced=True,
@@ -183,7 +183,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='Masq3D',
-            label='3D Masq',
+            label='3D Mask',
             description='3D Masq used for visibility.',
             value="",
             advanced=True,
@@ -207,18 +207,18 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='imageMeasurements2D',
-            label='imageMeasurements2D',
+            label='Image Measurements 2D',
             description="Image Measurements 2D file.",
             invalidate=False,
-            value=lambda node: node.imageMeasurementsFile.value.split(".")[0].replace('"', '')+"-S2D.xml",
+            value=lambda node: node.imageMeasurementsFile.value.replace('"', '').rsplit(".", 1)[0]+"-S2D.xml",
             commandLineGroup='', # not a command line parameter
         ),
         desc.File(
             name='imageMeasurements3D',
-            label='imageMeasurements3D',
+            label='Image Measurements 3D',
             description="Image Measurements 3D file.",
             invalidate=False,
-            value=lambda node: node.imageMeasurementsFile.value.split(".")[0].replace('"', '')+"-S3D.xml",
+            value=lambda node: node.imageMeasurementsFile.value.replace('"', '').rsplit(".", 1)[0]+"-S3D.xml",
             commandLineGroup='', # not a command line parameter
         ),
     ]

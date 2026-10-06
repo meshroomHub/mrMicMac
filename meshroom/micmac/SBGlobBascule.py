@@ -24,14 +24,14 @@ class SBGlobBascule(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='orientationIn',
-            label='Input Orientation',
+            label='In Orientation Directory',
             description="Input Orientation.",
             commandLineGroup='', # unnamed parameter
             value="",
         ),
         desc.File(
             name='imageMeasures',
-            label='Image Measures',
+            label='Image Measurements File',
             description="Image measures xml file.",
             commandLineGroup='', # unnamed parameter
             value="",
@@ -57,7 +57,7 @@ class SBGlobBascule(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='DistFS',
-            label='Dist FS',
+            label='DistFS',
             description="Distance between Ech1 and Ech2 to fix scale.",
             enabled=lambda node: node.setDistFS.value,
             value=1.0,
@@ -88,7 +88,7 @@ class SBGlobBascule(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='orientationOut',
-            label='Output Orientation',
+            label='Orientation Directory',
             description="Output orientation.",
             value="{OutValue}",
             commandLineGroup='', # unnamed parameter

@@ -54,7 +54,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='ByP',
-            label='By P',
+            label='ByP',
             description='By process.',
             enabled=lambda node: node.setByP.value,
             value=-1,

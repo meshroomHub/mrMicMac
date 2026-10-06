@@ -30,7 +30,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='OriCalib',
-            label='Ori Calib',
+            label='Calibration Directory',
             description='Orientation for calibration.',
             value='',
         ),
@@ -48,7 +48,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ExpTxt',
-            label='Exp Txt',
+            label='Tie Points In Txt',
             description='Is Homol in text format?.',
             value=False,
         ),
@@ -86,7 +86,7 @@ class Martini(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='OriOut',
-            label='Output Orientation Name',
+            label='Output Directory Name',
             description="Directory of Output Orientation.",
             value="Martini",
         ),

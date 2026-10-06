@@ -40,7 +40,7 @@ class TapiocaLine(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ExpTxt',
-            label='Export Files In Txt',
+            label='Tie Points In Txt',
             description='Export files in text format (if false binary).',
             value=False,
         ),

@@ -33,7 +33,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='targetedOrientation',
-            label='Targeted Orientation',
+            label='Output Directory Name',
             description='Targeted orientation.',
             value='OriConvert',
             commandLineGroup='', # unnamed parameter
@@ -76,14 +76,14 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='KN2I',
-            label='K N2 I',
+            label='KN2I',
             description="Key 2 compute Name Image from Id in file.",
             value='',
             advanced=True,
         ),
         desc.BoolParam(
             name='setDN',
-            label='Set D N',
+            label='Set DN',
             description="Set D N.",
             value=False,
             commandLineGroup='', # enable 'DN' attribute
@@ -91,7 +91,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='DN',
-            label='D N',
+            label='DN',
             description="Neighbooring distance for Image Graph.",
             enabled=lambda node: node.setDN.value,
             value=0.0,
@@ -126,7 +126,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setRedSizeSC',
-            label='Set Red Size S C',
+            label='Set Red Size SC',
             description="Set Red Size S C.",
             value=False,
             commandLineGroup='', # enable 'RedSizeSC' attribute
@@ -134,7 +134,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='RedSizeSC',
-            label='Red Size S C',
+            label='Red Size SC',
             description="Reduced Size of image to use for Tapioca for AltiSol (Def=1000).",
             enabled=lambda node: node.setRedSizeSC.value,
             value=0,
@@ -175,7 +175,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='RegNewBr',
-            label='Reg New Br',
+            label='RegNewBr',
             description="cost of creating a new branch (Def=0.4, prop to Regul).",
             enabled=lambda node: node.setRegNewBr.value,
             value=0.0,
@@ -218,7 +218,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setTFC',
-            label='Set T F C',
+            label='Set TFC',
             description="Set T F C.",
             value=False,
             commandLineGroup='', # enable 'TFC' attribute
@@ -226,7 +226,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='TFC',
-            label='T F C',
+            label='TFC',
             description="Teta from cap : compute orientation from speed).",
             enabled=lambda node: node.setTFC.value,
             value=False,
@@ -258,7 +258,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setSiftLR',
-            label='Set Sift L R',
+            label='Set Sift LR',
             description="Set Sift L R.",
             value=False,
             commandLineGroup='', # enable 'SiftLR' attribute
@@ -266,7 +266,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='SiftLR',
-            label='Sift L R',
+            label='Sift LR',
             description="Low Resolution of sift point for MultisCale ,when ImC (Def no multicale).",
             enabled=lambda node: node.setSiftLR.value,
             value=0,
@@ -299,7 +299,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='DelaunayCross',
-            label='Delaunay Cross',
+            label='DelaunayCross',
             description="Complete delaunay with some crossing trick arc when save couple (Def=true).",
             enabled=lambda node: node.setDelaunayCross.value,
             value=False,
@@ -307,7 +307,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setUOC',
-            label='Set U O C',
+            label='Set UOC',
             description="Set U O C.",
             value=False,
             commandLineGroup='', # enable 'UOC' attribute
@@ -315,7 +315,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='UOC',
-            label='U O C',
+            label='UOC',
             description="Use Only Center (tuning).",
             enabled=lambda node: node.setUOC.value,
             value=False,
@@ -361,7 +361,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setCBF',
-            label='Set C B F',
+            label='Set CBF',
             description="Set C B F.",
             value=False,
             commandLineGroup='', # enable 'CBF' attribute
@@ -369,7 +369,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='CBF',
-            label='C B F',
+            label='CBF',
             description="Export calib as a link to existing file.",
             enabled=lambda node: node.setCBF.value,
             value=False,
@@ -411,14 +411,14 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setOffsetXYZ',
-            label='Set Offset X Y Z',
+            label='Set Offset XYZ',
             description="Set Offset X Y Z.",
             value=False,
             commandLineGroup='', # enable 'OffsetXYZ' attribute
         ),
         desc.GroupAttribute(
             name='OffsetXYZ',
-            label='Offset X Y Z',
+            label='Offset XYZ',
             description="Offset to substract from X,Y,Z (To avoid possible round off error).",
             enabled=lambda node: node.setOffsetXYZ.value,
             brackets='[]',
@@ -450,7 +450,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='CalOFC',
-            label='Cal O F C',
+            label='Cal OFC',
             description="When specified compute initial orientation from centers (in Ori-GenFromC) Ori-${CalOFC.",
             value="",
             advanced=True,
@@ -472,14 +472,14 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='FNI',
-            label='F N I',
+            label='FNI',
             description="File to Create when non exist.",
             value="",
             advanced=True,
         ),
         desc.BoolParam(
             name='setSzW',
-            label='Set Sz W',
+            label='Set Window Size',
             description="Set Sz W.",
             value=False,
             commandLineGroup='', # enable 'SzW' attribute
@@ -487,7 +487,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='SzW',
-            label='Sz W',
+            label='Window Size',
             description="Size for visualisation.",
             enabled=lambda node: node.setSzW.value,
             value=0.0,
@@ -515,7 +515,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='orientationOut',
-            label='Targeted Orientation',
+            label='Orientation Directory',
             description='Targeted orientation.',
             value="{targetedOrientationValue}",
             commandLineGroup='', # not a command line parameter

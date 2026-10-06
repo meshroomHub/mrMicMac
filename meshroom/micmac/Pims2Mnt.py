@@ -25,15 +25,15 @@ class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='DS',
-            label='D S',
+            label='DS',
             description="Downscale, Def=1.0.",
             value=1.0,
             range=(-float('inf'), float('inf'), 0.01),
         ),
-        desc.StringParam(
+        desc.File(
             name='Repere',
             label='Repere',
-            description="Repair (Euclid or Cyl).",
+            description="Local system of coordinates (Euclid or Cyl).",
             value="",
         ),
         desc.BoolParam(
@@ -56,13 +56,13 @@ class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='UseTA',
-            label='Use T A',
+            label='Use TA',
             description="Use TA as filter when exist.",
             value=False,
         ),
         desc.FloatParam(
             name='RI',
-            label='R I',
+            label='RI',
             description="Resol Im, def=1.",
             value=1.0,
             range=(0.0, 10.0, 0.01),
@@ -83,19 +83,19 @@ class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='DirMTD',
-            label='Dir M T D',
+            label='MTD Directory Name',
             description="Subdirectory where the temporary results will be stored.",
             value="PIMs-TmpMnt/",
         ),
         desc.File(
             name='DirOrtho',
-            label='Dir Ortho',
+            label='Ortho Directory Name',
             description="Subdirectory for ortho images.",
             value="PIMs-ORTHO/",
         ),
         desc.File(
             name='DirBasc',
-            label='Dir Basc',
+            label='Basc Directory Name',
             description="Subdirectory for surface model.",
             value="PIMs-TmpBasc/",
         ),

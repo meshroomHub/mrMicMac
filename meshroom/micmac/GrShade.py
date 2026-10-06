@@ -17,7 +17,7 @@ class GrShade(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='imageFile',
-            label='imageFile',
+            label='In Image File',
             description="Image of the relief file name.",
             commandLineGroup='', # unnamed parameter
             value='',
@@ -123,19 +123,29 @@ class GrShade(node.MicmacNode, desc.CommandLineNode):
             value='',
         ),
         desc.StringParam(
-            name='suffixOut',
-            label='Output Suffix',
-            description="Suffix of the OutputFile.",
-            value='',
-            commandLineGroup='', # for output parameter
+            name='Out',
+            label='Output Filename',
+            description='Output shaded image name.',
+            value='Shade.tif',
         ),
     ]
 
     outputs = [
         desc.File(
-            name='Out',
-            label='Output File',
-            description='Output file.',
-            value='Shade{suffixOutValue}.tif',
+            name='outImagePath',
+            label='Shaded Image File',
+            description='Output shaded image (absolute path).',
+            value='{projectDirectoryValue}/{OutValue}',
+            semantic='image',
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
+        ),
+        desc.File(
+            name='outImageFilename',
+            label='Shaded Image Filename',
+            description='Output shaded image name, relative to the project directory.',
+            value='{OutValue}',
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
         ),
     ]

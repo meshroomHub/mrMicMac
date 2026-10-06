@@ -24,21 +24,21 @@ class ChgSysCo(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='orientationIn',
-            label='Input Orientation',
+            label='In Orientation Directory',
             description="Input Orientation.",
             commandLineGroup='', # unnamed parameter
             value="",
         ),
         desc.File(
             name='ChgSyst',
-            label='Changing system file',
+            label='Change System File',
             description="Changing system file.",
             commandLineGroup='', # unnamed parameter
             value="",
         ),
         desc.BoolParam(
             name='FR',
-            label='F R',
+            label='FR',
             description="Force orientation matrix to be pure rotation.",
             value=False,
         ),
@@ -54,7 +54,7 @@ class ChgSysCo(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='orientationOut',
-            label='Output Orientation',
+            label='Orientation Directory',
             description="Output orientation.",
             value="{OutValue}",
             commandLineGroup='',  # unnamed parameter

@@ -43,13 +43,13 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='DirMEC',
-            label='Dir MEC',
+            label='MEC Directory Name',
             description="Subdirectory where the results will be stored.",
             value="",
         ),
         desc.StringParam(
             name='DirOF',
-            label='Dir OF',
+            label='Ortho Directory Name',
             description="Subdirectory for ortho (Def in Ortho-DirMEC).",
             value="",
         ),
@@ -84,7 +84,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         # Advanced usage
         desc.BoolParam(
             name='setSzW',
-            label='Set Sz W',
+            label='Set Correlation Window Size',
             description="Set Sz W.",
             value=False,
             commandLineGroup='', # enable 'SzW' attribute
@@ -92,7 +92,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='SzW',
-            label='Sz W',
+            label='Correlation Window Size',
             description="Correlation window size (1 means 3x3).",
             enabled=lambda node: node.setSzW.value,
             value=1,
@@ -116,14 +116,14 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='DirPyram',
-            label='Dir Pyram',
+            label='Pyramid Directory Name',
             description="Subdirectory where the pyramids will be stored.",
             value="",
             advanced=True,
         ),
         desc.File(
             name='Masq3D',
-            label='Masq 3D',
+            label='3D Mask',
             description="Name of 3D Masq.",
             value="",
             advanced=True,
@@ -248,7 +248,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='DirTA',
-            label='Dir TA',
+            label='TA Directory',
             description="Directory of TA (for mask).",
             value="",
             advanced=True,
@@ -327,8 +327,8 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='ZInc',
-            label='Z Inc',
-            description="Incertitude on Z (in proportion of average depth, Def=0.3).",
+            label='Z Uncertainty',
+            description="Uncertainty on Z (in proportion of average depth, Def=0.3).",
             value=0.3,
             range=(0.0, 10.0, 0.01),
             advanced=True,
@@ -350,7 +350,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setZMoy',
-            label='Set ZMoy',
+            label='Set Average Z',
             description="Set ZMoy.",
             value=False,
             commandLineGroup='', # enable 'ZMoy' attribute
@@ -358,7 +358,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='ZMoy',
-            label='Z Moy',
+            label='Average Z',
             description="Average value of Z.",
             enabled=lambda node: node.setZMoy.value,
             value=0.0,

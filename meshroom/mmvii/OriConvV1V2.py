@@ -18,7 +18,7 @@ class OriConvV1V2(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='In',
-            label='Orientation MicMac V1',
+            label='In Orientation MicMac V1',
             description="Input Orientation for MMV1 Files.",
             commandLineGroup='', # unnamed parameter
             value="",

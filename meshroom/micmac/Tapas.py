@@ -34,7 +34,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='InCal',
-            label='In Calibration Directory',
+            label='Calibration Directory',
             description="Directory of Input Internal Orientation (Calibration).",
             value="",
         ),
@@ -46,7 +46,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setFocs',
-            label='set Focs',
+            label='Set Focs',
             description="Set Focs.",
             value=False,
             commandLineGroup='', # enable 'Focs' attribute
@@ -238,7 +238,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='DegRadMax',
-            label='Deg Rad Max',
+            label='DegRadMax',
             description="Max degree of radial, default model dependent.",
             enabled=lambda node: node.setDegRadMax.value,
             value=0,
@@ -371,7 +371,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='Out',
-            label='Output Name',
+            label='Output Directory Name',
             description="Directory of Output Orientation.",
             value="Tapas",
         ),

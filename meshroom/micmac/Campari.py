@@ -25,7 +25,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='inputOrientation',
-            label='Orientation Directory',
+            label='In Orientation Directory',
             description="Input Orientation.",
             commandLineGroup='', # unnamed parameter
             value="",
@@ -96,7 +96,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.GroupAttribute(
             name='IncLA',
-            label='Inc L A',
+            label='Inc LA',
             description="Inc on initial value of LA (Def not used).",
             brackets='[]',
             joinChar=',',
@@ -127,7 +127,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='PatGPS',
-            label='Pat G P S',
+            label='Pat GPS',
             description="When EmGPS, filter images where GPS is used.",
             value="",
         ),
@@ -147,13 +147,13 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='CPI1',
-            label='C P I1',
+            label='CPI1',
             description="Calib Per Im, Firt time.",
             value=False,
         ),
         desc.BoolParam(
             name='CPI2',
-            label='C P I2',
+            label='CPI2',
             description="Calib Per Im, After first time, reUsing Calib Per Im As input.",
             value=False,
         ),
@@ -177,7 +177,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='DetGCP',
-            label='Det G C P',
+            label='Det GCP',
             description="Detail on GCP (Def=false).",
             value=False,
         ),
@@ -203,7 +203,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ExpTxt',
-            label='Exp Txt',
+            label='Export In Txt',
             description="Export in text format (Def=false).",
             value=False,
         ),
@@ -233,13 +233,13 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='AcceptGB',
-            label='Accept G B',
+            label='Accept GB',
             description="Accepte new Generik Bundle image, Def=true, set false for perfect backward compatibility.",
             value=False,
         ),
         desc.StringParam(
             name='NameRTA',
-            label='Name R T A',
+            label='Name RTA',
             description="Name for save results of Rolling Test Appuis , Def=SauvRTA.xml.",
             value="",
         ),
@@ -258,7 +258,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='PPFree',
-            label='P P Free',
+            label='PP Free',
             description="Principal Point Free (Def=true).",
             value=False,
         ),
@@ -284,20 +284,20 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='DRMax',
-            label='D R Max',
+            label='DR Max',
             description="When specified degree of freedom of radial parameters.",
             value=0,
             range=(-sys.maxsize, sys.maxsize, 1),
         ),
         desc.BoolParam(
             name='LibCP',
-            label='Lib C P',
+            label='Lib CP',
             description="Free distorsion center, Def context dependant.",
             value=False,
         ),
         desc.BoolParam(
             name='LibCD',
-            label='Lib C D',
+            label='Lib CD',
             description="Free distorsion center, Def context dependant. Principal Point should be also free if CD is free.",
             value=False,
         ),
@@ -328,7 +328,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='RatioMaxDistCS',
-            label='Ratio Max Dist C S',
+            label='Ratio Max Dist CS',
             description="Ratio max of distance P-Center.",
             value=0.0,
             range=(-float('inf'), float('inf'), 0.01),
@@ -342,21 +342,21 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='PdsGBRot',
-            label='Pds G B Rot',
+            label='Pds GB Rot',
             description="Weighting of the global rotation constraint (Generic bundle Def=0.002).",
             value=0.0,
             range=(-float('inf'), float('inf'), 0.01),
         ),
         desc.FloatParam(
             name='PdsGBId',
-            label='Pds G B Id',
+            label='Pds GB Id',
             description="Weighting of the global deformation constraint (Generic bundle Def=0.0).",
             value=0.0,
             range=(-float('inf'), float('inf'), 0.01),
         ),
         desc.FloatParam(
             name='PdsGBIter',
-            label='Pds G B Iter',
+            label='Pds GB Iter',
             description="Weighting of the change of the global rotation constraint between iterations (Generic bundle Def=1e-6).",
             value=0.0,
             range=(-float('inf'), float('inf'), 0.01),
@@ -382,20 +382,20 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='StrDebugVTP',
-            label='Str Debug V T P',
+            label='Str Debug VTP',
             description="String of debug for tie points.",
             value="",
         ),
         desc.IntParam(
             name='NAWNF',
-            label='N A W N F',
+            label='NAWNF',
             description="Num Attribute for Weigthing in New Format.",
             value=0,
             range=(-sys.maxsize, sys.maxsize, 1),
         ),
         desc.FloatParam(
             name='WOP',
-            label='W O P',
+            label='WOP',
             description="Weight of plane observation on centers.",
             value=0.0,
             range=(-float('inf'), float('inf'), 0.01),

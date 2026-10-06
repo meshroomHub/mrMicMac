@@ -25,7 +25,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='HomolIn',
-            label='Homol In',
+            label='In Homol Directory',
             description="Input Homol directory suffix.",
             value="",
         ),
@@ -44,7 +44,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ExpTxt',
-            label='Exp Txt',
+            label='Tie Points In Txt',
             description="Ascii format for in and out, def=false.",
             value=False,
         ),
@@ -117,7 +117,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='DivPH',
-            label='Div P H',
+            label='Div PH',
             description="in exported network, denominator to decrease the number of tie point which is used for displaying strength of a relation between 2 images, def 10.",
             value=0,
             range=(-sys.maxsize, sys.maxsize, 1),
@@ -133,7 +133,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='HomolOut',
-            label='Homol Out',
+            label='Homol Directory',
             description="Output Homol directory suffix (default: _mini).",
             value="_mini",
         ),

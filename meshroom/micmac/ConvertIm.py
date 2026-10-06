@@ -17,14 +17,14 @@ class ConvertIm(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='image',
-            label='Image',
+            label='In Image File',
             description='Image.',
             commandLineGroup='', # unnamed parameter
             value="",
         ),
         desc.StringParam(
             name='Out',
-            label='Output Name',
+            label='Output Filename',
             description="Output image name (Def=input+_Out).",
             value="",
         ),
@@ -335,10 +335,19 @@ class ConvertIm(node.MicmacNode, desc.CommandLineNode):
 
     outputs = [
         desc.File(
-            name='outputImage',
-            label='Output Image',
-            description="Output image.",
-            value=lambda node: node.Out.value or node.image.value.replace('"', '').rsplit(".", 1)[0] + '_Out.' + (node.Ext.value or 'tif'),
+            name='outImageFilename',
+            label='Image Filename',
+            description="Output image name, relative to the project directory.",
+            value=lambda node: node.Out.value or ((node.Ext.value or '_Out') + '.').join(node.image.value.replace('"', '').rsplit('.', 1)),
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
+        ),
+        desc.File(
+            name='outImagePath',
+            label='Image File',
+            description="Output image (absolute path).",
+            value='{projectDirectoryValue}/{outImageFilenameValue}',
+            semantic='image',
             commandLineGroup='', # not a command line parameter
             invalidate=False,
         ),
