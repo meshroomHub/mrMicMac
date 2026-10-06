@@ -31,7 +31,7 @@ class ChgSysCo(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='ChgSyst',
-            label='Changing system file',
+            label='Change System File',
             description="Changing system file.",
             commandLineGroup='', # unnamed parameter
             value="",

@@ -125,7 +125,7 @@ class C3DC(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='FilePair',
-            label='FilePair',
+            label='File Pair',
             description='Explicit pairs of images (as in Tapioca).',
             value="",
             advanced=True,

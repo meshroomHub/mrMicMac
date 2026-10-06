@@ -46,7 +46,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setFocs',
-            label='set Focs',
+            label='Set Focs',
             description="Set Focs.",
             value=False,
             commandLineGroup='', # enable 'Focs' attribute

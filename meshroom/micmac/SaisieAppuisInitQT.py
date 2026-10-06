@@ -69,7 +69,7 @@ class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.GroupAttribute(
             name='NbF',
-            label='Number of Subwindows',
+            label='Number Of Subwindows',
             description='Number of Subwindows.',
             brackets='[]',
             joinChar=',',
@@ -99,7 +99,7 @@ class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='ForceGray',
-            label='Force gray image',
+            label='Force Gray Image',
             description='Force gray image.',
             value=True,
             advanced=True,
@@ -123,7 +123,7 @@ class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='OriMode',
-            label='Orientation type',
+            label='Orientation Type',
             description='Orientation type (GRID).',
             value='Std',
             advanced=True,
@@ -167,7 +167,7 @@ class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
     outputs = [
         desc.File(
             name='imageMeasurements2D',
-            label='imageMeasurements2D',
+            label='Image Measurements 2D',
             description="Image Measurements 2D file.",
             invalidate=False,
             value=lambda node: node.imageMeasurementsFile.value.split(".")[0].replace('"', '')+"-S2D.xml",
@@ -175,7 +175,7 @@ class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='imageMeasurements3D',
-            label='imageMeasurements3D',
+            label='Image Measurements 3D',
             description="Image Measurements 3D file.",
             invalidate=False,
             value=lambda node: node.imageMeasurementsFile.value.split(".")[0].replace('"', '')+"-S3D.xml",
