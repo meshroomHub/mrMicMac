@@ -1,6 +1,6 @@
 {
     "header": {
-        "releaseVersion": "2026.1.0+develop",
+        "releaseVersion": "2026.1.0",
         "fileVersion": "2.1",
         "nodesVersions": {
             "AperiCloud": "1.2.0",
@@ -18,8 +18,8 @@
         "AperiCloud_1": {
             "nodeType": "AperiCloud",
             "position": [
-                800,
-                0
+                832,
+                -61
             ],
             "inputs": {
                 "projectDirectory": "{Tapas_1.projectDirectory}",
@@ -45,8 +45,8 @@
         "C3DC_1": {
             "nodeType": "C3DC",
             "position": [
-                800,
-                160
+                833,
+                70
             ],
             "inputs": {
                 "projectDirectory": "{Tapas_1.projectDirectory}",
@@ -71,6 +71,9 @@
             ],
             "inputs": {
                 "input": "{CameraInit_1.output}"
+            },
+            "internalInputs": {
+                "color": "#602d2d"
             }
         },
         "Tapas_1": {
@@ -100,14 +103,14 @@
         "Tequila_1": {
             "nodeType": "Tequila",
             "position": [
-                1200,
-                0
+                1248,
+                71
             ],
             "inputs": {
                 "projectDirectory": "{TiPunch_1.projectDirectory}",
-                "imagePattern": ".*JPG",
+                "imagePattern": "{TiPunch_1.Pattern}",
                 "orientationDir": "{C3DC_1.orientationDir}",
-                "plyName": "{TiPunch_1.Out}",
+                "plyName": "{TiPunch_1.outMeshFilename}",
                 "Iter": 15,
                 "Sz": 4000
             }
@@ -115,13 +118,13 @@
         "TiPunch_1": {
             "nodeType": "TiPunch",
             "position": [
-                1000,
-                0
+                1042,
+                69
             ],
             "inputs": {
                 "projectDirectory": "{C3DC_1.projectDirectory}",
                 "Pattern": "{C3DC_1.imagePattern}",
-                "plyName": "{C3DC_1.pointCloud}",
+                "plyName": "{C3DC_1.outPointCloudFilename}",
                 "Mode": "{C3DC_1.mode}"
             }
         }

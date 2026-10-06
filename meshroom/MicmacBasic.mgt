@@ -1,6 +1,6 @@
 {
     "header": {
-        "releaseVersion": "2026.1.0+develop",
+        "releaseVersion": "2026.1.0",
         "fileVersion": "2.1",
         "nodesVersions": {
             "AperiCloud": "1.2.0",
@@ -16,8 +16,8 @@
         "AperiCloud_1": {
             "nodeType": "AperiCloud",
             "position": [
-                800,
-                0
+                875,
+                -52
             ],
             "inputs": {
                 "projectDirectory": "{Tapas_1.projectDirectory}",
@@ -43,8 +43,8 @@
         "C3DC_1": {
             "nodeType": "C3DC",
             "position": [
-                800,
-                160
+                874,
+                75
             ],
             "inputs": {
                 "projectDirectory": "{Tapas_1.projectDirectory}",
@@ -70,6 +70,9 @@
             ],
             "inputs": {
                 "input": "{CameraInit_1.output}"
+            },
+            "internalInputs": {
+                "color": "#602d2d"
             }
         },
         "Tapas_1": {
