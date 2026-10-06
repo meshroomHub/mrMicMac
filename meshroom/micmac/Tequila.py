@@ -128,14 +128,30 @@ class Tequila(node.MicmacNode, desc.CommandLineNode):
             exclusive=True,
             advanced=True,
         ),
+        desc.StringParam(
+            name='Out',
+            label='Output Filename',
+            description='Output PLY textured mesh name.',
+            value='Tequila.ply',
+        ),
     ]
 
     outputs = [
         desc.File(
-            name='Out',
+            name='outMeshPath',
             label='Textured Mesh',
-            description='Output PLY point cloud name.',
-            value='Tequila.ply',
+            description='Output PLY textured mesh (absolute path).',
+            value='{projectDirectoryValue}/{OutValue}',
+            semantic='3d',
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
+        ),
+        desc.File(
+            name='outMeshFilename',
+            label='Textured Mesh Filename',
+            description='Output PLY textured mesh name, relative to the project directory.',
+            value='{OutValue}',
+            commandLineGroup='', # not a command line parameter
             invalidate=False,
         ),
     ]
