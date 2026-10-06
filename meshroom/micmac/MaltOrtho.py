@@ -84,7 +84,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         # Advanced usage
         desc.BoolParam(
             name='setSzW',
-            label='Set Sz W',
+            label='Set Correlation Window Size',
             description="Set Sz W.",
             value=False,
             commandLineGroup='', # enable 'SzW' attribute
@@ -350,7 +350,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setZMoy',
-            label='Set ZMoy',
+            label='Set Average Z',
             description="Set ZMoy.",
             value=False,
             commandLineGroup='', # enable 'ZMoy' attribute

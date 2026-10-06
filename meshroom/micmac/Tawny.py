@@ -105,7 +105,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='DegRap',
-            label='Deg Rap',
+            label='DegRap',
             description="Degree of rappel to initial values.",
             enabled=lambda node: node.setDegRap.value,
             value=0,
@@ -122,7 +122,7 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.GroupAttribute(
             name='DegRapXY',
-            label='Deg Rap X Y',
+            label='DegRapXY',
             description="Degree of rappel to initial values.",
             brackets='[]',
             joinChar=',',

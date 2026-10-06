@@ -106,7 +106,7 @@ class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setGama',
-            label='Set Gama',
+            label='Set Gamma',
             description='Set Gama.',
             value=False,
             advanced=True,
@@ -130,7 +130,7 @@ class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setZMoy',
-            label='Set ZMoy',
+            label='Set Average Z',
             description='Set ZMoy.',
             value=False,
             advanced=True,
@@ -147,7 +147,7 @@ class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setZInc',
-            label='Set ZInc',
+            label='Set Z Uncertainty',
             description='Set ZInc.',
             value=False,
             advanced=True,

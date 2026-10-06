@@ -73,7 +73,7 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setName',
-            label='Set Name',
+            label='Set Output Filename',
             description="Set name.",
             value=True,
             commandLineGroup='', # enable 'Name' attribute

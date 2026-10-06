@@ -175,7 +175,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='RegNewBr',
-            label='Reg New Br',
+            label='RegNewBr',
             description="cost of creating a new branch (Def=0.4, prop to Regul).",
             enabled=lambda node: node.setRegNewBr.value,
             value=0.0,
@@ -299,7 +299,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='DelaunayCross',
-            label='Delaunay Cross',
+            label='DelaunayCross',
             description="Complete delaunay with some crossing trick arc when save couple (Def=true).",
             enabled=lambda node: node.setDelaunayCross.value,
             value=False,
@@ -479,7 +479,7 @@ class OriConvert(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setSzW',
-            label='Set Sz W',
+            label='Set Window Size',
             description="Set Sz W.",
             value=False,
             commandLineGroup='', # enable 'SzW' attribute

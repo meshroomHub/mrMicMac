@@ -100,7 +100,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.FloatParam(
             name='WBlur',
-            label='W Blur',
+            label='WBlur',
             enabled=lambda node: node.setWBlur.value,
             description='Size in ground geometry of bluring for target.',
             value=0.0,
@@ -125,7 +125,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setGama',
-            label='Set Gama',
+            label='Set Gamma',
             description='Set Gama.',
             value=False,
             advanced=True,
@@ -149,7 +149,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setZMoy',
-            label='Set ZMoy',
+            label='Set Average Z',
             description='Set ZMoy.',
             value=False,
             advanced=True,
@@ -166,7 +166,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.BoolParam(
             name='setZInc',
-            label='Set ZInc',
+            label='Set Z Uncertainty',
             description='Set ZInc.',
             value=False,
             advanced=True,

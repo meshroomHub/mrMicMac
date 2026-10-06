@@ -238,7 +238,7 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.IntParam(
             name='DegRadMax',
-            label='Deg Rad Max',
+            label='DegRadMax',
             description="Max degree of radial, default model dependent.",
             enabled=lambda node: node.setDegRadMax.value,
             value=0,
