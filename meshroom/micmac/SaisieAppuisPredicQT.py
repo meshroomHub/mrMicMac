@@ -210,7 +210,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
             label='Image Measurements 2D',
             description="Image Measurements 2D file.",
             invalidate=False,
-            value=lambda node: node.imageMeasurementsFile.value.split(".")[0].replace('"', '')+"-S2D.xml",
+            value=lambda node: node.imageMeasurementsFile.value.replace('"', '').rsplit(".", 1)[0]+"-S2D.xml",
             commandLineGroup='', # not a command line parameter
         ),
         desc.File(
@@ -218,7 +218,7 @@ class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
             label='Image Measurements 3D',
             description="Image Measurements 3D file.",
             invalidate=False,
-            value=lambda node: node.imageMeasurementsFile.value.split(".")[0].replace('"', '')+"-S3D.xml",
+            value=lambda node: node.imageMeasurementsFile.value.replace('"', '').rsplit(".", 1)[0]+"-S3D.xml",
             commandLineGroup='', # not a command line parameter
         ),
     ]
