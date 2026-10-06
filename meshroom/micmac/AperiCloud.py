@@ -134,18 +134,26 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='Out',
-            label='Point Cloud',
-            description='Output PLY point cloud name.',
-            value='AperiCloud.ply',
-            invalidate=False,
+            label='Output Filename',
+            description='Output PLY point cloud name (use a .pc.ply suffix to display it in the 3D Viewer).',
+            value='AperiCloud.pc.ply',
         ),
     ]
 
     outputs = [
         desc.File(
-            name='pointCloud',
+            name='outPointCloudPath',
             label='Sparse Point Cloud',
-            description='Output PLY point cloud name.',
+            description='Output PLY point cloud (absolute path).',
+            value='{projectDirectoryValue}/{OutValue}',
+            semantic='3d',
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
+        ),
+        desc.File(
+            name='outPointCloudFilename',
+            label='Sparse Point Cloud Filename',
+            description='Output PLY point cloud name, relative to the project directory.',
             value='{OutValue}',
             commandLineGroup='', # not a command line parameter
             invalidate=False,

@@ -77,14 +77,30 @@ class TiPunch(node.MicmacNode, desc.CommandLineNode):
             value=True,
             advanced=True,
         ),
+        desc.StringParam(
+            name='Out',
+            label='Output Filename',
+            description='Output PLY mesh name.',
+            value='TiPunch.ply',
+        ),
     ]
 
     outputs = [
         desc.File(
-            name='Out',
+            name='outMeshPath',
             label='Mesh',
-            description='Output PLY mesh name.',
-            value='TiPunch.ply',
+            description='Output PLY mesh (absolute path).',
+            value='{projectDirectoryValue}/{OutValue}',
+            semantic='3d',
+            commandLineGroup='', # not a command line parameter
+            invalidate=False,
+        ),
+        desc.File(
+            name='outMeshFilename',
+            label='Mesh Filename',
+            description='Output PLY mesh name, relative to the project directory.',
+            value='{OutValue}',
+            commandLineGroup='', # not a command line parameter
             invalidate=False,
         ),
     ]
