@@ -123,6 +123,5 @@ class GCPConvert(node.MicmacNode, desc.CommandLineNode):
             description='Output Ground Control Points xml file.',
             value=lambda node: node.Out.value or node.GCPFile.value.replace('"', '').rsplit(".", 1)[0] + '.xml',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]

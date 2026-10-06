@@ -384,6 +384,5 @@ class Tapas(node.MicmacNode, desc.CommandLineNode):
             description="Directory of Output Orientation.",
             value="{OutValue}",
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]

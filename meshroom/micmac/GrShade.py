@@ -138,7 +138,6 @@ class GrShade(node.MicmacNode, desc.CommandLineNode):
             value='{projectDirectoryValue}/{OutValue}',
             semantic='image',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
         desc.File(
             name='outImageFilename',
@@ -146,6 +145,5 @@ class GrShade(node.MicmacNode, desc.CommandLineNode):
             description='Output shaded image name, relative to the project directory.',
             value='{OutValue}',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]

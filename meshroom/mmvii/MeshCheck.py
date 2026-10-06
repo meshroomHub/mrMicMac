@@ -57,7 +57,6 @@ class MeshCheck(node.MicmacNode, desc.CommandLineNode):
             value="{projectDirectoryValue}/{OutValue}",
             semantic='3d',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
         desc.File(
             name='outMeshFilename',
@@ -65,6 +64,5 @@ class MeshCheck(node.MicmacNode, desc.CommandLineNode):
             description="Name of output corrected mesh, relative to the project directory.",
             value="{OutValue}",
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]

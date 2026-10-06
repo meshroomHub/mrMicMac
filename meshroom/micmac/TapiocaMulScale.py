@@ -115,6 +115,5 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             label='Homol Directory', # Directory Postfix
             description='Homol Directory.',
             value="MulScale",
-            invalidate=False,
         ),
     ]

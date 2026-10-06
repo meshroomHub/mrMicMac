@@ -148,7 +148,6 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             value='{projectDirectoryValue}/{OutValue}',
             semantic='3d',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
         desc.File(
             name='outPointCloudFilename',
@@ -156,6 +155,5 @@ class AperiCloud(node.MicmacNode, desc.CommandLineNode):
             description='Output PLY point cloud name, relative to the project directory.',
             value='{OutValue}',
             commandLineGroup='', # not a command line parameter
-            invalidate=False,
         ),
     ]
