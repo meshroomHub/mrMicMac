@@ -83,19 +83,19 @@ class Pims2Mnt(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.File(
             name='DirMTD',
-            label='Dir M T D',
+            label='MTD Directory Name',
             description="Subdirectory where the temporary results will be stored.",
             value="PIMs-TmpMnt/",
         ),
         desc.File(
             name='DirOrtho',
-            label='Dir Ortho',
+            label='Ortho Directory Name',
             description="Subdirectory for ortho images.",
             value="PIMs-ORTHO/",
         ),
         desc.File(
             name='DirBasc',
-            label='Dir Basc',
+            label='Basc Directory Name',
             description="Subdirectory for surface model.",
             value="PIMs-TmpBasc/",
         ),

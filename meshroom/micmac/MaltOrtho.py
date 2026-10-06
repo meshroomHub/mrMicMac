@@ -43,13 +43,13 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='DirMEC',
-            label='Dir MEC',
+            label='MEC Directory Name',
             description="Subdirectory where the results will be stored.",
             value="",
         ),
         desc.StringParam(
             name='DirOF',
-            label='Dir OF',
+            label='Ortho Directory Name',
             description="Subdirectory for ortho (Def in Ortho-DirMEC).",
             value="",
         ),
@@ -116,7 +116,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='DirPyram',
-            label='Dir Pyram',
+            label='Pyramid Directory Name',
             description="Subdirectory where the pyramids will be stored.",
             value="",
             advanced=True,
@@ -248,7 +248,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
         ),
         desc.StringParam(
             name='DirTA',
-            label='Dir TA',
+            label='TA Directory',
             description="Directory of TA (for mask).",
             value="",
             advanced=True,
