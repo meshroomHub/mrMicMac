@@ -6,6 +6,7 @@
             "AperiCloud": "1.2.0",
             "C3DC": "1.2.0",
             "CameraInit": "12.1",
+            "ConvertMesh": "2.0",
             "MicMacProject": "1.2.0",
             "Tapas": "1.2.0",
             "TapiocaMulScale": "1.2.0",
@@ -18,8 +19,8 @@
         "AperiCloud_1": {
             "nodeType": "AperiCloud",
             "position": [
-                832,
-                -61
+                821,
+                163
             ],
             "inputs": {
                 "projectDirectory": "{Tapas_1.projectDirectory}",
@@ -42,11 +43,25 @@
                 "nodeHeight": 251
             }
         },
+        "Backdrop_2": {
+            "nodeType": "Backdrop",
+            "position": [
+                1467,
+                -154
+            ],
+            "internalInputs": {
+                "comment": "Convert the mesh and textured mesh from PLY to OBJ for visualization.\n\nDouble-click on nodes to open in the 3D viewer.",
+                "label": "Convert PLY Mesh to OBJ",
+                "fontSize": 10,
+                "nodeWidth": 327,
+                "nodeHeight": 359
+            }
+        },
         "C3DC_1": {
             "nodeType": "C3DC",
             "position": [
-                833,
-                70
+                818,
+                1
             ],
             "inputs": {
                 "projectDirectory": "{Tapas_1.projectDirectory}",
@@ -62,6 +77,34 @@
                 2
             ],
             "inputs": {}
+        },
+        "ConvertMesh_1": {
+            "nodeType": "ConvertMesh",
+            "position": [
+                1544,
+                -31
+            ],
+            "inputs": {
+                "inputMesh": "{TiPunch_1.outMeshPath}"
+            },
+            "internalInputs": {
+                "label": "Mesh",
+                "color": "#094400"
+            }
+        },
+        "ConvertMesh_2": {
+            "nodeType": "ConvertMesh",
+            "position": [
+                1544,
+                86
+            ],
+            "inputs": {
+                "inputMesh": "{Tequila_1.outMeshPath}"
+            },
+            "internalInputs": {
+                "label": "TexturedMesh",
+                "color": "#094400"
+            }
         },
         "MicMacProject_1": {
             "nodeType": "MicMacProject",
@@ -103,8 +146,8 @@
         "Tequila_1": {
             "nodeType": "Tequila",
             "position": [
-                1248,
-                71
+                1251,
+                98
             ],
             "inputs": {
                 "projectDirectory": "{TiPunch_1.projectDirectory}",
@@ -118,8 +161,8 @@
         "TiPunch_1": {
             "nodeType": "TiPunch",
             "position": [
-                1042,
-                69
+                1035,
+                -19
             ],
             "inputs": {
                 "projectDirectory": "{C3DC_1.projectDirectory}",
