@@ -20,7 +20,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             label='Image Pattern',
             description='Image Pattern.',
             commandLineGroup='', # unnamed parameter
-            value=".*.(jpg|jpeg|JPG|JPEG|png|PNG|tif|tiff|TIF|TIFF)",
+            value="[a-zA-Z0-9_.-]*[.](jpg|jpeg|JPG|JPEG|png|PNG)",
         ),
         desc.File(
             name='Pat2',

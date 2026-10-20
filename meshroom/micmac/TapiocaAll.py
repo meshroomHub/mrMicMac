@@ -19,7 +19,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            value='.*.(jpg|jpeg|JPG|JPEG|png|PNG|tif|tiff|TIF|TIFF)',
+            value='[a-zA-Z0-9_.-]*[.](jpg|jpeg|JPG|JPEG|png|PNG)',
             commandLineGroup='', # unnamed parameter
         ),
         desc.File(
