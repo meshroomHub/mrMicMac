@@ -91,6 +91,13 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
             value=False,
             advanced=True,
         ),
+        desc.StringParam(
+            name='Out',
+            label='Output Directory Name',
+            description="Name or the directory of the output orientation file.",
+            commandLineGroup='', # for output parameter
+            value="GCPBasc",
+        ),
     ]
 
     outputs = [
@@ -99,6 +106,6 @@ class GCPBascule(node.MicmacNode, desc.CommandLineNode):
             label='Orientation Directory',
             description="Output orientation.",
             commandLineGroup='', # unnamed parameter
-            value="GCPBasc",
+            value="{OutValue}",
         ),
     ]

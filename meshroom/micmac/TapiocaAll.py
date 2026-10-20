@@ -19,7 +19,7 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             name='imagePattern',
             label='Image Pattern',
             description='Image Pattern.',
-            value='.*.(jpg|jpeg|JPG|JPEG|png|PNG|tif|tiff|TIF|TIFF)',
+            value='[a-zA-Z0-9_.-]*[.](jpg|jpeg|JPG|JPEG|png|PNG)',
             commandLineGroup='', # unnamed parameter
         ),
         desc.File(
@@ -91,6 +91,13 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             exclusive=True,
             advanced=True,
         ),
+        desc.StringParam(
+            name='HomolPostFix',
+            label='Homol Directory Name',
+            description='Postfix of the output Homol directory (empty for "Homol").',
+            value="All",
+            commandLineGroup='', # for output parameter
+        ),
     ]
 
     outputs = [
@@ -98,6 +105,6 @@ class TapiocaAll(node.MicmacNode, desc.CommandLineNode):
             name='PostFix',
             label='Homol Directory', # Directory Postfix
             description='Homol Directory.',
-            value="All",
+            value="{HomolPostFixValue}",
         ),
     ]

@@ -20,7 +20,7 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             label='Image Pattern',
             description='Image Pattern.',
             commandLineGroup='', # unnamed parameter
-            value=".*.(jpg|jpeg|JPG|JPEG|png|PNG|tif|tiff|TIF|TIFF)",
+            value="[a-zA-Z0-9_.-]*[.](jpg|jpeg|JPG|JPEG|png|PNG)",
         ),
         desc.File(
             name='Pat2',
@@ -107,6 +107,13 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             exclusive=True,
             advanced=True,
         ),
+        desc.StringParam(
+            name='HomolPostFix',
+            label='Homol Directory Name',
+            description='Postfix of the output Homol directory (empty for "Homol").',
+            value="MulScale",
+            commandLineGroup='', # for output parameter
+        ),
     ]
 
     outputs = [
@@ -114,6 +121,6 @@ class TapiocaMulScale(node.MicmacNode, desc.CommandLineNode):
             name='PostFix',
             label='Homol Directory', # Directory Postfix
             description='Homol Directory.',
-            value="MulScale",
+            value="{HomolPostFixValue}",
         ),
     ]

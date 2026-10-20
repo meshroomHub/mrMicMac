@@ -70,7 +70,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
             name='setRegul',
             label='Set Regul',
             description="Set Regul.",
-            value=False,
+            value=True,
             commandLineGroup='', # enable 'Regul' attribute
         ),
         desc.FloatParam(
@@ -95,7 +95,7 @@ class MaltOrtho(node.MicmacNode, desc.CommandLineNode):
             label='Correlation Window Size',
             description="Correlation window size (1 means 3x3).",
             enabled=lambda node: node.setSzW.value,
-            value=1,
+            value=2,
             range=(1, 20, 1),
             advanced=True,
         ),

@@ -3,7 +3,7 @@ __version__ = "1.2.0"
 from meshroom.core import desc
 from ..common import node
 
-class SaisieAppuisInitQT(node.MicmacNode, desc.CommandLineNode):
+class SaisieAppuisInitQT(node.MicmacSaisieNode, desc.CommandLineNode):
     commandLine = 'mm3d SaisieAppuisInitQT {imagePatternValue} {orientationInValue} {pointNamesValue} {imageMeasurementsFileValue} {allParams}'
     documentation = 'SaisieAppuisInitQT: Interactive tool for initial capture of GCP image measurements.'
 
