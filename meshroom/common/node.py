@@ -21,24 +21,35 @@ class MicmacNode:
         cmdline = re.sub(r'(\w+=\[\])', lambda m: '', cmdline)                                               # remove value with empty list (optional parameter)
         return cmdline
 
+    def buildCommandLines(self, chunk):
+        '''
+        Command lines to execute for a chunk (one by default, override to run several)
+        '''
+        return [self.buildCommandLine(chunk)]
+
     def processChunk(self, chunk):
         try:
             with open(chunk.logFile, 'w') as logF:
-                cmd = self.buildCommandLine(chunk) + ' @ExitOnBrkp @ExitOnWarn @ExitOnNan' # build command line and add MicMac enter key flags
+                cmds = [cmd + ' @ExitOnBrkp @ExitOnWarn @ExitOnNan' for cmd in self.buildCommandLines(chunk)] # build command lines and add MicMac enter key flags
                 projectDir = chunk.node._expVars['projectDirectoryValue'].replace('"','')  # get project directory from parameter (and remove quotes)
-                chunk.status.commandLine = cmd
+                chunk.status.commandLine = '\n'.join(cmds)
                 chunk.saveStatusFile()
-                print(' - commandLine: {}'.format(cmd))
                 print(' - logFile: {}'.format(chunk.logFile))
                 print(' - projectDir: {}'.format(projectDir))
-                chunk.subprocess = psutil.Popen(shlex.split(cmd), stdout=logF, stderr=logF, cwd=projectDir) # execute in project directory
-                chunk.statThread.proc = chunk.subprocess
-                stdout, stderr = chunk.subprocess.communicate()
-                chunk.subprocess.wait()
+                returnCode = 0
+                for cmd in cmds:
+                    print(' - commandLine: {}'.format(cmd))
+                    chunk.subprocess = psutil.Popen(shlex.split(cmd), stdout=logF, stderr=logF, cwd=projectDir) # execute in project directory
+                    chunk.statThread.proc = chunk.subprocess
+                    stdout, stderr = chunk.subprocess.communicate()
+                    chunk.subprocess.wait()
 
-                chunk.status.returnCode = chunk.subprocess.returncode
+                    returnCode = chunk.subprocess.returncode
+                    chunk.status.returnCode = returnCode
+                    if returnCode != 0:
+                        break # stop at the first failing command
 
-            if chunk.subprocess.returncode != 0:
+            if returnCode != 0:
                 with open(chunk.logFile, 'r') as logF:
                     logContent = ''.join(logF.readlines())
                 raise RuntimeError('Error on node "{}":\nLog:\n{}'.format(chunk.name, logContent))
