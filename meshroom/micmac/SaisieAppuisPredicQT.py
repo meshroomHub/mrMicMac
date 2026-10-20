@@ -3,7 +3,7 @@ __version__ = "1.2.0"
 from meshroom.core import desc
 from ..common import node
 
-class SaisieAppuisPredicQT(node.MicmacNode, desc.CommandLineNode):
+class SaisieAppuisPredicQT(node.MicmacSaisieNode, desc.CommandLineNode):
     commandLine = 'mm3d SaisieAppuisPredicQT {imagePatternValue} {orientationInValue} {groundControlPointsFileValue} {imageMeasurementsFileValue} {allParams}'
     documentation = 'SaisieAppuisPredicQT: Interactive tool for assisted (predictive) capture of GCP image measurements.'
 

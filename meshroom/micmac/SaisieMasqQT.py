@@ -3,7 +3,7 @@ __version__ = "1.2.0"
 from meshroom.core import desc
 from ..common import node
 
-class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
+class SaisieMasqQT(node.MicmacSaisieNode, desc.CommandLineNode):
     commandLine = 'mm3d SaisieMasqQT {filePathValue} {allParams}'
     documentation = 'SaisieMasqQT: Interactive tool to draw a 2D mask on an image or a 3D mask on a point cloud.'
 
@@ -139,3 +139,10 @@ class SaisieMasqQT(node.MicmacNode, desc.CommandLineNode):
             commandLineGroup='', # not a command line parameter
         ),
     ]
+
+    def outputsToCheck(self, node):
+        '''
+        Only the output of the current mode: 3D selection for a PLY or camera XML input, 2D mask for an image
+        '''
+        is3D = node.filePath.value.replace('"', '').lower().endswith(('.ply', '.xml'))
+        return [node.outputSelection if is3D else node.outputMask]
