@@ -25,13 +25,13 @@ class ConvertIm(node.MicmacNode, desc.CommandLineNode):
         desc.StringParam(
             name='Out',
             label='Output Filename',
-            description="Output image name (Def=input+_Out).",
+            description="Output image name, used as is (Def=input+_Out.tif).",
             value="",
         ),
         desc.StringParam(
             name='Ext',
-            label='Extension',
-            description="Output image extension (Def=tif).",
+            label='Output Postfix',
+            description="Postfix added to the input name to build the output image name when no output filename is set (Def=_Out), output is always a tif.",
             value="",
         ),
         desc.BoolParam(
@@ -338,7 +338,7 @@ class ConvertIm(node.MicmacNode, desc.CommandLineNode):
             name='outImageFilename',
             label='Image Filename',
             description="Output image name, relative to the project directory.",
-            value=lambda node: node.Out.value or ((node.Ext.value or '_Out') + '.').join(node.image.value.replace('"', '').rsplit('.', 1)),
+            value=lambda node: node.Out.value or node.image.value.replace('"', '').rsplit('.', 1)[0] + (node.Ext.value or '_Out') + '.tif',
             commandLineGroup='', # not a command line parameter
         ),
         desc.File(
