@@ -61,6 +61,13 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             value=0.6,
             range=(0.1, 1.0, 0.1),
         ),
+        desc.StringParam(
+            name='HomolPostFix',
+            label='Homol Directory Name',
+            description='Postfix of the output Homol directory (empty for "Homol").',
+            value="Tapioca",
+            commandLineGroup='', # for output parameter
+        ),
     ]
 
     outputs = [
@@ -68,6 +75,6 @@ class TapiocaFile(node.MicmacNode, desc.CommandLineNode):
             name='PostFix',
             label='Homol Directory', # Directory Postfix
             description='Homol Directory.',
-            value="Tapioca",
+            value="{HomolPostFixValue}",
         ),
     ]

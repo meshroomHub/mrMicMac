@@ -128,6 +128,13 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
             description="Do write output homol dir, def=true.",
             value=True,
         ),
+        desc.StringParam(
+            name='HomolOutPostFix',
+            label='Out Homol Directory Name',
+            description='Output Homol directory suffix (default: _mini).',
+            value="_mini",
+            commandLineGroup='', # for output parameter
+        ),
     ]
 
     outputs = [
@@ -135,7 +142,7 @@ class Schnaps(node.MicmacNode, desc.CommandLineNode):
             name='HomolOut',
             label='Homol Directory',
             description="Output Homol directory suffix (default: _mini).",
-            value="_mini",
+            value="{HomolOutPostFixValue}",
         ),
         desc.File(
             name='PoubelleName',
