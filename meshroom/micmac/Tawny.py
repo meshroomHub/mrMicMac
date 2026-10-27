@@ -302,4 +302,11 @@ class Tawny(node.MicmacNode, desc.CommandLineNode):
             value='{orthoDirectoryValue}/{OutValue}',
             commandLineGroup='', # not a command line parameter
         ),
+        desc.File(
+            name='outImagePattern',
+            label='Orthophoto Pattern',
+            description="Pattern of the output orthophoto and its tiles (when split by Tawny), relative to the project directory.",
+            value=lambda node: node.orthoDirectory.value.replace('"', '') + '/' + node.Out.value.replace('"', '').rsplit('.', 1)[0] + '.*[.]tif',
+            commandLineGroup='', # not a command line parameter
+        ),
     ]
