@@ -29,10 +29,10 @@ class SaisieAppuisInitQT(node.MicmacSaisieNode, desc.CommandLineNode):
             commandLineGroup='', # unnamed parameter
             value="",
         ),
-        desc.StringParam(
+        desc.File(
             name='pointNames',
             label='Point Names',
-            description="Point name, or name of a file containing the point names.",
+            description="Point name, list of names ([A,B,C]), text file (one name per line) or GCP XML file (DicoAppuisFlottant).",
             commandLineGroup='', # unnamed parameter
             value="",
         ),
