@@ -37,6 +37,36 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             value="",
         ),
         desc.BoolParam(
+            name='setEmGPS',
+            label='Set Em GPS',
+            description="Set EmGPS.",
+            value=False,
+            commandLineGroup='', # enable 'EmGPS' attribute
+        ),
+        desc.GroupAttribute(
+            name='EmGPS',
+            label='Em GPS',
+            description="Embedded GPS: orientation directory of the camera centers and their uncertainty ([Dir,Sigma]).",
+            brackets='[]',
+            joinChar=',',
+            enabled=lambda node: node.setEmGPS.value,
+            items=[
+                desc.File(
+                    name="orientation",
+                    label="GPS Orientation Directory",
+                    description="Orientation directory of the GPS camera centers (e.g. output of OriConvert).",
+                    value="",
+                ),
+                desc.FloatParam(
+                    name="sigma",
+                    label="Sigma",
+                    description="GPS uncertainty (in meters).",
+                    value=5.0,
+                    range=(0.0, 100.0, 0.01),
+                ),
+            ]
+        ),
+        desc.BoolParam(
             name='enableGpsLa',
             label='Enable GpsLa',
             description="Enable GpsLa.",
