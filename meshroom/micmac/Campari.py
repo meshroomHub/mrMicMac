@@ -188,7 +188,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             name='SigmaTieP',
             label='Sigma Tie P',
             description="Sigma use for TieP weighting (Def=1).",
-            value=5.0,
+            value=1.0,
             range=(-float('inf'), float('inf'), 0.01),
         ),
         desc.FloatParam(
@@ -242,10 +242,18 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             range=(-float('inf'), float('inf'), 0.01),
         ),
         desc.BoolParam(
+            name='setAddViscInterne',
+            label='Set Add Visc Interne',
+            description="Set AddViscInterne.",
+            value=False,
+            commandLineGroup='', # enable 'AddViscInterne' attribute
+        ),
+        desc.BoolParam(
             name='AddViscInterne',
             label='Add Visc Interne',
             description="Add Viscosity on calibration parameter (Def=false, exept for GradualRefineCal).",
             value=False,
+            enabled=lambda node: node.setAddViscInterne.value,
         ),
         desc.FloatParam(
             name='ViscInterne',
@@ -288,7 +296,7 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             name='AcceptGB',
             label='Accept GB',
             description="Accepte new Generik Bundle image, Def=true, set false for perfect backward compatibility.",
-            value=False,
+            value=True,
         ),
         desc.StringParam(
             name='NameRTA',
@@ -304,68 +312,148 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             range=(-sys.maxsize, sys.maxsize, 1),
         ),
         desc.BoolParam(
+            name='setFocFree',
+            label='Set Foc Free',
+            description="Set FocFree.",
+            value=False,
+            commandLineGroup='', # enable 'FocFree' attribute
+        ),
+        desc.BoolParam(
             name='FocFree',
             label='Foc Free',
             description="Foc Free (Def=true).",
+            value=True,
+            enabled=lambda node: node.setFocFree.value,
+        ),
+        desc.BoolParam(
+            name='setPPFree',
+            label='Set PP Free',
+            description="Set PPFree.",
             value=False,
+            commandLineGroup='', # enable 'PPFree' attribute
         ),
         desc.BoolParam(
             name='PPFree',
             label='PP Free',
             description="Principal Point Free (Def=true).",
+            value=True,
+            enabled=lambda node: node.setPPFree.value,
+        ),
+        desc.BoolParam(
+            name='setAffineFree',
+            label='Set Affine Free',
+            description="Set AffineFree.",
             value=False,
+            commandLineGroup='', # enable 'AffineFree' attribute
         ),
         desc.BoolParam(
             name='AffineFree',
             label='Affine Free',
             description="Affine Parameter (Def=true).",
+            value=True,
+            enabled=lambda node: node.setAffineFree.value,
+        ),
+        desc.BoolParam(
+            name='setDegAdd',
+            label='Set Deg Add',
+            description="Set DegAdd.",
             value=False,
+            commandLineGroup='', # enable 'DegAdd' attribute
         ),
         desc.IntParam(
             name='DegAdd',
             label='Deg Add',
             description="When specified, degree of additionnal parameter.",
             value=0,
-            range=(-sys.maxsize, sys.maxsize, 1),
+            range=(0, 20, 1),
+            enabled=lambda node: node.setDegAdd.value,
+        ),
+        desc.BoolParam(
+            name='setDegFree',
+            label='Set Deg Free',
+            description="Set DegFree.",
+            value=False,
+            commandLineGroup='', # enable 'DegFree' attribute
         ),
         desc.IntParam(
             name='DegFree',
             label='Deg Free',
             description="When specified degree of freedom of parameters generiqs.",
             value=0,
-            range=(-sys.maxsize, sys.maxsize, 1),
+            range=(0, 20, 1),
+            enabled=lambda node: node.setDegFree.value,
+        ),
+        desc.BoolParam(
+            name='setDRMax',
+            label='Set DR Max',
+            description="Set DRMax.",
+            value=False,
+            commandLineGroup='', # enable 'DRMax' attribute
         ),
         desc.IntParam(
             name='DRMax',
             label='DR Max',
             description="When specified degree of freedom of radial parameters.",
             value=0,
-            range=(-sys.maxsize, sys.maxsize, 1),
+            range=(0, 20, 1),
+            enabled=lambda node: node.setDRMax.value,
+        ),
+        desc.BoolParam(
+            name='setLibCP',
+            label='Set Lib CP',
+            description="Set LibCP.",
+            value=False,
+            commandLineGroup='', # enable 'LibCP' attribute
         ),
         desc.BoolParam(
             name='LibCP',
             label='Lib CP',
             description="Free distorsion center, Def context dependant.",
             value=False,
+            enabled=lambda node: node.setLibCP.value,
+        ),
+        desc.BoolParam(
+            name='setLibCD',
+            label='Set Lib CD',
+            description="Set LibCD.",
+            value=False,
+            commandLineGroup='', # enable 'LibCD' attribute
         ),
         desc.BoolParam(
             name='LibCD',
             label='Lib CD',
             description="Free distorsion center, Def context dependant. Principal Point should be also free if CD is free.",
             value=False,
+            enabled=lambda node: node.setLibCD.value,
+        ),
+        desc.BoolParam(
+            name='setLibDec',
+            label='Set Lib Dec',
+            description="Set LibDec.",
+            value=False,
+            commandLineGroup='', # enable 'LibDec' attribute
         ),
         desc.BoolParam(
             name='LibDec',
             label='Lib Dec',
             description="Free decentric parameter, Def context dependant.",
             value=False,
+            enabled=lambda node: node.setLibDec.value,
+        ),
+        desc.BoolParam(
+            name='setSElimB',
+            label='Set S Elim B',
+            description="Set SElimB.",
+            value=False,
+            commandLineGroup='', # enable 'SElimB' attribute
         ),
         desc.IntParam(
             name='SElimB',
             label='S Elim B',
             description="Print stat on reason for bundle elimination (0,1,2).",
             value=0,
-            range=(-sys.maxsize, sys.maxsize, 1),
+            range=(0, 2, 1),
+            enabled=lambda node: node.setSElimB.value,
         ),
         desc.BoolParam(
             name='ExpMatMark',
@@ -379,26 +467,42 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             description="Save intermediary results to, Set NONE if dont want any.",
             value="",
         ),
+        desc.BoolParam(
+            name='setRatioMaxDistCS',
+            label='Set Ratio Max Dist CS',
+            description="Set RatioMaxDistCS.",
+            value=False,
+            commandLineGroup='', # enable 'RatioMaxDistCS' attribute
+        ),
         desc.FloatParam(
             name='RatioMaxDistCS',
             label='Ratio Max Dist CS',
             description="Ratio max of distance P-Center.",
             value=0.0,
-            range=(-float('inf'), float('inf'), 0.01),
+            range=(0.0, 100000.0, 0.01),
+            enabled=lambda node: node.setRatioMaxDistCS.value,
+        ),
+        desc.BoolParam(
+            name='setNbLiais',
+            label='Set Nb Liais',
+            description="Set NbLiais.",
+            value=False,
+            commandLineGroup='', # enable 'NbLiais' attribute
         ),
         desc.IntParam(
             name='NbLiais',
             label='Nb Liais',
             description="Param for relative weighting for tie points.",
             value=100,
-            range=(-sys.maxsize, sys.maxsize, 1),
+            range=(0, 100000, 1),
+            enabled=lambda node: node.setNbLiais.value,
         ),
         desc.FloatParam(
             name='PdsGBRot',
             label='Pds GB Rot',
             description="Weighting of the global rotation constraint (Generic bundle Def=0.002).",
-            value=0.0,
-            range=(-float('inf'), float('inf'), 0.01),
+            value=0.002,
+            range=(0.0, 1.0, 0.001),
         ),
         desc.FloatParam(
             name='PdsGBId',
@@ -407,12 +511,20 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             value=0.0,
             range=(-float('inf'), float('inf'), 0.01),
         ),
+        desc.BoolParam(
+            name='setPdsGBIter',
+            label='Set Pds GB Iter',
+            description="Set PdsGBIter.",
+            value=False,
+            commandLineGroup='', # enable 'PdsGBIter' attribute
+        ),
         desc.FloatParam(
             name='PdsGBIter',
             label='Pds GB Iter',
             description="Weighting of the change of the global rotation constraint between iterations (Generic bundle Def=1e-6).",
-            value=0.0,
-            range=(-float('inf'), float('inf'), 0.01),
+            value=0.000001,
+            range=(0.0, 1.0, 0.000001),
+            enabled=lambda node: node.setPdsGBIter.value,
         ),
         desc.BoolParam(
             name='ExportSensib',
@@ -421,10 +533,18 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             value=False,
         ),
         desc.BoolParam(
+            name='setUseGaussJ',
+            label='Set Use Gauss J',
+            description="Set UseGaussJ.",
+            value=False,
+            commandLineGroup='', # enable 'UseGaussJ' attribute
+        ),
+        desc.BoolParam(
             name='UseGaussJ',
             label='Use Gauss J',
             description="Use GaussJ instead of Cholesky (Def depend of others).",
             value=False,
+            enabled=lambda node: node.setUseGaussJ.value,
         ),
         desc.IntParam(
             name='NormEq',
@@ -439,26 +559,50 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             description="String of debug for tie points.",
             value="",
         ),
+        desc.BoolParam(
+            name='setNAWNF',
+            label='Set NAWNF',
+            description="Set NAWNF.",
+            value=False,
+            commandLineGroup='', # enable 'NAWNF' attribute
+        ),
         desc.IntParam(
             name='NAWNF',
             label='NAWNF',
             description="Num Attribute for Weigthing in New Format.",
             value=0,
-            range=(-sys.maxsize, sys.maxsize, 1),
+            range=(0, 100, 1),
+            enabled=lambda node: node.setNAWNF.value,
+        ),
+        desc.BoolParam(
+            name='setWOP',
+            label='Set WOP',
+            description="Set WOP.",
+            value=False,
+            commandLineGroup='', # enable 'WOP' attribute
         ),
         desc.FloatParam(
             name='WOP',
             label='WOP',
             description="Weight of plane observation on centers.",
             value=0.0,
-            range=(-float('inf'), float('inf'), 0.01),
+            range=(0.0, 100000.0, 0.01),
+            enabled=lambda node: node.setWOP.value,
+        ),
+        desc.BoolParam(
+            name='setExtIntZ',
+            label='Set Ext Int Z',
+            description="Set ExtIntZ.",
+            value=False,
+            commandLineGroup='', # enable 'ExtIntZ' attribute
         ),
         desc.FloatParam(
             name='ExtIntZ',
             label='Ext Int Z',
             description="Extension of Z Interval for elimination.",
             value=0.0,
-            range=(-float('inf'), float('inf'), 0.01),
+            range=(0.0, 100000.0, 0.01),
+            enabled=lambda node: node.setExtIntZ.value,
         ),
     ]
 
