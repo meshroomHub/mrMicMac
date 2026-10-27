@@ -17,8 +17,8 @@ class SaisieMasqQT(node.MicmacSaisieNode, desc.CommandLineNode):
         ),
         desc.File(
             name='filePath',
-            label='File Path',
-            description='Path of the file to open (image or PLY or camera XML).',
+            label='Filename',
+            description='Filename / Path of the file to open (image or PLY or camera XML).',
             commandLineGroup='', # unnamed parameter
             value="",
         ),

@@ -154,7 +154,7 @@
                 "projectDirectory": "{SaisieMasqQT_1.projectDirectory}"
             },
             "internalInputs": {
-                "comment": "Set 'File Path' to the image on which the 2D mask is drawn.",
+                "comment": "Set 'Filename' to the image on which the 2D mask is drawn.",
                 "label": "SaisieMasqQT 2D"
             }
         },
