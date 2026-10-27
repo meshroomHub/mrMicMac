@@ -4,7 +4,8 @@ from meshroom.core import desc
 from ..common import node
 
 class ChgSysCo(node.MicmacNode, desc.CommandLineNode):
-    commandLine = 'mm3d ChgSysCo {imagePatternValue} {orientationInValue} {ChgSystValue} {orientationOutValue} {allParams}'
+    # pattern kept in double quotes: ChgSysCo passes it unquoted to an 'mm3d Apero' shell command, where '|' would be a pipe
+    commandLine = 'mm3d ChgSysCo \'"{imagePatternValue}"\' {orientationInValue} {ChgSystValue} {orientationOutValue} {allParams}'
     documentation = 'ChgSysCo: Change the coordinate system of an orientation.'
 
     inputs = [
