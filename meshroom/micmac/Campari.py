@@ -73,25 +73,48 @@ class Campari(node.MicmacNode, desc.CommandLineNode):
             value=False,
             commandLineGroup='', # enable 'GpsLa', 'IncLA' attributes
         ),
+        desc.BoolParam(
+            name='setGCP',
+            label='Set GCP',
+            description="Set GCP.",
+            value=False,
+            commandLineGroup='', # enable 'GCP' attribute
+        ),
         desc.GroupAttribute(
             name='GCP',
             label='GCP',
-            description="Give the start and end image that you want to put in a new folder.",
+            description="Ground control points ([GrMes.xml,GrUncertainty,ImMes.xml,ImUnc]).",
             brackets='[]',
             joinChar=',',
+            enabled=lambda node: node.setGCP.value,
             items=[
-                desc.ListAttribute(
-                    name='GCPCtrl',
-                    label='GCP Ctrl',
-                    description="[GCPTerr.xml,GCPIm.xml,Scale]-> true 3D coordinates+image observations+residual vector scaling factor.",
-                    joinChar=',',
-                    elementDesc=desc.StringParam(
-                        name="GCPCtrlItem",
-                        label="GCP Ctrl Item",
-                        description="GCP Ctrl item.",
-                        value="",
-                    ),
-            )],
+                desc.File(
+                    name="gcpFile",
+                    label="GCP File",
+                    description="Ground coordinates of the GCPs (e.g. output of GCPConvert).",
+                    value="",
+                ),
+                desc.FloatParam(
+                    name="gcpUncertainty",
+                    label="GCP Uncertainty",
+                    description="Uncertainty of the ground coordinates (in meters).",
+                    value=0.01,
+                    range=(0.0, 100.0, 0.001),
+                ),
+                desc.File(
+                    name="imageMeasurementsFile",
+                    label="Image Measurements File",
+                    description="Image measurements of the GCPs (e.g. Mesure-S2D.xml).",
+                    value="",
+                ),
+                desc.FloatParam(
+                    name="imageUncertainty",
+                    label="Image Uncertainty",
+                    description="Uncertainty of the image measurements (in pixels).",
+                    value=1.0,
+                    range=(0.0, 100.0, 0.01),
+                ),
+            ]
         ),
         desc.GroupAttribute(
             name='GpsLa',
