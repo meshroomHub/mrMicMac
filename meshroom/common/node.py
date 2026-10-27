@@ -97,3 +97,28 @@ class MicmacSaisieNode(MicmacNode):
         xmlOutputs = [path for path in outputs if path.lower().endswith('.xml')]
         if xmlOutputs and not any(self.hasData(path) for path in xmlOutputs):
             raise RuntimeError('Error on node "{}": output written without data (saved before measuring?):\n{}'.format(chunk.name, '\n'.join(xmlOutputs)))
+
+class MicmacPythonNode:
+    '''
+    Mixin for MicMac nodes implemented in Python, to use with desc.Node:
+        class MyNode(MicmacPythonNode, desc.Node)
+    The node defines 'projectDirectory' (input or output) and 'verboseLevel', and implements run(chunk, projectDir).
+    Not a desc.Node itself, so Meshroom does not register it as a node.
+    '''
+    category = 'MicMac'
+
+    def run(self, chunk, projectDir):
+        raise NotImplementedError()
+
+    def processChunk(self, chunk):
+        try:
+            chunk.logManager.start(chunk.node.verboseLevel.value)
+            projectDir = chunk.node.projectDirectory.value.replace('"', '')
+            if not projectDir:
+                raise RuntimeError('"Project Directory" is not set.')
+            projectDir = os.path.normpath(projectDir).replace('\\', '/')
+            chunk.logger.debug('Project directory: ' + projectDir)
+            os.makedirs(projectDir, exist_ok=True)
+            self.run(chunk, projectDir)
+        finally:
+            chunk.logManager.end()

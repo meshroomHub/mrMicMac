@@ -1,0 +1,395 @@
+{
+    "header": {
+        "releaseVersion": "2026.1.0",
+        "fileVersion": "2.1",
+        "nodesVersions": {
+            "AperiCloud": "1.2.0",
+            "CameraInit": "12.1",
+            "Campari": "1.2.0",
+            "CenterBascule": "1.2.0",
+            "ChgSysCo": "1.2.0",
+            "ConvertImages": "1.2.0",
+            "MaltOrtho": "1.2.0",
+            "MicMacImportFile": "1.2.0",
+            "MicMacImportSysCo": "1.2.0",
+            "MicMacProject": "1.2.0",
+            "OriConvert": "1.2.0",
+            "SaisieMasqQT": "1.2.0",
+            "Tapas": "1.2.0",
+            "TapiocaFile": "1.2.0",
+            "Tarama": "1.2.0",
+            "Tawny": "1.2.0"
+        },
+        "template": true
+    },
+    "graph": {
+        "AperiCloud_1": {
+            "nodeType": "AperiCloud",
+            "position": [
+                1885,
+                141
+            ],
+            "inputs": {
+                "projectDirectory": "{Tapas_1.projectDirectory}",
+                "imagePattern": "{Tapas_1.imagePattern}",
+                "SH": "{Tapas_1.SH}",
+                "orientationDir": "{Tapas_1.orientationDirectory}",
+                "Out": "Sample4Calib-Rel.pc.ply"
+            },
+            "internalInputs": {
+                "label": "AperiCloud Calib"
+            }
+        },
+        "AperiCloud_2": {
+            "nodeType": "AperiCloud",
+            "position": [
+                2085,
+                141
+            ],
+            "inputs": {
+                "projectDirectory": "{Tapas_2.projectDirectory}",
+                "imagePattern": "{Tapas_2.imagePattern}",
+                "SH": "{Tapas_2.SH}",
+                "orientationDir": "{Tapas_2.orientationDirectory}",
+                "Out": "All-Rel.pc.ply"
+            },
+            "internalInputs": {
+                "label": "AperiCloud All"
+            }
+        },
+        "AperiCloud_3": {
+            "nodeType": "AperiCloud",
+            "position": [
+                2968,
+                133
+            ],
+            "inputs": {
+                "projectDirectory": "{ChgSysCo_1.projectDirectory}",
+                "imagePattern": "{ChgSysCo_1.imagePattern}",
+                "SH": "{Tapas_2.SH}",
+                "orientationDir": "{ChgSysCo_1.orientationOut}",
+                "WithPoints": false,
+                "Out": "All-Proj-cam.pc.ply"
+            },
+            "internalInputs": {
+                "label": "AperiCloud Cameras"
+            }
+        },
+        "Backdrop_1": {
+            "nodeType": "Backdrop",
+            "position": [
+                123,
+                -159
+            ],
+            "internalInputs": {
+                "comment": "To access the project folder: \n- Right-click on the 'MicMacProject' node\n- Select 'Open Folder'\n- Open the 'project' folder. \n\nAll calculations are stored in this folder.",
+                "label": "MicMac Project",
+                "fontSize": 10,
+                "nodeWidth": 253,
+                "nodeHeight": 330
+            }
+        },
+        "Backdrop_2": {
+            "nodeType": "Backdrop",
+            "position": [
+                2350,
+                -198
+            ],
+            "internalInputs": {
+                "comment": "Georeferencing with the embedded GPS, computed in the local tangent frame (RTL):\n1) 'CenterBascule' moves the relative block onto the GPS camera centers\n2) 'Campari' refines the block with the GPS centers ('Em GPS') and the tie points\n3) 'ChgSysCo' converts the orientation to the map projection ('Import SysCo Projection')",
+                "label": "Georeferencing (RTL -> Map Projection)",
+                "fontSize": 10,
+                "nodeWidth": 820,
+                "nodeHeight": 473
+            }
+        },
+        "Backdrop_3": {
+            "nodeType": "Backdrop",
+            "position": [
+                3230,
+                -198
+            ],
+            "internalInputs": {
+                "comment": "Orthophoto in the map projection:\n1) Draw the area to process on the TA image ('SaisieMasqQT TA'), used by Malt through 'DirTA'\n2) 'Tawny' builds the mosaic, possibly split into tiles\n3) 'ConvertImages' converts the mosaic (or each tile) into a standard TIFF",
+                "label": "Orthophoto",
+                "fontSize": 10,
+                "nodeWidth": 1027,
+                "nodeHeight": 330
+            }
+        },
+        "Backdrop_4": {
+            "nodeType": "Backdrop",
+            "position": [
+                404,
+                -159
+            ],
+            "internalInputs": {
+                "comment": "Project files, chosen in the 'Import' nodes and copied into the project folder:\n1) 'Import GPS': the GPS file\n2) 'Import SysCo RTL': the local tangent system (origin near the site); its 'Change System' converts the GPS (DegreeWGS84) into it\n3) 'Import SysCo Projection': the map projection; its 'Change System' converts the RTL system into it",
+                "label": "Project Files",
+                "fontSize": 10,
+                "nodeWidth": 680,
+                "nodeHeight": 326
+            }
+        },
+        "Backdrop_5": {
+            "nodeType": "Backdrop",
+            "position": [
+                122,
+                -451
+            ],
+            "internalInputs": {
+                "comment": "UAS Grand-Leez (200 images): http://web.archive.org/web/20260303004211/https://micmac.ensg.eu/data/uas_grand_leez_dataset.zip\n- 'Import GPS': GPS_WPK_Grand-Leez.csv\n- 'Import SysCo RTL': SysCoRTL.xml (origin = first camera R0040438.JPG)\n- 'Import SysCo Projection': SysCoBL72_EPSG31370.xml (Belgian Lambert 72, EPSG:31370)\n- 'OriConvert GPS': 'Image Center' = R0040536.JPG\n- 'Tapas Calib': 'Image Pattern' = the PATC of the 'OriConvert GPS' log (25 images around R0040536.JPG)\n- 'Campari': 'Sigma' = 5 (no RTK)",
+                "label": "Example Dataset (UAS Grand-Leez)",
+                "fontSize": 10,
+                "nodeWidth": 957,
+                "nodeHeight": 260
+            }
+        },
+        "CameraInit_1": {
+            "nodeType": "CameraInit",
+            "position": [
+                -66,
+                2
+            ],
+            "inputs": {}
+        },
+        "Campari_1": {
+            "nodeType": "Campari",
+            "position": [
+                2570,
+                -37
+            ],
+            "inputs": {
+                "projectDirectory": "{CenterBascule_1.projectDirectory}",
+                "imagePattern": "{CenterBascule_1.imagePattern}",
+                "inputOrientation": "{CenterBascule_1.orientationOut}",
+                "SH": "{Tapas_2.SH}",
+                "setEmGPS": true,
+                "EmGPS": {
+                    "orientation": "{OriConvert_1.orientationOut}",
+                    "sigma": 5.0
+                },
+                "AllFree": true
+            },
+            "internalInputs": {
+                "comment": "Set 'Sigma' of 'Em GPS' to the GPS accuracy (a few meters without RTK)."
+            }
+        },
+        "CenterBascule_1": {
+            "nodeType": "CenterBascule",
+            "position": [
+                2370,
+                -37
+            ],
+            "inputs": {
+                "projectDirectory": "{Tapas_2.projectDirectory}",
+                "imagePattern": "{Tapas_2.imagePattern}",
+                "orientationIn": "{Tapas_2.orientationDirectory}",
+                "LocalizationOfICenters": "{OriConvert_1.orientationOut}",
+                "Out": "All-RTL"
+            }
+        },
+        "ChgSysCo_1": {
+            "nodeType": "ChgSysCo",
+            "position": [
+                2770,
+                -37
+            ],
+            "inputs": {
+                "projectDirectory": "{Campari_1.projectDirectory}",
+                "imagePattern": "{Campari_1.imagePattern}",
+                "orientationIn": "{Campari_1.Out}",
+                "ChgSyst": "{MicMacImportSysCo_2.changeSystem}",
+                "Out": "All-Proj"
+            }
+        },
+        "ConvertImages_1": {
+            "nodeType": "ConvertImages",
+            "position": [
+                4069,
+                -37
+            ],
+            "inputs": {
+                "projectDirectory": "{Tawny_1.projectDirectory}",
+                "imagePattern": "{Tawny_1.outImagePattern}"
+            },
+            "internalInputs": {
+                "comment": "Converts the mosaic, or each of its tiles, into a standard TIFF (tiles are not merged)."
+            }
+        },
+        "MaltOrtho_1": {
+            "nodeType": "MaltOrtho",
+            "position": [
+                3669,
+                -37
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieMasqQT_1.projectDirectory}",
+                "imagePattern": "{Tarama_1.imagePattern}",
+                "orientationDir": "{Tarama_1.orientationDir}",
+                "DirMEC": "MEC-Malt",
+                "DirTA": "{Tarama_1.Out}"
+            }
+        },
+        "MicMacImportFile_1": {
+            "nodeType": "MicMacImportFile",
+            "position": [
+                444,
+                -3
+            ],
+            "inputs": {
+                "projectDirectory": "{MicMacProject_1.projectDirectory}"
+            },
+            "internalInputs": {
+                "label": "Import GPS"
+            }
+        },
+        "MicMacImportSysCo_1": {
+            "nodeType": "MicMacImportSysCo",
+            "position": [
+                667,
+                -3
+            ],
+            "inputs": {
+                "projectDirectory": "{MicMacImportFile_1.projectDirectory}"
+            },
+            "internalInputs": {
+                "label": "Import SysCo RTL"
+            }
+        },
+        "MicMacImportSysCo_2": {
+            "nodeType": "MicMacImportSysCo",
+            "position": [
+                867,
+                -3
+            ],
+            "inputs": {
+                "projectDirectory": "{MicMacImportSysCo_1.projectDirectory}",
+                "sourceType": "File",
+                "sourceFile": "{MicMacImportSysCo_1.filename}"
+            },
+            "internalInputs": {
+                "label": "Import SysCo Projection"
+            }
+        },
+        "MicMacProject_1": {
+            "nodeType": "MicMacProject",
+            "position": [
+                177,
+                2
+            ],
+            "inputs": {
+                "input": "{CameraInit_1.output}"
+            },
+            "internalInputs": {
+                "color": "#602d2d"
+            }
+        },
+        "OriConvert_1": {
+            "nodeType": "OriConvert",
+            "position": [
+                1285,
+                -32
+            ],
+            "inputs": {
+                "projectDirectory": "{MicMacImportFile_1.projectDirectory}",
+                "orientationFile": "{MicMacImportFile_1.filename}",
+                "targetedOrientation": "Nav-Brut-RTL",
+                "ChSys": "{MicMacImportSysCo_1.changeSystem}",
+                "NameCple": "FileImagesNeighbour.xml",
+                "setCalcV": true,
+                "CalcV": true,
+                "setNbImC": true,
+                "NbImC": 25
+            },
+            "internalInputs": {
+                "comment": "Converts the GPS file, computes the image pairs and the speed, and selects the calibration sub-block around 'Image Center' (printed as PATC in the log). Set 'Image Center' (required).",
+                "label": "OriConvert GPS"
+            }
+        },
+        "SaisieMasqQT_1": {
+            "nodeType": "SaisieMasqQT",
+            "position": [
+                3469,
+                -37
+            ],
+            "inputs": {
+                "projectDirectory": "{Tarama_1.projectDirectory}",
+                "filePath": "{Tarama_1.taImage}"
+            },
+            "internalInputs": {
+                "comment": "Draw the ortho area on the TA image (mask used by Malt through 'DirTA').",
+                "label": "SaisieMasqQT TA"
+            }
+        },
+        "Tapas_1": {
+            "nodeType": "Tapas",
+            "position": [
+                1685,
+                -32
+            ],
+            "inputs": {
+                "projectDirectory": "{TapiocaFile_1.projectDirectory}",
+                "imagePattern": "[a-zA-Z0-9_.-]*[.](jpg|jpeg|JPG|JPEG|png|PNG)",
+                "SH": "{TapiocaFile_1.PostFix}",
+                "Out": "Sample4Calib-Rel"
+            },
+            "internalInputs": {
+                "comment": "To calibrate on a sub-block, set 'Image Pattern' to the PATC printed in the 'OriConvert GPS' log.",
+                "label": "Tapas Calib"
+            }
+        },
+        "Tapas_2": {
+            "nodeType": "Tapas",
+            "position": [
+                1885,
+                -32
+            ],
+            "inputs": {
+                "projectDirectory": "{Tapas_1.projectDirectory}",
+                "imagePattern": "[a-zA-Z0-9_.-]*[.](jpg|jpeg|JPG|JPEG|png|PNG)",
+                "calibrationModel": "{Tapas_1.calibrationModel}",
+                "InCal": "{Tapas_1.orientationDirectory}",
+                "SH": "{Tapas_1.SH}",
+                "Out": "All-Rel"
+            },
+            "internalInputs": {
+                "label": "Tapas All"
+            }
+        },
+        "TapiocaFile_1": {
+            "nodeType": "TapiocaFile",
+            "position": [
+                1485,
+                -32
+            ],
+            "inputs": {
+                "projectDirectory": "{OriConvert_1.projectDirectory}",
+                "xmlPath": "{OriConvert_1.NameCple}"
+            }
+        },
+        "Tarama_1": {
+            "nodeType": "Tarama",
+            "position": [
+                3269,
+                -37
+            ],
+            "inputs": {
+                "projectDirectory": "{ChgSysCo_1.projectDirectory}",
+                "imagePattern": "{ChgSysCo_1.imagePattern}",
+                "orientationDir": "{ChgSysCo_1.orientationOut}"
+            }
+        },
+        "Tawny_1": {
+            "nodeType": "Tawny",
+            "position": [
+                3869,
+                -37
+            ],
+            "inputs": {
+                "projectDirectory": "{MaltOrtho_1.projectDirectory}",
+                "orthoDirectory": "{MaltOrtho_1.orthoDirectory}"
+            }
+        }
+    }
+}

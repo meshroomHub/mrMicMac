@@ -1,0 +1,442 @@
+{
+    "header": {
+        "releaseVersion": "2026.1.0",
+        "fileVersion": "2.1",
+        "nodesVersions": {
+            "CameraInit": "12.1",
+            "GCPBascule": "1.2.0",
+            "MaltOrtho": "1.2.0",
+            "MicMacImportDirectory": "1.2.0",
+            "MicMacImportFile": "1.2.0",
+            "MicMacProject": "1.2.0",
+            "RepLocBascule": "1.2.0",
+            "SBGlobBascule": "1.2.0",
+            "SaisieAppuisInitQT": "1.2.0",
+            "SaisieBascQT": "1.2.0",
+            "SaisieMasqQT": "1.2.0",
+            "Tapas": "1.2.0",
+            "TapiocaAll": "1.2.0",
+            "Tarama": "1.2.0",
+            "Tawny": "1.2.0"
+        },
+        "template": true
+    },
+    "graph": {
+        "Backdrop_1": {
+            "nodeType": "Backdrop",
+            "position": [
+                123,
+                -159
+            ],
+            "internalInputs": {
+                "comment": "To access the project folder: \n- Right-click on the 'MicMacProject' node\n- Select 'Open Folder'\n- Open the 'project' folder. \n\nAll calculations are stored in this folder.",
+                "label": "MicMac Project",
+                "fontSize": 10,
+                "nodeWidth": 253,
+                "nodeHeight": 330
+            }
+        },
+        "Backdrop_2": {
+            "nodeType": "Backdrop",
+            "position": [
+                872,
+                8
+            ],
+            "internalInputs": {
+                "comment": "Relative orientation and scene measurements (shared by A1 and A2):\n1) 'Tapas' self-calibrates the camera ('RadialBasic')\n2) 'SaisieMasqQT Facade' draws the facade plane on one image\n3) 'SaisieBascQT' measures 'Line1', 'Line2' (X axis), 'Origine' and 'Ech1', 'Ech2' (scale)",
+                "label": "Common",
+                "fontSize": 10,
+                "nodeWidth": 820,
+                "nodeHeight": 330
+            }
+        },
+        "Backdrop_3": {
+            "nodeType": "Backdrop",
+            "position": [
+                2335,
+                -283
+            ],
+            "internalInputs": {
+                "comment": "Absolute orientation from the captured GCPs ('GCPBascule'), then local facade frame with 'RepLocBascule' (does not change the orientation).",
+                "label": "A1 - Frame From GCPs",
+                "fontSize": 10,
+                "nodeWidth": 1499,
+                "nodeHeight": 310
+            }
+        },
+        "Backdrop_4": {
+            "nodeType": "Backdrop",
+            "position": [
+                2330,
+                59
+            ],
+            "internalInputs": {
+                "comment": "Frame from the scene with 'SBGlobBascule': plane = facade mask, X axis = Line1/Line2, scale = DistFS between Ech1 and Ech2.",
+                "label": "A2 - Frame From Scene",
+                "fontSize": 10,
+                "nodeWidth": 1502,
+                "nodeHeight": 332
+            }
+        },
+        "Backdrop_5": {
+            "nodeType": "Backdrop",
+            "position": [
+                878,
+                -326
+            ],
+            "internalInputs": {
+                "comment": "Project files:\n- 'Import GCP': the GCP coordinates file also used as the point names of 'SaisieAppuisInitQT'\n- 'Import Ref Measures' (only for 'GCPBascule Ref'): reference image measures\n- 'Import Calibration' (optional): a reference calibration; link its 'Orientation Directory' to the 'Calibration Directory' of 'Tapas' and set 'Figee'",
+                "label": "Project Files",
+                "fontSize": 10,
+                "nodeWidth": 812,
+                "nodeHeight": 300
+            }
+        },
+        "Backdrop_6": {
+            "nodeType": "Backdrop",
+            "position": [
+                2063,
+                -540
+            ],
+            "internalInputs": {
+                "comment": "Compare the GCPBascule residuals with reference image measures. Compute it manually: it fails when 'Import Ref Measures' is empty.",
+                "label": "Optional: Check With Reference Measures",
+                "fontSize": 10,
+                "nodeWidth": 640,
+                "nodeHeight": 200
+            }
+        },
+        "Backdrop_7": {
+            "nodeType": "Backdrop",
+            "position": [
+                -361,
+                -459
+            ],
+            "internalInputs": {
+                "comment": "Mur Saint Martin (MMVII-TestDir/Input/Saisies-MMV1): 4 images IMGP4167-4170, 1728x1152 (hence full resolution in 'TapiocaAll')\n- 'SaisieMasqQT Facade': 'Filename' = IMGP4168.JPG\n- 'Import GCP': Ground-Pts3D.xml; only 6 GCPs usable: Acute, Finger-1, Grille, I-of-I, Stone-6, Stone-7\n- 'Import Ref Measures': GroundMeasure.xml\n- 'Import Calibration' (optional): Ori-Ground_mm3d; link it to the 'Calibration Directory' of 'Tapas' and set 'Figee'\n- 'SBGlobBascule': Ech1 = Stone-7, Ech2 = Grille, 'DistFS' = 2.17\nExpected GCPBascule residuals: 3-21 mm (self-calibration), 3-12 mm with 'Figee'.",
+                "label": "Example Dataset (Mur Saint Martin)",
+                "fontSize": 10,
+                "nodeWidth": 1080,
+                "nodeHeight": 260
+            }
+        },
+        "CameraInit_1": {
+            "nodeType": "CameraInit",
+            "position": [
+                -66,
+                2
+            ],
+            "inputs": {}
+        },
+        "GCPBascule_1": {
+            "nodeType": "GCPBascule",
+            "position": [
+                2555,
+                -83
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieAppuisInitQT_1.projectDirectory}",
+                "imagePattern": "{SaisieAppuisInitQT_1.imagePattern}",
+                "orientationIn": "{SaisieAppuisInitQT_1.orientationIn}",
+                "GCPFile": "{MicMacImportFile_1.filename}",
+                "imageMeasurementsFile": "{SaisieAppuisInitQT_1.imageMeasurements2D}"
+            }
+        },
+        "GCPBascule_2": {
+            "nodeType": "GCPBascule",
+            "position": [
+                2460,
+                -458
+            ],
+            "inputs": {
+                "projectDirectory": "{GCPBascule_1.projectDirectory}",
+                "imagePattern": "{GCPBascule_1.imagePattern}",
+                "orientationIn": "{GCPBascule_1.orientationIn}",
+                "GCPFile": "{GCPBascule_1.GCPFile}",
+                "imageMeasurementsFile": "{MicMacImportFile_2.filename}",
+                "Out": "GCPBasc-Ref"
+            },
+            "internalInputs": {
+                "label": "GCPBascule Ref",
+                "color": "#555555"
+            }
+        },
+        "MaltOrtho_1": {
+            "nodeType": "MaltOrtho",
+            "position": [
+                3415,
+                -223
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieMasqQT_2.projectDirectory}",
+                "imagePattern": "{Tarama_1.imagePattern}",
+                "orientationDir": "{Tarama_1.orientationDir}",
+                "DirMEC": "MEC-A1",
+                "NbVI": 2,
+                "Repere": "{Tarama_1.Repere}",
+                "DirTA": "{Tarama_1.Out}"
+            },
+            "internalInputs": {
+                "label": "MaltOrtho A1"
+            }
+        },
+        "MaltOrtho_2": {
+            "nodeType": "MaltOrtho",
+            "position": [
+                2972,
+                183
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieMasqQT_3.projectDirectory}",
+                "imagePattern": "{Tarama_2.imagePattern}",
+                "orientationDir": "{Tarama_2.orientationDir}",
+                "DirMEC": "MEC-A2",
+                "NbVI": 2,
+                "DirTA": "{Tarama_2.Out}"
+            },
+            "internalInputs": {
+                "label": "MaltOrtho A2"
+            }
+        },
+        "MicMacImportDirectory_1": {
+            "nodeType": "MicMacImportDirectory",
+            "position": [
+                1052,
+                -131
+            ],
+            "inputs": {
+                "projectDirectory": "{MicMacProject_1.projectDirectory}"
+            },
+            "internalInputs": {
+                "label": "Import Calibration"
+            }
+        },
+        "MicMacImportFile_1": {
+            "nodeType": "MicMacImportFile",
+            "position": [
+                1266,
+                -141
+            ],
+            "inputs": {
+                "projectDirectory": "{MicMacProject_1.projectDirectory}"
+            },
+            "internalInputs": {
+                "label": "Import GCP"
+            }
+        },
+        "MicMacImportFile_2": {
+            "nodeType": "MicMacImportFile",
+            "position": [
+                2083,
+                -451
+            ],
+            "inputs": {
+                "projectDirectory": "{MicMacProject_1.projectDirectory}"
+            },
+            "internalInputs": {
+                "label": "Import Ref Measures",
+                "color": "#555555"
+            }
+        },
+        "MicMacProject_1": {
+            "nodeType": "MicMacProject",
+            "position": [
+                177,
+                2
+            ],
+            "inputs": {
+                "input": "{CameraInit_1.output}"
+            },
+            "internalInputs": {
+                "color": "#602d2d"
+            }
+        },
+        "RepLocBascule_1": {
+            "nodeType": "RepLocBascule",
+            "position": [
+                2755,
+                -83
+            ],
+            "inputs": {
+                "projectDirectory": "{GCPBascule_1.projectDirectory}",
+                "imagePattern": "{GCPBascule_1.imagePattern}",
+                "orientationDir": "{GCPBascule_1.orientationOut}",
+                "imageMeasures": "{SaisieBascQT_1.imageMeasurements2D}"
+            }
+        },
+        "SBGlobBascule_1": {
+            "nodeType": "SBGlobBascule",
+            "position": [
+                2372,
+                183
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieBascQT_1.projectDirectory}",
+                "imagePattern": "{SaisieBascQT_1.imagePattern}",
+                "orientationIn": "{SaisieBascQT_1.orientationIn}",
+                "imageMeasures": "{SaisieBascQT_1.imageMeasurements2D}",
+                "setDistFS": true
+            },
+            "internalInputs": {
+                "comment": "Set 'DistFS' to the real distance between Ech1 and Ech2 (in meters)."
+            }
+        },
+        "SaisieAppuisInitQT_1": {
+            "nodeType": "SaisieAppuisInitQT",
+            "position": [
+                2355,
+                -83
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieBascQT_1.projectDirectory}",
+                "imagePattern": "{SaisieBascQT_1.imagePattern}",
+                "orientationIn": "{SaisieBascQT_1.orientationIn}",
+                "pointNames": "{MicMacImportFile_1.filename}"
+            }
+        },
+        "SaisieBascQT_1": {
+            "nodeType": "SaisieBascQT",
+            "position": [
+                1492,
+                169
+            ],
+            "inputs": {
+                "projectDirectory": "{SaisieMasqQT_1.projectDirectory}",
+                "imagePattern": "{Tapas_1.imagePattern}",
+                "orientationIn": "{Tapas_1.orientationDirectory}"
+            }
+        },
+        "SaisieMasqQT_1": {
+            "nodeType": "SaisieMasqQT",
+            "position": [
+                1292,
+                169
+            ],
+            "inputs": {
+                "projectDirectory": "{Tapas_1.projectDirectory}"
+            },
+            "internalInputs": {
+                "label": "SaisieMasqQT Facade"
+            }
+        },
+        "SaisieMasqQT_2": {
+            "nodeType": "SaisieMasqQT",
+            "position": [
+                3198,
+                -74
+            ],
+            "inputs": {
+                "projectDirectory": "{Tarama_1.projectDirectory}",
+                "filePath": "{Tarama_1.taImage}"
+            },
+            "internalInputs": {
+                "comment": "Draw the ortho area on the TA image (mask used by Malt through 'DirTA').",
+                "label": "SaisieMasqQT TA A1"
+            }
+        },
+        "SaisieMasqQT_3": {
+            "nodeType": "SaisieMasqQT",
+            "position": [
+                2772,
+                183
+            ],
+            "inputs": {
+                "projectDirectory": "{Tarama_2.projectDirectory}",
+                "filePath": "{Tarama_2.taImage}"
+            },
+            "internalInputs": {
+                "comment": "Draw the ortho area on the TA image (mask used by Malt through 'DirTA').",
+                "label": "SaisieMasqQT TA A2"
+            }
+        },
+        "Tapas_1": {
+            "nodeType": "Tapas",
+            "position": [
+                1092,
+                169
+            ],
+            "inputs": {
+                "projectDirectory": "{TapiocaAll_1.projectDirectory}",
+                "imagePattern": "{TapiocaAll_1.imagePattern}",
+                "SH": "{TapiocaAll_1.PostFix}",
+                "Out": "Rel"
+            },
+            "internalInputs": {
+                "label": "Tapas"
+            }
+        },
+        "TapiocaAll_1": {
+            "nodeType": "TapiocaAll",
+            "position": [
+                892,
+                169
+            ],
+            "inputs": {
+                "projectDirectory": "{MicMacProject_1.projectDirectory}",
+                "imageSize": -1,
+                "HomolPostFix": ""
+            }
+        },
+        "Tarama_1": {
+            "nodeType": "Tarama",
+            "position": [
+                2976,
+                -217
+            ],
+            "inputs": {
+                "projectDirectory": "{RepLocBascule_1.projectDirectory}",
+                "imagePattern": "{RepLocBascule_1.imagePattern}",
+                "orientationDir": "{RepLocBascule_1.orientationDir}",
+                "Repere": "{RepLocBascule_1.localFrameOut}",
+                "Out": "TA-A1"
+            },
+            "internalInputs": {
+                "label": "Tarama A1"
+            }
+        },
+        "Tarama_2": {
+            "nodeType": "Tarama",
+            "position": [
+                2572,
+                183
+            ],
+            "inputs": {
+                "projectDirectory": "{SBGlobBascule_1.projectDirectory}",
+                "imagePattern": "{SBGlobBascule_1.imagePattern}",
+                "orientationDir": "{SBGlobBascule_1.orientationOut}",
+                "Out": "TA-A2"
+            },
+            "internalInputs": {
+                "label": "Tarama A2"
+            }
+        },
+        "Tawny_1": {
+            "nodeType": "Tawny",
+            "position": [
+                3637,
+                -93
+            ],
+            "inputs": {
+                "projectDirectory": "{MaltOrtho_1.projectDirectory}",
+                "orthoDirectory": "{MaltOrtho_1.orthoDirectory}"
+            },
+            "internalInputs": {
+                "label": "Tawny A1"
+            }
+        },
+        "Tawny_2": {
+            "nodeType": "Tawny",
+            "position": [
+                3172,
+                183
+            ],
+            "inputs": {
+                "projectDirectory": "{MaltOrtho_2.projectDirectory}",
+                "orthoDirectory": "{MaltOrtho_2.orthoDirectory}"
+            },
+            "internalInputs": {
+                "label": "Tawny A2"
+            }
+        }
+    }
+}
